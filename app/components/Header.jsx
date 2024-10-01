@@ -55,13 +55,25 @@ const Header = () => {
   };
 
   const activeProjects = () => {
-    return pathname.includes("/projects")
+    return pathname.includes("/projects");
     // /projects/
   };
 
   return (
     <Container maxWidth="xl" sx={{ py: 1 }}>
-      <Grid container alignItems="center" justifyContent="space-between">
+      <Grid
+        container
+        alignItems="center"
+        // justifyContent={{ sm: "space-between" }}
+        sx={{
+          justifyContent: {
+            xs: "space-between",
+            sm: "space-between",
+            md: "start",
+          },
+          gap: 8
+        }}
+      >
         <Grid
           item
           xs="auto"
@@ -77,7 +89,7 @@ const Header = () => {
             },
           }}
         >
-          <img src="/Logo.svg" alt="chitron logo" width="60px" />
+          <img src="/logo.svg" alt="chitron logo" width="60px" />
         </Grid>
         <Grid item xs="auto">
           <Box

@@ -77,7 +77,7 @@ const MobileDrawer = () => {
         }}
       >
         <div style={{ position: "relative", padding: "3px 15px 0px" }}>
-          <img src="/Logo.svg" alt="chitron logo" style={{ width: "30px" }} />
+          <img src="/logo.svg" alt="chitron logo"  />
           <IconButton
             id="closeButton"
             onClick={toggleDrawer(anchor, false)}
