@@ -15,6 +15,10 @@ body {
 
 body {
 }
+a {
+  color: #111111;
+  text-decoration: none;
+}
 .pointer {
   cursor: pointer;
 }

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const MyLayout = ({ children }) => {
   const [loading, setLoading] = useState(true);
@@ -35,7 +36,7 @@ const MyLayout = ({ children }) => {
         </div>
       )}
       <header className="appbar_holder" id="header">
-        <Header />
+        <Navbar />
       </header>
       <main>{children}</main>
       <footer>

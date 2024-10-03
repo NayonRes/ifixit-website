@@ -1,9 +1,9 @@
 "use client";
-import { Arimo } from "next/font/google";
+import { Inter } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 import ColorPalette from "./ColorPalette";
 
-const arimo = Arimo({
+const inter = Inter({
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
@@ -68,7 +68,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: arimo.style.fontFamily,
+    fontFamily: inter.style.fontFamily,
 
     h1: {
       fontSize: "7.875rem", //126px
@@ -96,7 +96,7 @@ const theme = createTheme({
       fontSize: "3.75rem", //60px
       lineHeight: "4.25rem", // 68px
       fontWeight: 700,
-      fontFamily: '"Tinos", serif', // alternative of  Times New Roman
+      fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
       display: "block",
 
       [createTheme().breakpoints.down("lg")]: {
@@ -112,10 +112,10 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontSize: "2.625rem", //42px
-      lineHeight: "3rem", // 48px
+      fontSize: "3rem", //42px
+      lineHeight: "3.2rem", // 48px
       fontWeight: 700,
-      fontFamily: '"Tinos", serif', // alternative of  Times New Roman
+      fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
       display: "block",
 
       [createTheme().breakpoints.down("lg")]: {
@@ -136,7 +136,7 @@ const theme = createTheme({
       lineHeight: "1.75rem", // 28px
       fontWeight: 700,
       display: "block",
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("lg")]: {
         fontSize: "1.5rem", // Adjust for medium screens
       },
@@ -152,7 +152,7 @@ const theme = createTheme({
       lineHeight: "3.25rem", // 52px
       fontWeight: 700,
       display: "block",
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "1.125rem", // Adjust for medium screens
         lineHeight: "2rem", // 32px
@@ -163,18 +163,18 @@ const theme = createTheme({
       },
     },
     h6: {
-      //   fontSize: "1.5rem", //24px
+      fontSize: "1.25rem", //20px
       //   lineHeight: "3.25rem", // 52px
       //   fontWeight: 700,
       display: "block",
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
     },
     base: {
       fontSize: "1.125rem", //18px
       lineHeight: "2.125rem", // 34px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "1rem", // Adjust for medium screens
       },
@@ -188,7 +188,7 @@ const theme = createTheme({
       lineHeight: "1.75rem", // 28px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "0.875rem", // Adjust for medium screens
       },
@@ -201,7 +201,7 @@ const theme = createTheme({
       lineHeight: "1.125rem", // 18px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "0.75rem", // Adjust for medium screens
       },
@@ -214,7 +214,7 @@ const theme = createTheme({
       lineHeight: "1rem", // 16px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Arimo", sans-serif',
+      fontFamily: '"Inter", sans-serif',
     },
   },
   components: {
@@ -239,7 +239,7 @@ const theme = createTheme({
           borderRadius: "10px",
           textTransform: "none",
           fontWeight: 700,
-          fontFamily: '"Arimo", sans-serif',
+          fontFamily: '"Inter", sans-serif',
 
           [createTheme().breakpoints.down("sm")]: {
             "& .MuiButton-endIcon": {

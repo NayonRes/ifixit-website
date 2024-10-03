@@ -4,7 +4,7 @@ let ColorPalette = {
       default: "#F6F6F6", // Change the background color for dark mode
     },
     primary: {
-      main: "#2E2E2E",
+      main: "#F57042",
       light: "#F9E8EF",
       contrastText: "#fff",
     },

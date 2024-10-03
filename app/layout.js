@@ -1,4 +1,4 @@
-import { Arimo, Playfair_Display, Tinos } from "next/font/google";
+import { Arimo, Playfair_Display, Tinos, Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
@@ -23,6 +23,12 @@ const tinos = Tinos({
   subsets: ["latin"],
   display: "swap",
 });
+const inter = Inter({
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 // font-family: "Playfair Display", serif;
 // font-family: "Arimo", sans-serif; alternative of  Helvetica Neue
 // font-family: "Tinos", serif; alternative of  Times New Roman
@@ -36,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${arimo.className} ${playfair_display.className} ${tinos.className}`}
+        className={`${inter.className}`}
       >
         <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>
