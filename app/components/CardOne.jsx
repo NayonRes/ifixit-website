@@ -8,11 +8,12 @@ const CardOne = () => {
         p: 3,
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        // justifyContent: "center",
         alignItems: "center",
         gap: 3,
         borderRadius: 6,
         border: "1px solid #ddd",
+        height: '100%'
       }}
     >
       <Typography variant="h5">Apple</Typography>

@@ -89,7 +89,7 @@ const Header = () => {
             },
           }}
         >
-          <img src="/logo.svg" alt="chitron logo" width="60px" />
+          <img src="/logo.svg" alt="iFixit logo" width="60px" />
         </Grid>
         <Grid item xs="auto">
           <Box

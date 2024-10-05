@@ -67,9 +67,9 @@ const ContactForm = () => {
           color="text.light"
           sx={{ maxWidth: "400px" }}
         >
-          <a className="no_link_design" href="mailto:chitroninterior@gmail.com">
+          <a className="no_link_design" href="mailto:ifixit@gmail.com">
             <span style={{ fontWeight: 700 }}>E-mail:</span>&nbsp;
-            chitroninterior@gmail.com
+            ifixit@gmail.com
           </a>
         </Typography>
         <Typography

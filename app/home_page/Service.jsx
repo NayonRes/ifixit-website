@@ -6,11 +6,13 @@ import CardOne from "../components/CardOne";
 const Service = () => {
   return (
     <Container maxWidth="xl" sx={{ my:4 }} >
+      <Box sx={{display: 'flex', flexDirection: 'column', gap: 1, mb:6 }} >
       <Typography variant="body1" color="primary">
-        Services
+        SERVICES
       </Typography>
       <Typography variant="h3">Available Services</Typography>
-      <Grid container spacing={4}>
+      </Box>
+      <Grid container spacing={3}>
         <Grid size={4}>
           <CardOne />
         </Grid>
