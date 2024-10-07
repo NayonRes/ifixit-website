@@ -1,10 +1,15 @@
 /* font-family: "Playfair Display", serif; */
 /* font-family: "Arimo", sans-serif; alternative of  Helvetica Neue */
 /* font-family: "Tinos", serif; alternative of  Times New Roman */
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+:root {
+  --primary: #f57042;
 }
 
 html,
@@ -144,6 +149,16 @@ a {
 
 .zoom_effect:hover {
   transform: scale(1.3); /* Zoom in by 10% */
+}
+
+.Mui-selected {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-bottom: 0px solid !important;
+  border-radius: 6px !important;
+}
+.MuiTabs-indicator {
+  background: rgba(0, 0, 0, 0) !important;
 }
 @media screen and (max-width: 1536px) {
   .card_holder {
