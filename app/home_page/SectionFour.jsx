@@ -36,22 +36,22 @@ const SectionFour = () => {
         </Box>
         <Box>
           <Grid container spacing={3}>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThree />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThree />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThree />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThree />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThree />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardThree />
             </Grid>
           </Grid>

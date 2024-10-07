@@ -54,66 +54,66 @@ export default function SectionThreeTab() {
       </Box>
       <CustomTabPanel value={value} index={0}>
         <Grid container spacing={3}>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
         </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
       <Grid container spacing={3}>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
         </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
       <Grid container spacing={3}>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
         </Grid>

@@ -14,13 +14,13 @@ const Service = () => {
           <Typography variant="h3">Available Services</Typography>
         </Box>
         <Grid container spacing={3}>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 4, md: 4 }}>
             <CardOne />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 4, md: 4 }}>
             <CardOne />
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, sm: 4, md: 4 }}>
             <CardOne />
           </Grid>
         </Grid>

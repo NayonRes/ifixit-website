@@ -39,22 +39,22 @@ const SectionFive = () => {
             <Box sx={{ background: "#eee", height: "100%", flex: 2 }}></Box>
           </Box>
           <Grid container spacing={3}>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardFour />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardFour />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardFour />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardFour />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardFour />
             </Grid>
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
               <CardFour />
             </Grid>
           </Grid>

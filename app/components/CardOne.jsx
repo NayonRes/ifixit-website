@@ -13,11 +13,11 @@ const CardOne = () => {
         gap: 3,
         borderRadius: 6,
         border: "1px solid #ddd",
-        height: '100%'
+        height: "100%",
       }}
     >
       <Typography variant="h5">Apple</Typography>
-      <img src="/products/apple.png" alt="" />
+      <img src="/products/apple.png" alt="" style={{ maxWidth: "100%" }} />
     </Box>
   );
 };

@@ -28,7 +28,7 @@ const SectionTwo = () => {
           </Typography>
         </Box>
         <Grid container spacing={3}>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
             <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
               <Grid container spacing={3}>
                 <Grid size={6} sx={style.inner}>
@@ -66,7 +66,7 @@ const SectionTwo = () => {
               </Grid>
             </Box>
           </Grid>
-          <Grid size={6}>
+          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
             <img src="/section-2.jpg" alt="" />
           </Grid>
         </Grid>
