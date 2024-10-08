@@ -134,7 +134,7 @@ const theme = createTheme({
     h4: {
       fontSize: "1.75rem", //28px
       lineHeight: "1.75rem", // 28px
-      fontWeight: 700,
+      fontWeight: 600,
       display: "block",
       fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("lg")]: {
@@ -165,7 +165,7 @@ const theme = createTheme({
     h6: {
       fontSize: "1.25rem", //20px
       //   lineHeight: "3.25rem", // 52px
-      //   fontWeight: 700,
+        fontWeight: 500,
       display: "block",
       fontFamily: '"Inter", sans-serif',
     },

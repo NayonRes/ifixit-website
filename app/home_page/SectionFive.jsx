@@ -2,7 +2,7 @@ import { Box, Container, Grid2, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
 import CardThree from "../components/CardThree";
-import CardFour from "../components/cardFour.jsx";
+import CardFour from "../components/cardFour";
 
 const style = {
   inner: {
