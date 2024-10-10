@@ -151,13 +151,13 @@ a {
   transform: scale(1.3); /* Zoom in by 10% */
 }
 
-.Mui-selected {
+.home_tab .Mui-selected {
   background: var(--primary) !important;
   color: #fff !important;
   border-bottom: 0px solid !important;
   border-radius: 6px !important;
 }
-.MuiTabs-indicator {
+.home_tab .MuiTabs-indicator {
   background: rgba(0, 0, 0, 0) !important;
 }
 @media screen and (max-width: 1536px) {

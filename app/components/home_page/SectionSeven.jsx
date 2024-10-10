@@ -1,7 +1,7 @@
 import { Box, Button, Container, Grid2, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
-import CardSix from "../components/CardSix";
+import CallMadeIcon from '@mui/icons-material/CallMade';
 
 const style = {
   inner: {
@@ -32,7 +32,7 @@ const SectionSeven = () => {
                   flexDirection: "column",
                   gap: 2,
                   color: "#fff",
-                  textShadow: "2px 2px 6px #666",
+                  textShadow: "2px 2px 6px #C62E2E",
                 }}
               >
                 <Typography variant="body1" sx={{ textTransform: "uppercase" }}>
@@ -46,8 +46,8 @@ const SectionSeven = () => {
                   for your well-being
                 </Typography>
                 <Box>
-                <Button variant="contained"  sx={{ background: '#fff', color:"#333", borderRadius: "30px", mt:4 }} >
-                  Book an appointment
+                <Button variant="contained"  sx={{ background: '#fff', color:"#333", borderRadius: "30px", mt:4, }} endIcon={<CallMadeIcon />} >
+                  Live Chat
                 </Button>
                 </Box>
               </Box>

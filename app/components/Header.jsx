@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
-import { Box, Button, Container, Grid } from "@mui/material";
+import { Box, Button, Container,  } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import Link from "next/link";
 import MobileDrawer from "./MobileDrawer";
 import { usePathname } from "next/navigation";
@@ -75,7 +76,7 @@ const Header = () => {
         }}
       >
         <Grid
-          item
+          size="auto"
           xs="auto"
           sx={{
             "& img": {
@@ -91,7 +92,7 @@ const Header = () => {
         >
           <img src="/logo.svg" alt="iFixit logo" width="60px" />
         </Grid>
-        <Grid item xs="auto">
+        <Grid size="auto" xs="auto">
           <Box
             sx={{
               display: {

@@ -1,6 +1,6 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import React from "react";
-import styles from "../theme/styles";
+import styles from "../../theme/styles";
 
 const Banner = () => {
   return (
@@ -39,7 +39,7 @@ const Banner = () => {
             sx={{
               textAlign: "center",
               fontWeight: 400,
-              mb: { xs: 4, sm: 4, md: 4, lg: 9, xl: 9 },
+              
               px: { xs: 4, sm: 0 },
             }}
           >
@@ -47,6 +47,10 @@ const Banner = () => {
             Supercharge your <br /> managers & keep employees engaged from
             anywhere.
           </Typography>
+        </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 10, }} >
+          <Button variant="contained" color="primary"  >Repair Now</Button>
+          <Button variant="outlined" >Buy Now</Button>
         </Box>
         <Box
           sx={{

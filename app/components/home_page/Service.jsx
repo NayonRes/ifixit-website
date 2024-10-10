@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
-import CardOne from "../components/CardOne";
+import CardOne from "../CardOne";
 
 const Service = () => {
   return (

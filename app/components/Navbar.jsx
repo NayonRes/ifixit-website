@@ -23,7 +23,7 @@ const Navbar = () => {
               gap: 4,
             }}
           >
-            <Link href="#">
+            <Link href="/">
               <Typography variant="h4">Site Logo</Typography>
             </Link>
             <Box
@@ -35,7 +35,8 @@ const Navbar = () => {
               }}
             >
               <Link href="#">Home</Link>
-              <Link href="#">Services</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/device-list">Device List</Link>
               <Link href="#">Shop</Link>
               <Link href="#">Contact Us</Link>
             </Box>

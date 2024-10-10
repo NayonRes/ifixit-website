@@ -1,7 +1,6 @@
 import { Box, Container, Grid2, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
-import CardOne from "../components/CardOne";
 import SectionThreeTab from "./SectionThreeTab";
 
 const style = {

@@ -5,7 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
-import CardTwo from "../components/CardTwo";
+import CardTwo from "../CardTwo";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,7 +44,7 @@ export default function SectionThreeTab() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%" }} className="home_tab" >
       <Box>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs">
           <Tab label="Item One" {...a11yProps(0)} />

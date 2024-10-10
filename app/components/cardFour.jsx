@@ -5,7 +5,7 @@ const CardFour = () => {
   return (
     <Box
       sx={{
-        p: 3,
+        py: 3,
         display: "flex",
         flexDirection: "column",
         // justifyContent: "center",

@@ -1,8 +1,7 @@
 import { Box, Container, Grid2, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
-import CardThree from "../components/CardThree";
-import CardFour from "../components/cardFour";
+import CardThree from "../CardThree";
 
 const style = {
   inner: {
@@ -15,7 +14,7 @@ const style = {
   },
 };
 
-const SectionFive = () => {
+const SectionFour = () => {
   return (
     <Box sx={{ py: 10 }}>
       <Container maxWidth="xl">
@@ -24,38 +23,36 @@ const SectionFive = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 8,
-            mb: 8,
+            gap: 1,
+            mb: 6,
           }}
         >
-          <Typography variant="h3">Why choose iFixit</Typography>
-          <Box>
-            <img src="/why.png" alt="" style={{ maxWidth: "100%" }} />
-          </Box>
+          <Typography variant="h3">iFixit Best Features</Typography>
+          <Typography variant="body1" color="text.light">
+            Powerful, self-serve product and growth analytics to help you
+            convert, engage, and retain more users. Trusted by over 4,000
+            startups.
+          </Typography>
         </Box>
         <Box>
-          <Box sx={{ height: 4, display: "flex", width: "100%" }}>
-            <Box sx={{ background: "#7F56D9", height: "100%", flex: 1 }}></Box>
-            <Box sx={{ background: "#eee", height: "100%", flex: 2 }}></Box>
-          </Box>
           <Grid container spacing={3}>
             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <CardFour />
+              <CardThree />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <CardFour />
+              <CardThree />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <CardFour />
+              <CardThree />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <CardFour />
+              <CardThree />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <CardFour />
+              <CardThree />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <CardFour />
+              <CardThree />
             </Grid>
           </Grid>
         </Box>
@@ -64,4 +61,4 @@ const SectionFive = () => {
   );
 };
 
-export default SectionFive;
+export default SectionFour;
