@@ -169,6 +169,12 @@ const theme = createTheme({
       display: "block",
       fontFamily: '"Inter", sans-serif',
     },
+    subtitle1: {
+      fontSize: "1.13rem", //18px
+        fontWeight: 500,
+      display: "block",
+      fontFamily: '"Inter", sans-serif',
+    },
     base: {
       fontSize: "1.125rem", //18px
       lineHeight: "2.125rem", // 34px

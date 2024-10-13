@@ -18,7 +18,7 @@ const CardThree = () => {
         <img src="/icons/message.svg" alt="" />
       </Box>
       <Typography variant="h6">INSTANT REPAIR</Typography>
-      <Typography variant="body1" sx={{ textAlign: "center" }}>
+      <Typography variant="body1" color="text.light" sx={{ textAlign: "center" }}>
         In case you need emergency repair service we are here to assist you with
         an instant repair. You will get your broken devices fixed in no time.
       </Typography>

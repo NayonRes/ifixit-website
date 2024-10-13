@@ -44,7 +44,7 @@ const Navbar = () => {
                 alignItems: "center",
               }}
             >
-              <Link href="#">
+              <Link href="/">
                 <Typography sx={style.li}>Home</Typography>
               </Link>
               <Link href="/services">
@@ -53,11 +53,9 @@ const Navbar = () => {
               <Link href="/device-list">
                 <Typography sx={style.li}>Device List</Typography>
               </Link>
-              
+
               <Link href="#">
-                <Typography sx={style.li}>
-                  <Shop />
-                </Typography>
+                <Shop />
               </Link>
               <Link href="#">
                 <Typography sx={style.li}>Contact Us</Typography>
@@ -81,7 +79,8 @@ const Navbar = () => {
               }}
             >
               <Link href="#">
-              <img src="/icons/profile.png" alt="" /></Link>
+                <img src="/icons/profile.png" alt="" />
+              </Link>
             </Box>
           </Box>
         </Box>

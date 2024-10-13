@@ -31,8 +31,8 @@ const SectionSeven = () => {
                   display: "flex",
                   flexDirection: "column",
                   gap: 2,
-                  color: "#fff",
-                  textShadow: "2px 2px 6px #C62E2E",
+                  color: "#eee",
+                  textShadow: "2px 2px 6px #FC002C",
                 }}
               >
                 <Typography variant="body1" sx={{ textTransform: "uppercase" }}>
@@ -41,7 +41,7 @@ const SectionSeven = () => {
                 <Typography variant="h3">
                   Expert doctors are online <br /> NOW!
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="subtitle1">
                   Personalized support, ensuring immediate access <br /> to expert care
                   for your well-being
                 </Typography>

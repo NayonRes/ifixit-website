@@ -62,19 +62,19 @@ const Banner = () => {
             <img
               src="/home_banner/banner1.jpg"
               alt=""
-              sx={{ maxWidth: "100%" }}
+              style={{ maxWidth: "100%" }}
             />
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <img
               src="/home_banner/banner2.jpg"
               alt=""
-              sx={{ maxWidth: "100%" }}
+              style={{ maxWidth: "100%" }}
             />
             <img
               src="/home_banner/banner3.jpg"
               alt=""
-              sx={{ maxWidth: "100%" }}
+              style={{ maxWidth: "100%" }}
             />
           </Box>
         </Box>

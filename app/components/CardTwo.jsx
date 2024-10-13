@@ -17,10 +17,10 @@ const CardTwo = () => {
       }}
       
     >
-      <Typography variant="h5" sx={{ lineHeight: "2rem" }}>
-        Liquid <br /> Damage
+      <Typography variant="h5"   sx={{ lineHeight: "2rem", }}>
+        Liquid <br /> Damage 
       </Typography>
-      <Typography variant="body1">
+      <Typography variant="subtitle1" color="text.light">
         Worst thing that can happen to your device is get damaged by liquid.
         Sooner you bring it to us is better for your device.
       </Typography>

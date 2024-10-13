@@ -18,11 +18,11 @@ const SectionTwo = () => {
     <Box sx={{ py: 10, background: "#F7F7F7" }}>
       <Container maxWidth="xl">
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 6 }}>
-          <Typography variant="body1" color="primary">
+          <Typography variant="body1" color="primary" sx={{ fontWeight: 600 }}>
             Our process
           </Typography>
           <Typography variant="h3">Creating memorable spaces</Typography>
-          <Typography variant="body1" color="text.light">
+          <Typography variant="h6" color="text.light">
             We design physical experiences that create more happy in the world.
           </Typography>
         </Box>
@@ -65,8 +65,11 @@ const SectionTwo = () => {
               </Grid>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
-            <img src="/section-2.jpg" alt="" />
+          <Grid
+            size={{ xs: 12, sm: 6, md: 6 }}
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
+            <img src="/section-2.jpg" alt="" style={{ maxWidth: "100%" }} />
           </Grid>
         </Grid>
       </Container>

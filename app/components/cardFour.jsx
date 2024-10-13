@@ -15,7 +15,7 @@ const CardFour = () => {
       }}
     >
       <Typography variant="h6">Free Diagnostic Checkup</Typography>
-      <Typography variant="body1" >
+      <Typography variant="body1" color="text.light" >
         Only we are providing you with a free diagnostic check-up on your Apple
         devices where all of the software and hardware issues will be checked by
         our expert technicians.

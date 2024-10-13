@@ -20,19 +20,22 @@ const SectionSix = () => {
     <Box sx={{ py: 4, background: "#0C111D", color: "#94969C" }}>
       <Container maxWidth="xl">
         <Box>
-          <Grid container spacing={0}>
-            <Grid size={{ xs: 12, sm: 12, md: 2 }}>Logo</Grid>
+          <Grid container spacing={2}>
+            <Grid size={{ xs: 12, sm: 12, md: 2 }}>
+              <img src="/logo.svg" alt="" />
+            </Grid>
             <Grid
               size={{ xs: 12, sm: 12, md: 8 }}
               sx={{
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                flexDirection: { xs: "column", sm: "row" },
+                justifyContent: { xs: "flex-start", sm: "center" },
+                alignItems: { xs: "flex-start", sm: "center" },
                 gap: 2,
               }}
             >
               <Link href="#" style={{ color: "#94969C" }}>
-                Site Logo
+                Blog
               </Link>
               <Link href="#" style={{ color: "#94969C" }}>
                 Careers
@@ -48,9 +51,24 @@ const SectionSix = () => {
               </Link>
             </Grid>
             <Grid size={{ xs: 12, sm: 12, md: 2 }}>
-              <Typography sx={{ textAlign: "right", color: "#94969C" }}>
-                © 2077 Untitled UI
-              </Typography>
+              <Box
+                sx={{
+                  height: "100%",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: { xs: "flex-start", sm: "flex-end" },
+                }}
+              >
+                <Typography
+                  sx={{
+                    // textAlign: { xs: "center", sm: "right" },
+                    color: "#94969C",
+                  }}
+                >
+                  © 2077 Untitled UI
+                </Typography>
+              </Box>
             </Grid>
           </Grid>
         </Box>
