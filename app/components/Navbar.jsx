@@ -4,6 +4,14 @@ import React from "react";
 import MobileDrawer from "./MobileDrawer";
 
 import styles from "../theme/styles";
+import Shop from "./dropdown.jsx/Shop";
+
+const style = {
+  li: {
+    color: "#101828",
+    fontWeight: 600,
+  },
+};
 
 const Navbar = () => {
   return (
@@ -24,7 +32,9 @@ const Navbar = () => {
             }}
           >
             <Link href="/">
-              <Typography variant="h4">Site Logo</Typography>
+              <Typography variant="h4">
+                <img src="/logo.svg" alt="" />
+              </Typography>
             </Link>
             <Box
               // sx={styles.desktopOnly}
@@ -34,11 +44,24 @@ const Navbar = () => {
                 alignItems: "center",
               }}
             >
-              <Link href="#">Home</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/device-list">Device List</Link>
-              <Link href="#">Shop</Link>
-              <Link href="#">Contact Us</Link>
+              <Link href="#">
+                <Typography sx={style.li}>Home</Typography>
+              </Link>
+              <Link href="/services">
+                <Typography sx={style.li}>Services</Typography>
+              </Link>
+              <Link href="/device-list">
+                <Typography sx={style.li}>Device List</Typography>
+              </Link>
+              
+              <Link href="#">
+                <Typography sx={style.li}>
+                  <Shop />
+                </Typography>
+              </Link>
+              <Link href="#">
+                <Typography sx={style.li}>Contact Us</Typography>
+              </Link>
             </Box>
           </Box>
 
@@ -57,7 +80,8 @@ const Navbar = () => {
                 gap: 4,
               }}
             >
-              <Link href="#">Login</Link>
+              <Link href="#">
+              <img src="/icons/profile.png" alt="" /></Link>
             </Box>
           </Box>
         </Box>
