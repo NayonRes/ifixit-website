@@ -4,7 +4,7 @@ import React from "react";
 import MobileDrawer from "./MobileDrawer";
 
 import styles from "../theme/styles";
-import Shop from "./dropdown.jsx/Shop";
+import Shop from "./dropdown/Shop";
 
 const style = {
   li: {
