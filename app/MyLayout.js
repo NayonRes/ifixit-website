@@ -4,9 +4,9 @@ import Navbar from "./components/Navbar";
 const MyLayout = ({ children }) => {
   return (
     <div>
-      {/* <header className="appbar_holder" id="header">
+      <header className="appbar_holder" id="header">
         <Navbar />
-      </header> */}
+      </header>
       <main>{children}</main>
       <footer>
         <Footer />

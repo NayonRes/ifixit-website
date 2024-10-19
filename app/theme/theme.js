@@ -56,6 +56,7 @@ const theme = createTheme({
     },
     text: {
       main: ColorPalette.light.text.main,
+      primary: ColorPalette.light.primary.main,
       light: ColorPalette.light.text.light,
       fade: ColorPalette.light.text.fade,
       contrastText: ColorPalette.light.text.contrastText,

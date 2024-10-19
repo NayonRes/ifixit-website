@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link href="#">
                 <Shop />
               </Link>
-              <Link href="#">
+              <Link href="/contact-us">
                 <Typography sx={style.li}>Contact Us</Typography>
               </Link>
             </Box>
