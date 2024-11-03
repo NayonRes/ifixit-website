@@ -3,8 +3,8 @@ import PageHeader from "@/app/components/PageHeader";
 import { Box, Button, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import React from "react";
-import theme from "@/app/theme/ColorPalette";
 import CallMadeIcon from "@mui/icons-material/CallMade";
+import ColorPalette from "@/app/theme/ColorPalette";
 
 const style = {
   card_wrapper: {
@@ -18,9 +18,10 @@ const style = {
     display: "flex",
     alignItems: "flex-start",
     gap: 2,
-    background: "#FEFAF5",
+    background: ColorPalette.light.primary.light,
+    border: `1px solid ${ColorPalette.light.primary.main}`,
     width: { xs: "100%", sm: "100%", md: "auto" },
-    border: `1px solid ${theme.light.primary.main}`,
+    mb: 2,
   },
   card2: {
     p: 2,
@@ -28,16 +29,9 @@ const style = {
     display: "flex",
     alignItems: "flex-start",
     gap: 2,
+    border: `1px solid #ddd`,
     width: { xs: "100%", sm: "100%", md: "auto" },
-    border: `1px solid ${theme.light.primary.light}`,
-  },
-  card_image: {
-    p: 2,
-    borderRadius: "16px",
-    border: `1px solid ${theme.light.primary.light}`,
-    "& img": {
-      width: "100%",
-    },
+    mb: 2,
   },
   card_text: {
     display: "flex",
@@ -61,7 +55,7 @@ const page = () => {
           subtitle="Come visit our friendly team at one of our offices."
         />
         <Grid container spacing={4}>
-          <Grid size={6} sx={style.card_wrapper}>
+          <Grid size={{ sm: 12, md: 6 }} sx={style.card_wrapper}>
             <Box sx={style.card}>
               <Box>
                 <img src="/icons/pin.svg" alt="" />
@@ -70,7 +64,7 @@ const page = () => {
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
                   Jamuna Future Park
                 </Typography>
-                <Typography variant="subtitle1" color="text.light">
+                <Typography variant="body1" color="text.light">
                   Off day: Wednesday
                 </Typography>
                 <Typography
@@ -82,17 +76,20 @@ const page = () => {
                 </Typography>
                 <Typography
                   variant="subtitle1"
-                  color="text.primary"
-                  sx={{ fontWeight: 600, textDecoration: "underline" }}
+                  color={ColorPalette.light.primary.main}
+                  sx={{ textDecoration: "underline" }}
                 >
                   Call : 01820 00 99 00
                 </Typography>
                 <Box>
                   <Button
                     variant="contained"
+                    color="primary"
                     sx={{
-                      // color: "#333",
                       borderRadius: "30px",
+                      fontWeight: 500,
+                      background: ColorPalette.light.primary.main,
+
                       // mt: 4,
                     }}
                     endIcon={<CallMadeIcon />}
@@ -110,7 +107,7 @@ const page = () => {
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
                   Jamuna Future Park
                 </Typography>
-                <Typography variant="subtitle1" color="text.light">
+                <Typography variant="body1" color="text.light">
                   Off day: Wednesday
                 </Typography>
                 <Typography
@@ -122,16 +119,18 @@ const page = () => {
                 </Typography>
                 <Typography
                   variant="subtitle1"
-                  sx={{ fontWeight: 600, textDecoration: "underline" }}
+                  // color={ColorPalette.light.primary.main}
+                  sx={{ textDecoration: "underline" }}
                 >
                   Call : 01820 00 99 00
                 </Typography>
                 <Box>
                   <Button
                     variant="outlined"
+                    color="primary"
                     sx={{
-                      // color: "#333",
                       borderRadius: "30px",
+                      fontWeight: 500,
                       // mt: 4,
                     }}
                     endIcon={<CallMadeIcon />}
@@ -149,7 +148,7 @@ const page = () => {
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
                   Jamuna Future Park
                 </Typography>
-                <Typography variant="subtitle1" color="text.light">
+                <Typography variant="body1" color="text.light">
                   Off day: Wednesday
                 </Typography>
                 <Typography
@@ -161,16 +160,18 @@ const page = () => {
                 </Typography>
                 <Typography
                   variant="subtitle1"
-                  sx={{ fontWeight: 600, textDecoration: "underline" }}
+                  // color={ColorPalette.light.primary.main}
+                  sx={{ textDecoration: "underline" }}
                 >
                   Call : 01820 00 99 00
                 </Typography>
                 <Box>
                   <Button
                     variant="outlined"
+                    color="primary"
                     sx={{
-                      // color: "#333",
                       borderRadius: "30px",
+                      fontWeight: 500,
                       // mt: 4,
                     }}
                     endIcon={<CallMadeIcon />}
@@ -181,12 +182,23 @@ const page = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid size={6}>
-            <Box sx={style.card_image}>
-              <img src="/shop.jpg" alt="" />
+          <Grid size={{ sm: 12, md: 6 }}>
+            <Box
+              sx={{
+                p: 2,
+                border: "1px solid #ddd",
+                borderRadius: "12px",
+                mb: 6,
+              }}
+            >
+              <img
+                src="/shop.jpg"
+                alt=""
+                style={{ width: "100%", borderRadius: "8px" }}
+              />
             </Box>
-            <Box sx={{mt: 6}} >
-              <img src="/map.jpg" alt="" style={{ width: "100%" }} />
+            <Box>
+              <img src="/gmap.jpg" alt="" style={{ width: "100%" }} />
             </Box>
           </Grid>
         </Grid>

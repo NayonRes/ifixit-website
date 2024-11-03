@@ -53,10 +53,13 @@ const Navbar = () => {
               <Link href="/device-list">
                 <Typography sx={style.li}>Device List</Typography>
               </Link>
-
-              <Link href="#">
-                <Shop />
+              <Link href="/blog">
+                <Typography sx={style.li}>Blog</Typography>
               </Link>
+
+              {/* <Link href="#">
+                <Shop />
+              </Link> */}
               <Link href="/contact-us">
                 <Typography sx={style.li}>Contact Us</Typography>
               </Link>

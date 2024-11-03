@@ -77,7 +77,7 @@ const MobileDrawer = () => {
         }}
       >
         <div style={{ position: "relative", padding: "3px 15px 0px" }}>
-          <img src="/logo.svg" alt="iFixit logo"  />
+          <img src="/logo.svg" alt="iFixit logo" />
           <IconButton
             id="closeButton"
             onClick={toggleDrawer(anchor, false)}
@@ -116,10 +116,10 @@ const MobileDrawer = () => {
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
-              handleChange("projects");
+              handleChange("/services");
               document.getElementById("closeButton").click();
             }}
-            style={{ background: pathname === "/projects" ? "#f3f3f3" : "" }}
+            style={{ background: pathname === "/services" ? "#f3f3f3" : "" }}
           >
             <ListItemIcon>
               <svg
@@ -148,16 +148,16 @@ const MobileDrawer = () => {
                 </g>
               </svg>
             </ListItemIcon>
-            <ListItemText primary="Projects" />
+            <ListItemText primary="Services" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
-              handleChange("/about-us");
+              handleChange("/device-list");
               document.getElementById("closeButton").click();
             }}
-            style={{ background: pathname === "/about-us" ? "#f3f3f3" : "" }}
+            style={{ background: pathname === "/device-list" ? "#f3f3f3" : "" }}
           >
             <ListItemIcon>
               <svg
@@ -174,16 +174,42 @@ const MobileDrawer = () => {
                 />
               </svg>
             </ListItemIcon>
-            <ListItemText primary="About Us" />
+            <ListItemText primary="Device List" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
-              handleChange("/contacts");
+              handleChange("/blog");
               document.getElementById("closeButton").click();
             }}
-            style={{ background: pathname === "/contacts" ? "#f3f3f3" : "" }}
+            style={{ background: pathname === "/blog" ? "#f3f3f3" : "" }}
+          >
+            <ListItemIcon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Layer_1"
+                data-name="Layer 1"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+              >
+                <path
+                  d="m11.5,6.5c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.596,7.355c.472.287,1.088.136,1.374-.336.559-.922,1.627-1.519,2.722-1.519s2.163.596,2.722,1.519c.188.31.519.481.856.481.177,0,.355-.047.518-.145.472-.286.623-.901.337-1.374-.929-1.531-2.627-2.481-4.433-2.481s-3.504.951-4.433,2.481c-.286.473-.135,1.087.337,1.374Zm12.096-8.855v14c0,2.757-2.243,5-5,5H6c-2.206,0-4-1.794-4-4V5C2,2.243,4.243,0,7,0h10C19.757,0,22,2.243,22,5Zm-5-3h-9v14h12V5c0-1.654-1.346-3-3-3Zm-13,3v11.556c.591-.344,1.268-.556,2-.556V2.184c-1.161.414-2,1.514-2,2.816Zm16,14v-1H6c-1.103,0-2,.897-2,2s.897,2,2,2h11c1.654,0,3-1.346,3-3Z"
+                  fill="#2E2E2E"
+                />
+              </svg>
+            </ListItemIcon>
+            <ListItemText primary="Blog" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => {
+              handleChange("/contact-us");
+              document.getElementById("closeButton").click();
+            }}
+            style={{ background: pathname === "/contact-us" ? "#f3f3f3" : "" }}
           >
             <ListItemIcon>
               <svg
@@ -200,7 +226,7 @@ const MobileDrawer = () => {
                 />
               </svg>
             </ListItemIcon>
-            <ListItemText primary="Contacts" />
+            <ListItemText primary="Contact Us" />
           </ListItemButton>
         </ListItem>
       </List>
