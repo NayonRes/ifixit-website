@@ -24,33 +24,104 @@ const SectionSix = () => {
             <Grid size={{ xs: 12, sm: 12, md: 2 }}>
               <img src="/logo.svg" alt="" />
             </Grid>
+            {/* desktop only  */}
             <Grid
               size={{ xs: 12, sm: 12, md: 8 }}
               sx={{
-                display: "flex",
-                flexDirection: { xs: "column", sm: "row" },
-                justifyContent: { xs: "flex-start", sm: "center" },
-                alignItems: { xs: "flex-start", sm: "center" },
-                gap: 2,
+                display: { xs: "none", sm: "block" },
               }}
             >
-              <Link href="#" style={{ color: "#94969C" }}>
-                Blog
-              </Link>
-              <Link href="#" style={{ color: "#94969C" }}>
-                Careers
-              </Link>
-              <Link href="#" style={{ color: "#94969C" }}>
-                Warranty policy
-              </Link>
-              <Link href="#" style={{ color: "#94969C" }}>
-                Help
-              </Link>
-              <Link href="#" style={{ color: "#94969C" }}>
-                Privacy
-              </Link>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
+                  justifyContent: { xs: "center", sm: "center" },
+                  alignItems: { xs: "flex-start", sm: "center" },
+                  gap: 2,
+                  mt: 1,
+                }}
+              >
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Blog
+                </Link>
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Careers
+                </Link>
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Warranty policy
+                </Link>
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Help
+                </Link>
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Privacy
+                </Link>
+              </Box>
             </Grid>
-            <Grid size={{ xs: 12, sm: 12, md: 2 }}>
+            {/* mobile only  */}
+
+            <Grid
+              size={{ xs: 6, sm: 6, md: 6 }}
+              sx={{
+                display: { xs: "block", sm: "none" },
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
+                  justifyContent: { xs: "center", sm: "center" },
+                  alignItems: { xs: "flex-start", sm: "center" },
+                  gap: 2,
+                  mt: 1,
+                }}
+              >
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Blog
+                </Link>
+
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Warranty policy
+                </Link>
+
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Privacy
+                </Link>
+              </Box>
+            </Grid>
+
+            {/* mobile only  */}
+            <Grid
+              size={{ xs: 6, sm: 6, md: 6 }}
+              sx={{
+                display: { xs: "block", sm: "none" },
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
+                  justifyContent: { xs: "center", sm: "center" },
+                  alignItems: { xs: "flex-start", sm: "center" },
+                  gap: 2,
+                  mt: 1,
+                }}
+              >
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Careers
+                </Link>
+
+                <Link href="#" style={{ color: "#94969C" }}>
+                  Help
+                </Link>
+              </Box>
+            </Grid>
+            <Grid
+              size={{ xs: 12, sm: 12, md: 2 }}
+              sx={{
+                mt: { xs: 4, sm: 0 },
+              }}
+            >
               <Box
                 sx={{
                   height: "100%",
@@ -66,7 +137,7 @@ const SectionSix = () => {
                     color: "#94969C",
                   }}
                 >
-                  © 2077 Untitled UI
+                  © 2024 iFixit Limited
                 </Typography>
               </Box>
             </Grid>
