@@ -8,17 +8,18 @@ const PageHeader = ({ title, subtitle, menu_title }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        my: 8,
+        mt: { sm: 2, md: 8 },
+        mb: 8,
         gap: 4,
       }}
     >
       <Typography variant="body1" color="text.main" sx={{ fontWeight: 600 }}>
         {menu_title}
       </Typography>
-      <Typography variant="h3" color="text.main" sx={{ fontWeight: 600 }}>
+      <Typography variant="h3" color="text.main" sx={{ fontWeight: 600, textAlign: "center" }}>
         {title}
       </Typography>
-      <Typography variant="h6" color="text.main">
+      <Typography variant="h6" color="text.main" sx={{ textAlign: "center" }}>
         {subtitle}
       </Typography>
     </Box>

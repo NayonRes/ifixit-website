@@ -1,3 +1,4 @@
+"use client";
 import { Box, Container, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
@@ -5,15 +6,21 @@ import MobileDrawer from "./MobileDrawer";
 
 import styles from "../theme/styles";
 import Shop from "./dropdown/Shop";
+import { usePathname } from "next/navigation";
 
 const style = {
   li: {
     color: "#101828",
     fontWeight: 600,
   },
+  active: {
+    color: "#E96A3F",
+    fontWeight: 600,
+  },
 };
 
 const Navbar = () => {
+  const pathname = usePathname();
   return (
     <Box>
       <Container maxWidth="xl">
@@ -45,23 +52,25 @@ const Navbar = () => {
               }}
             >
               <Link href="/">
-                <Typography sx={style.li}>Home</Typography>
+                <Typography sx={pathname === "/" ? style.active : style.li}>
+                  Home
+                </Typography>
               </Link>
               <Link href="/services">
-                <Typography sx={style.li}>Services</Typography>
+                <Typography sx={pathname === "/services" ? style.active : style.li}>Services</Typography>
               </Link>
               <Link href="/device-list">
-                <Typography sx={style.li}>Device List</Typography>
+                <Typography sx={pathname === "/device-list" ? style.active : style.li}>Device List</Typography>
               </Link>
               <Link href="/blog">
-                <Typography sx={style.li}>Blog</Typography>
+                <Typography sx={pathname === "/blog" ? style.active : style.li}>Blog</Typography>
               </Link>
 
               {/* <Link href="#">
                 <Shop />
               </Link> */}
               <Link href="/contact-us">
-                <Typography sx={style.li}>Contact Us</Typography>
+                <Typography sx={pathname === "/contact-us" ? style.active : style.li}>Contact Us</Typography>
               </Link>
             </Box>
           </Box>

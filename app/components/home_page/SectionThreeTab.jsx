@@ -6,6 +6,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import CardTwo from "../CardTwo";
+import { BackHand, Padding } from "@mui/icons-material";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -18,7 +19,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ pt: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -44,7 +45,7 @@ export default function SectionThreeTab() {
   };
 
   return (
-    <Box sx={{ width: "100%" }} className="home_tab" >
+    <Box sx={{ width: "100%" }} className="home_tab">
       <Box>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs">
           <Tab label="Item One" {...a11yProps(0)} />
@@ -75,7 +76,7 @@ export default function SectionThreeTab() {
         </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-      <Grid container spacing={3}>
+        <Grid container spacing={3}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
@@ -97,7 +98,7 @@ export default function SectionThreeTab() {
         </Grid>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-      <Grid container spacing={3}>
+        <Grid container spacing={3}>
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <CardTwo />
           </Grid>
