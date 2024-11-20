@@ -175,6 +175,10 @@ const theme = createTheme({
         fontWeight: 500,
       display: "block",
       fontFamily: '"Inter", sans-serif',
+      [createTheme().breakpoints.down("md")]: {
+        fontSize: "0.8rem", // Adjust for medium screens
+      
+      }
     },
     base: {
       fontSize: "1.125rem", //18px

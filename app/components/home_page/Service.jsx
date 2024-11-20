@@ -5,7 +5,7 @@ import CardOne from "../CardOne";
 
 const Service = () => {
   return (
-    <Box sx={{ py: 10 }}>
+    <Box sx={{ pt: { sm: 0, md: 10 }, pb: 10 }}>
       <Container maxWidth="xl">
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 6 }}>
           <Typography variant="body1" color="primary">

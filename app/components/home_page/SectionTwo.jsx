@@ -8,7 +8,7 @@ const style = {
     flexDirection: "column",
     textAlign: "center",
     alignItems: "center",
-    gap: 4,
+    gap: { sm: 2, md: 4 },
     p: 4,
   },
 };
@@ -34,7 +34,11 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }} >
+                  <Typography
+                    variant="subtitle1"
+                    color=""
+                    sx={{ fontWeight: 600 }}
+                  >
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
@@ -42,7 +46,11 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }}>
+                  <Typography
+                    variant="subtitle1"
+                    color=""
+                    sx={{ fontWeight: 600 }}
+                  >
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
@@ -50,7 +58,11 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }}>
+                  <Typography
+                    variant="subtitle1"
+                    color=""
+                    sx={{ fontWeight: 600 }}
+                  >
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
@@ -58,7 +70,11 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }}>
+                  <Typography
+                    variant="subtitle1"
+                    color=""
+                    sx={{ fontWeight: 600 }}
+                  >
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
