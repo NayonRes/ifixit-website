@@ -1,12 +1,12 @@
 "use client";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import MobileDrawer from "./MobileDrawer";
 
 import styles from "../theme/styles";
 import Shop from "./dropdown/Shop";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const style = {
   li: {
@@ -21,6 +21,7 @@ const style = {
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   return (
     <Box>
       <Container maxWidth="xl">
@@ -57,20 +58,34 @@ const Navbar = () => {
                 </Typography>
               </Link>
               <Link href="/services">
-                <Typography sx={pathname === "/services" ? style.active : style.li}>Services</Typography>
+                <Typography
+                  sx={pathname === "/services" ? style.active : style.li}
+                >
+                  Services
+                </Typography>
               </Link>
               <Link href="/device-list">
-                <Typography sx={pathname === "/device-list" ? style.active : style.li}>Device List</Typography>
+                <Typography
+                  sx={pathname === "/device-list" ? style.active : style.li}
+                >
+                  Device List
+                </Typography>
               </Link>
               <Link href="/blog">
-                <Typography sx={pathname === "/blog" ? style.active : style.li}>Blog</Typography>
+                <Typography sx={pathname === "/blog" ? style.active : style.li}>
+                  Blog
+                </Typography>
               </Link>
 
               {/* <Link href="#">
                 <Shop />
               </Link> */}
               <Link href="/contact-us">
-                <Typography sx={pathname === "/contact-us" ? style.active : style.li}>Contact Us</Typography>
+                <Typography
+                  sx={pathname === "/contact-us" ? style.active : style.li}
+                >
+                  Contact Us
+                </Typography>
               </Link>
             </Box>
           </Box>
@@ -90,9 +105,16 @@ const Navbar = () => {
                 gap: 4,
               }}
             >
-              <Link href="#">
+              <Link href="/login">
                 <img src="/icons/profile.png" alt="" />
               </Link>
+              {/* <Button
+                variant="outlined"
+                sx={{ height: 40, fontWeight: 500 }}
+                onClick={() => router.push("/login")}
+              >
+                Login
+              </Button> */}
             </Box>
           </Box>
         </Box>

@@ -34,7 +34,7 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="">
+                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }} >
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
@@ -42,7 +42,7 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="">
+                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }}>
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
@@ -50,7 +50,7 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="">
+                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }}>
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>
@@ -58,7 +58,7 @@ const SectionTwo = () => {
                   <Typography variant="h2" color="primary">
                     5400+
                   </Typography>
-                  <Typography variant="subtitle1" color="">
+                  <Typography variant="subtitle1" color="" sx={{ fontWeight: 600 }}>
                     SUCCESSFULLY REPAIRED DEVICES
                   </Typography>
                 </Grid>

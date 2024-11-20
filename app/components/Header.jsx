@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { Box, Button, Container,  } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Link from "next/link";
 import MobileDrawer from "./MobileDrawer";
@@ -72,7 +72,7 @@ const Header = () => {
             sm: "space-between",
             md: "start",
           },
-          gap: 8
+          gap: 8,
         }}
       >
         <Grid
