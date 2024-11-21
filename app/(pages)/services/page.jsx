@@ -12,7 +12,7 @@ const page = () => {
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <PageHeader
-          title="CHOOSE YOUR APPLE DEVICE !!"
+          title="CHOOSE YOUR APPLE DEVICE!!"
           subtitle="Choose From iPhone, iPad, Macbook, iMac, Apple Watch, Drone Device List"
         />
         <Box

@@ -10,7 +10,7 @@ const PageHeader = ({ title, subtitle, menu_title }) => {
         alignItems: "center",
         mt: { sm: 2, md: 8 },
         mb: 8,
-        gap: 4,
+        gap: {xs: 2, md: 4},
       }}
     >
       <Typography variant="body1" color="text.main" sx={{ fontWeight: 600 }}>

@@ -78,7 +78,7 @@ const page = () => {
         <Typography variant="h4" sx={{ fontWeight: 600 }}>
           Log in to your account
         </Typography>
-        <Typography variant="body1" color="text.light" sx={{ mb: 3 }}>
+        <Typography variant="body1" color="text.light" sx={{ mb: 3, textAlign: 'center' }}>
           Welcome back! Please enter your details.
         </Typography>
         <Box sx={style.form}>

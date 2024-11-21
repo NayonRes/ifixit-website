@@ -28,7 +28,7 @@ const SectionFour = () => {
           }}
         >
           <Typography variant="h3">iFixit Best Features</Typography>
-          <Typography variant="h6" color="text.light">
+          <Typography variant="h6" color="text.light" sx={{ textAlign: 'center' }} >
             Powerful, self-serve product and growth analytics to help you
             convert, engage, and retain more users. Trusted by over 4,000
             startups.

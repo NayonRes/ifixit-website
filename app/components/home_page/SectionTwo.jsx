@@ -22,7 +22,7 @@ const SectionTwo = () => {
             Our process
           </Typography>
           <Typography variant="h3">Creating memorable spaces</Typography>
-          <Typography variant="h6" color="text.light">
+          <Typography variant="body1" color="text.light">
             We design physical experiences that create more happy in the world.
           </Typography>
         </Box>

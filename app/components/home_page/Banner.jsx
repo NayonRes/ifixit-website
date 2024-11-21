@@ -29,9 +29,26 @@ const Banner = () => {
           <Typography
             variant="h2"
             color="text.main"
-            sx={{ textAlign: "center", mb: 1, px: { xs: 4, sm: 0 } }}
+            sx={{
+              textAlign: "center",
+              mb: 1,
+             
+              display: { xs: "none", md: "block" },
+            }}
           >
             Start Your Repair Journey <br /> with iFixit
+          </Typography>
+          <Typography
+            variant="h2"
+            color="text.main"
+            sx={{
+              textAlign: "center",
+              mb: 1,
+              px: 2,
+              display: { xs: "block", md: "none" },
+            }}
+          >
+            Start Your Repair Journey with iFixit
           </Typography>
           <Typography
             variant="h6"
@@ -39,7 +56,7 @@ const Banner = () => {
             sx={{
               textAlign: "center",
               fontWeight: 400,
-              
+
               px: { xs: 4, sm: 0 },
             }}
           >
@@ -48,9 +65,11 @@ const Banner = () => {
             anywhere.
           </Typography>
         </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 10, }} >
-          <Button variant="contained" color="primary"  >Repair Now</Button>
-          <Button variant="outlined" >Buy Now</Button>
+        <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 10 }}>
+          <Button variant="contained" color="primary">
+            Repair Now
+          </Button>
+          <Button variant="outlined">Buy Now</Button>
         </Box>
         <Box
           sx={{
