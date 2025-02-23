@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid2";
 import React from "react";
 import CallMadeIcon from "@mui/icons-material/CallMade";
 import ColorPalette from "@/app/theme/ColorPalette";
-import Branches from "./Branches";
 
 const style = {
   card_wrapper: {
@@ -49,16 +48,16 @@ const style = {
 const page = () => {
   return (
     <Box>
+      <Box>
+        <img src="/contact_top.jpg" alt="" style={{ width: "100%" }} />
+      </Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
-        <PageHeader
-          menu_title="Contact Us"
-          title="Our Locations"
-          subtitle="Come visit our friendly team at one of our offices."
-        />
         <Grid container spacing={4}>
+          <Grid size={{ sm: 12, md: 12 }} sx={{ my: 8 }}>
+            <img src="/details_map.jpg" alt="" style={{ width: "100%" }} />
+          </Grid>
           <Grid size={{ sm: 12, md: 6 }} sx={style.card_wrapper}>
-            <Branches />
-            {/* <Box sx={style.card}>
+            <Box sx={style.card}>
               <Box>
                 <img src="/icons/pin.svg" alt="" />
               </Box>
@@ -182,7 +181,7 @@ const page = () => {
                   </Button>
                 </Box>
               </Box>
-            </Box> */}
+            </Box>
           </Grid>
           <Grid size={{ sm: 12, md: 6 }}>
             <Box
