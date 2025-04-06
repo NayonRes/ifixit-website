@@ -46,7 +46,7 @@ const style = {
 const Branches = async () => {
   // const data = await fetch('https://api.vercel.app/blog')
   const data = await fetch(
-    "https://inventory.nayon.dev/api/v1/branch?limit=100&page=1"
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch?status=true&limit=100&page=1`
   );
   const branches = await data.json();
 
@@ -62,7 +62,9 @@ const Branches = async () => {
             <Box sx={style.card_text}>
               <Typography variant="h6" sx={{ fontWeight: 600 }}>
                 {/* {branch?.name} */}
-                <Link href="/contact-details">{branch?.name}</Link>
+                <Link href={`/contact-details/${branch?._id}`}>
+                  {branch?.name}
+                </Link>
               </Typography>
               <Typography variant="body1" color="text.light">
                 Off day: {branch?.off_day}
@@ -76,8 +78,8 @@ const Branches = async () => {
               </Typography>
               <Typography
                 variant="subtitle1"
-                color={ColorPalette.light.primary.main}
-                sx={{ textDecoration: "underline" }}
+                // color={ColorPalette.light.primary.main}
+                sx={{ textDecoration: "underline", fontWeight: 600 }}
               >
                 Call : {branch?.phone_no_1}
               </Typography>
@@ -90,7 +92,7 @@ const Branches = async () => {
                     fontWeight: 500,
                     background: ColorPalette.light.primary.main,
 
-                    // mt: 4,
+                    mt: 1,
                   }}
                   endIcon={<CallMadeIcon />}
                 >
