@@ -61,6 +61,7 @@ const Details = ({ param }) => {
       let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/${param}`;
       axios.get(url).then((response) => {
         console.log("response", response);
+        setBranch(response?.data?.data);
       });
     } catch (error) {
       console.log("err", error);
@@ -107,27 +108,29 @@ const Details = ({ param }) => {
               <Box>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                    Jamuna Future Park
+                    {branch?.name}
                   </Typography>
                   <Typography
                     variant="body1"
                     color="text.light"
                     sx={{ fontWeight: 400, fontSize: "1.5rem" }}
                   >
-                    Off day: Wednesday
+                    Off day: {branch?.off_day}
                   </Typography>
                   <Typography
                     color="text.light"
                     variant="body1"
                     sx={{ fontWeight: 400, fontSize: "1.5rem" }}
                   >
-                    Shop # 4C-13D, 4th floor, Jamuna future park
+                    {branch?.address}
                   </Typography>
                   <Typography
                     variant="body1"
                     sx={{ fontWeight: 600, fontSize: "1.5rem" }}
                   >
-                    Call : 01820 00 99 00
+                    <a href="tel:9876765678" >
+                      Call : {branch?.phone_no_1}
+                    </a>
                   </Typography>
                 </Box>
               </Box>
@@ -135,7 +138,7 @@ const Details = ({ param }) => {
           </Grid>
         </Container>
       </Box>
-      <Gallery name={param} />
+      <Gallery name={branch?.name} />
       <SectionSeven />
     </Box>
   );
