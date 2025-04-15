@@ -4,6 +4,7 @@ import ColorPalette from "@/app/theme/ColorPalette";
 import { Box, Button, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import CallMadeIcon from "@mui/icons-material/CallMade";
+import Link from "next/link";
 
 const style = {
   card_wrapper: {
@@ -63,10 +64,9 @@ const SingleBranch = ({ branch }) => {
     <Box
       onClick={() => handleCardClick(branch?._id)}
       href={`/contact-details/${branch?._id}`}
-    
     >
       <Box sx={style.card2}>
-        <Box sx={{ mt: '4px' }} >
+        <Box sx={{ mt: "4px" }}>
           <img src="/icons/pin.svg" alt="" />
         </Box>
         <Box sx={style.card_text}>
@@ -95,21 +95,23 @@ const SingleBranch = ({ branch }) => {
             </a>
           </Typography>
           <Box>
-            <Button
-              onClick={handleButtonClick}
-              variant="contained"
-              color="primary"
-              sx={{
-                borderRadius: "30px",
-                fontWeight: 500,
-                background: ColorPalette.light.primary.main,
+            <Link href={branch?.map_url} target="_blank" >  
+              <Button
+                onClick={handleButtonClick}
+                variant="contained"
+                color="primary"
+                sx={{
+                  borderRadius: "30px",
+                  fontWeight: 500,
+                  background: ColorPalette.light.primary.main,
 
-                mt: 1,
-              }}
-              endIcon={<CallMadeIcon />}
-            >
-              Visit on Map
-            </Button>
+                  mt: 1,
+                }}
+                endIcon={<CallMadeIcon />}
+              >
+                Visit on Map
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>
