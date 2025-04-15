@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
-const CardOne = () => {
+const CardOne = ({ item }) => {
   return (
     <Link href="/details">
       <Box
@@ -18,8 +18,13 @@ const CardOne = () => {
           height: "100%",
         }}
       >
-        <Typography variant="h5">Apple</Typography>
-        <img src="/products/apple.png" alt="" style={{ maxWidth: "100%" }} />
+        <Typography variant="h5">{item?.title}</Typography>
+
+        <img
+          src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}
+          alt=""
+          style={{ maxWidth: "100%" }}
+        />
       </Box>
     </Link>
   );

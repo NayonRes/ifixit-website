@@ -51,14 +51,14 @@ const style = {
 const Details = ({ param }) => {
   const [branch, setBranch] = useState("");
   // const data = await fetch(
-  //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/${param}`
+  //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/public/${param}`
   // );
   // const branches = await data.json();
   // console.log("branches", branches);
 
   const getData = async () => {
     try {
-      let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/${param}`;
+      let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/public/${param}`;
       axios.get(url).then((response) => {
         console.log("response", response);
         setBranch(response?.data?.data);
