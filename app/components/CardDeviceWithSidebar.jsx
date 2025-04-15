@@ -4,7 +4,7 @@ import React from "react";
 
 const CardOne = ({ item }) => {
   return (
-    <Link href="/device-list">
+    <Link href="/details">
       <Box
         sx={{
           p: 3,

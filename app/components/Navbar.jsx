@@ -64,13 +64,13 @@ const Navbar = () => {
                   Services
                 </Typography>
               </Link>
-              <Link href="/device-list">
+              {/* <Link href="/device-list">
                 <Typography
                   sx={pathname === "/device-list" ? style.active : style.li}
                 >
                   Device List
                 </Typography>
-              </Link>
+              </Link> */}
               <Link href="/blog">
                 <Typography sx={pathname === "/blog" ? style.active : style.li}>
                   Blog
