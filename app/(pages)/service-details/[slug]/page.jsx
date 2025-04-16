@@ -38,7 +38,7 @@ const style = {
     alignItems: "center",
     gap: 2,
     background: "#F2F3F7",
-    width: { xs: "100%", sm: "100%", md: "auto" },
+    width: { xs: "100%", sm: "100%", md: "100%" },
   },
   card_text: {
     display: "flex",

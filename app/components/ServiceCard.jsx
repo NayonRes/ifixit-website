@@ -25,6 +25,7 @@ const ServiceCard = ({ item }) => {
             }
             alt=""
             style={{ maxWidth: "100%" }}
+            className="image"
           />
 
           <Typography variant="base" sx={{ mt: 3, fontWeight: 600 }}>
