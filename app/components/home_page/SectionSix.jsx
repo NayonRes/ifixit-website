@@ -14,7 +14,7 @@ const style = {
   },
 };
 
-const SectionSix = () => {
+const SectionSix = ({modelList}) => {
   return (
     <Box sx={{ py: 10 }}>
       <Container maxWidth="xl">

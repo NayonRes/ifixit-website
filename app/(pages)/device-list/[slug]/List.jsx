@@ -10,9 +10,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid2";
-import CardDevice from "../../components/CardDevice";
+import ModelCard from "../../../components/ModelCard";
 
-export default function List() {
+export default function List({ modelList, loading }) {
+  console.log("modelList", modelList);
+
   const [value, setValue] = React.useState("1");
   const [age, setAge] = React.useState("");
 
@@ -65,85 +67,90 @@ export default function List() {
         </Box>
         <TabPanel value="1">
           <Grid container spacing={3}>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+            {!loading &&
+              modelList?.length > 0 &&
+              modelList?.map((item, i) => (
+                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                  <ModelCard item={item} />
+                </Grid>
+              ))}
+
+            {/* <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
-            </Grid>
+              <ModelCard />
+            </Grid> */}
           </Grid>
         </TabPanel>
         <TabPanel value="2">
           <Grid container spacing={3}>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
           </Grid>
         </TabPanel>
         <TabPanel value="3">
           <Grid container spacing={3}>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardDevice />
+              <ModelCard />
             </Grid>
           </Grid>
         </TabPanel>

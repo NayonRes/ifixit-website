@@ -13,8 +13,14 @@ import Grid from "@mui/material/Grid2";
 import CardDeviceWithSidebar from "../../components/CardDeviceWithSidebar";
 import Link from "next/link";
 import { Typography } from "@mui/material";
+import { useParams, useSearchParams } from "next/navigation";
+import ServiceCard from "@/app/components/ServiceCard";
 
-export default function List() {
+export default function List({ modelList, loading, serviceList, loading2 }) {
+  const params = useParams();
+  const searchParams = useSearchParams();
+  const device_id = searchParams.get("device_id");
+  const model_id = searchParams.get("model_id");
   const [value, setValue] = React.useState("1");
   const [age, setAge] = React.useState("");
 
@@ -31,70 +37,28 @@ export default function List() {
       <Grid container spacing={4}>
         <Grid size={3}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 3 }}>
-            <Link href="#">
-              <Typography
-                color="text.primary"
-                sx={{
-                  px: 2,
-                  py: "2px",
-                  borderLeft: "3px solid #F57042",
-                  fontWeight: 600,
-                }}
-              >
-                iphone 15 Pro Max
-              </Typography>{" "}
-            </Link>
-           
-            
-            <Link href="#">
-              <Typography
-                color="text.light"
-                sx={{
-                  px: 2,
-                  py: "2px",
-                  fontWeight: 600,
-                }}
-              >
-                iphone 15 Pro Max
-              </Typography>{" "}
-            </Link>
-            <Link href="#">
-              <Typography
-                color="text.light"
-                sx={{
-                  px: 2,
-                  py: "2px",
-                  fontWeight: 600,
-                }}
-              >
-                iphone 15 Pro Max
-              </Typography>{" "}
-            </Link>
-            <Link href="#">
-              <Typography
-                color="text.light"
-                sx={{
-                  px: 2,
-                  py: "2px",
-                  fontWeight: 600,
-                }}
-              >
-                iphone 15 Pro Max
-              </Typography>{" "}
-            </Link>
-            <Link href="#">
-              <Typography
-                color="text.light"
-                sx={{
-                  px: 2,
-                  py: "2px",
-                  fontWeight: 600,
-                }}
-              >
-                iphone 15 Pro Max
-              </Typography>{" "}
-            </Link>
-            
+            {!loading &&
+              modelList?.length > 0 &&
+              modelList?.map((item) => (
+                <Link
+                  href={`/device-list-category?device_id=${device_id}&model_id=${item?._id}`}
+                  key={item?._id}
+                >
+                  <Typography
+                    color={
+                      model_id === item?._id ? "text.primary" : "text.light"
+                    }
+                    sx={{
+                      px: 2,
+                      py: "2px",
+                      borderLeft: model_id === item?._id && "3px solid #F57042",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {item?.name}
+                  </Typography>{" "}
+                </Link>
+              ))}
           </Box>
         </Grid>
         <Grid size={9}>
@@ -135,35 +99,18 @@ export default function List() {
               </FormControl>
             </Box>
           </Box> */}
-            <TabPanel value="1">
-              <Grid container spacing={3}>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-                  <CardDeviceWithSidebar />
-                </Grid>
-              </Grid>
-            </TabPanel>
-            <TabPanel value="2">
+            {/* <TabPanel value="1"> */}
+            <Grid container spacing={3}>
+              {!loading2 &&
+                serviceList?.length > 0 &&
+                serviceList?.map((item) => (
+                  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={item._id}>
+                    <ServiceCard item={item}/>
+                  </Grid>
+                ))}
+            </Grid>
+            {/* </TabPanel> */}
+            {/* <TabPanel value="2">
               <Grid container spacing={3}>
                 <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <CardDeviceWithSidebar />
@@ -218,7 +165,7 @@ export default function List() {
                   <CardDeviceWithSidebar />
                 </Grid>
               </Grid>
-            </TabPanel>
+            </TabPanel> */}
           </TabContext>
         </Grid>
       </Grid>

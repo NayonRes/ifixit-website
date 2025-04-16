@@ -2,9 +2,15 @@ import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
-const CardOne = ({ item }) => {
+const RepairServiceCard = ({ item }) => {
   return (
-    <Link href={`/device-list/${item._id}`}>
+    <Link
+      href={
+        item?.parent_id === null
+          ? `/device-list/${item._id}`
+          : `/service/${item._id}`
+      }
+    >
       <Box
         sx={{
           p: 3,
@@ -18,7 +24,10 @@ const CardOne = ({ item }) => {
           height: "100%",
         }}
       >
-        <Typography variant="h5">{item?.name} Repair</Typography>
+        <Typography variant="h5">
+          {" "}
+          {item?.name?.replace(/series\.?/i, "").trim()} Repair {item.parent_id}
+        </Typography>
         <img
           src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}
           alt=""
@@ -29,4 +38,4 @@ const CardOne = ({ item }) => {
   );
 };
 
-export default CardOne;
+export default RepairServiceCard;

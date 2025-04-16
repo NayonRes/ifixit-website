@@ -5,7 +5,7 @@ import CardOne from "../CardOne";
 
 const Service = async () => {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?limit=100`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?limit=1000`
   );
   const services = await data.json();
   console.log(

@@ -1,10 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
+import { useParams, useSearchParams } from "next/navigation";
 import React from "react";
 
-const CardOne = ({ item }) => {
+const ModelCard = ({ item }) => {
+  const params = useParams();
+  const searchParams = useSearchParams();
   return (
-    <Link href={`/device-list/${item._id}`}>
+    <Link
+      href={`/device-list-category?device_id=${params.slug}&model_id=${item?._id}`}
+    >
       <Box
         sx={{
           p: 3,
@@ -18,7 +23,8 @@ const CardOne = ({ item }) => {
           height: "100%",
         }}
       >
-        <Typography variant="h5">{item?.name} Repair</Typography>
+        <Typography variant="h5">{item?.name}</Typography>
+
         <img
           src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}
           alt=""
@@ -29,4 +35,4 @@ const CardOne = ({ item }) => {
   );
 };
 
-export default CardOne;
+export default ModelCard;
