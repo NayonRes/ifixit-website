@@ -11,6 +11,7 @@ import RepairServiceCard from "@/app/components/RepairServiceCard";
 import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 import { useRouter } from "next/navigation";
+import SectionLoading from "../../components/SectionLoading";
 
 const page = async () => {
   // const data = await fetch(
@@ -93,6 +94,8 @@ const page = async () => {
                 </Grid>
               ))}
         </Grid>
+
+        {loading && <SectionLoading />}
       </Container>
       <Line />
       <SectionSix />
