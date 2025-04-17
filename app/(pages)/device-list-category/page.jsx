@@ -35,7 +35,7 @@ const page = () => {
   };
   const getServiceList = async () => {
     setLoading2(true);
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?model_id=${model_id}&limit=1000`;
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?model_id=${model_id}&limit=1000&status=true`;
     let allData = await getDataWithToken(url);
 
     console.log("after childDevice list", allData?.data?.data);
