@@ -14,6 +14,7 @@ import SectionSeven from "@/app/components/home_page/SectionSeven";
 import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 import Link from "next/link";
+import "./page.css";
 
 const style = {
   ul: {
@@ -139,6 +140,7 @@ const page = () => {
                             : "/noImage.jpg"
                         }
                         alt=""
+                        style={{ width: "100%" }}
                       />
                     </Box>
                     <Box>
@@ -195,113 +197,30 @@ const page = () => {
               </Grid>
             </Box>
           ))}
-        <Box
-          sx={{ mt: 12 }}
+
+        <Typography
+          variant="body1"
+          color="text.light"
+          sx={{ mt: 1, mb: 8 }}
           dangerouslySetInnerHTML={{ __html: serviceDetails?.description }}
         />
-        <Box sx={{ mt: 12 }}>
-          <Typography variant="h5">Details</Typography>
-          <Typography variant="body1" color="text.light" sx={{ mt: 1, mb: 8 }}>
-            The new iPhone 15 Pro Max has a back glass finish like most of the
-            previous iPhones released by Apple in the market. It has a frosted
-            matte finish which looks sleek and stylish. Not only that, but it is
-            also scratch and oil-resistant. However, even after having a Gorilla
-            glass in the back and IP certified, it is still vulnerable to
-            damages by insecure actions by its users such as dropping it from
-            hand or any other form of accident. The most common back glass
-            damage on the iPhone 15 Pro Max is the back glass getting cracked.
-          </Typography>
-          <Typography variant="body1" color="text.light" sx={{}}>
-            The new iPhone 15 Pro Max has a back glass finish like most of the
-            previous iPhones released by Apple in the market. It has a frosted
-            matte finish which looks sleek and stylish. Not only that, but it is
-            also scratch and oil-resistant. However, even after having a Gorilla
-            glass in the back and IP certified, it is still vulnerable to
-            damages by insecure actions by its users such as dropping it from
-            hand or any other form of accident. The most common back glass
-            damage on the iPhone 15 Pro Max is the back glass getting cracked.
-          </Typography>
-          <Typography variant="h5">
-            Signs that indicate you need to repair your iPhone 15 Pro Max back
-            glass are:
-          </Typography>
-          <Box sx={style.text}>
-            <Box>
-              <Typography variant="body1" color="text.light" sx={{}}>
-                1. Scratched up / Multiple visible scratches
-              </Typography>
-              <Typography variant="body1" color="text.light" sx={{}}>
-                2. Shattered glass / small glass parts coming out of the back
-              </Typography>
-            </Box>
-            <Typography variant="body1" color="text.light" sx={{}}>
-              One of the three is a reason that you should repair the back glass
-              of your iPhone 15 Pro Max as soon as possible. Broken back glass
-              on an iPhone not only hampers full-flowing wireless charging but
-              also hampers the overall iPhone experience.
-            </Typography>
-            <Typography variant="body1" color="text.light" sx={{}}>
-              On iFixit bd, we have experienced professionals who specialize in
-              iPhone repair services in service points located in Dhaka,
-              Bangladesh. We offer the fastest reliable service for your ease
-              and on top of that a 30-day warranty on all of our services on
-              iPhone 15 Pro Max. We also offer genuine Apple parts for replacing
-              or repairing your iPhone woes.
-            </Typography>
-            <Typography variant="body1" color="text.light" sx={{}}>
-              Also, always use a protective cover/phone case with safety
-              certification from the vendors. A phone case or protector reduces
-              the chances of your front or back glass getting cracked in an
-              accidental fall significantly.
-            </Typography>
-          </Box>
-          <Box sx={{ mt: 4 }}>
-            <Typography variant="h5" sx={{   mb: 1,}}>Service Available At</Typography>
-            {serviceDetails?.branch_data?.length > 0 &&
-              serviceDetails?.branch_data?.map((item) => (
-                <Button
-                  variant="outlined"
-                  sx={{
-                    // color: "#333",
-                    borderRadius: "30px",
 
-                    mr: 1,
-                    mb: 1,
-                  }}
-                  component={Link}
-                  href={`/contact-details/${item?._id}`}
-                  endIcon={<CallMadeIcon />}
-                >
-                  {item.name}
-                </Button>
-              ))}
-            {/* <Button
-            variant="contained"
-            sx={{
-              // color: "#333",
-              borderRadius: "30px",
-              mt: 4,
-            }}
-            endIcon={<CallMadeIcon />}
-          >
-            Our Location
-          </Button> */}
-          </Box>
-        </Box>
         {serviceDetails?.steps?.length > 0 && (
           <Grid container spacing={8}>
             <Grid size={{ xs: 12, sm: 6, md: 6 }}>
               <Box sx={{ mt: 12 }}>
                 <Typography variant="h5">Step 1</Typography>
 
-                <Typography
-                  variant="body1"
-                  color="text.light"
-                  sx={{ mt: 1, mb: 4 }}
-                  dangerouslySetInnerHTML={{
-                    __html: serviceDetails?.steps[0]?.details,
-                  }}
-                />
+                <Box className="step">
+                  <Typography
+                    variant="body1"
+                    color="text.light"
+                    sx={{ mt: 1, mb: 4 }}
+                    dangerouslySetInnerHTML={{
+                      __html: serviceDetails?.steps[0]?.details,
+                    }}
+                  />
+                </Box>
 
                 {/* <Box sx={style.text}>
                 <Box sx={style.icon_list}>

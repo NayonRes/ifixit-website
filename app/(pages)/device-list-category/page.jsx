@@ -1,6 +1,6 @@
 "use client";
 import { Box, Container } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import PageHeader from "@/app/components/PageHeader";
 import List from "./List";
 import SectionSix from "../../components/home_page/SectionSix";
@@ -8,49 +8,65 @@ import SectionSeven from "../../components/home_page/SectionSeven";
 import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 
-const page = () => {
+const Page = () => {
   const params = useParams();
   const searchParams = useSearchParams();
   const device_id = searchParams.get("device_id");
   const model_id = searchParams.get("model_id");
 
   const [modelList, setModelList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [modelLoading, setModelLoading] = useState(false);
   const [serviceList, setServiceList] = useState([]);
-  const [loading2, setLoading2] = useState(false);
-  const getData = async () => {
-    setLoading(true);
+  const [serviceLoading, setServiceLoading] = useState(false);
 
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${device_id}`;
-    let allData = await getDataWithToken(url);
+  const fetchModelList = async () => {
+    setModelLoading(true);
+    try {
+      let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${device_id}`;
+      let response = await getDataWithToken(url);
 
-    console.log("after childDevice list", allData?.data?.data);
-
-    if (allData.status >= 200 && allData.status < 300) {
-      setModelList(allData?.data?.data);
-    } else {
-      setLoading(false);
+      if (response.status >= 200 && response.status < 300) {
+        setModelList(response?.data?.data || []);
+      }
+    } catch (error) {
+      console.error("Error fetching models:", error);
+    } finally {
+      setModelLoading(false);
     }
-    setLoading(false);
   };
-  const getServiceList = async () => {
-    setLoading2(true);
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?model_id=${model_id}&limit=1000&status=true`;
-    let allData = await getDataWithToken(url);
 
-    console.log("after childDevice list", allData?.data?.data);
+  const fetchServiceList = async () => {
+    if (!model_id) return;
 
-    if (allData.status >= 200 && allData.status < 300) {
-      setServiceList(allData?.data?.data);
-    } else {
-      setLoading2(false);
+    setServiceLoading(true);
+    try {
+      let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?model_id=${model_id}&limit=1000&status=true`;
+      let response = await getDataWithToken(url);
+
+      if (response.status >= 200 && response.status < 300) {
+        setServiceList(response?.data?.data || []);
+      }
+    } catch (error) {
+      console.error("Error fetching services:", error);
+    } finally {
+      setServiceLoading(false);
     }
-    setLoading2(false);
   };
+
   useEffect(() => {
-    getData();
-    getServiceList();
-  }, [device_id, model_id]);
+    if (device_id) {
+      fetchModelList();
+    }
+  }, [device_id]);
+
+  useEffect(() => {
+    if (model_id) {
+      fetchServiceList();
+    }
+  }, [model_id]);
+
+  const memoizedModelList = useMemo(() => modelList, [modelList]);
+
   return (
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
@@ -59,10 +75,12 @@ const page = () => {
           subtitle="Choose the iPhone model you need to repair"
         />
         <List
-          modelList={modelList}
-          loading={loading}
+          modelList={memoizedModelList}
+          modelLoading={modelLoading}
           serviceList={serviceList}
-          loading2={loading2}
+          serviceLoading={serviceLoading}
+          device_id={device_id}
+          model_id={model_id}
         />
       </Container>
       <SectionSix />
@@ -71,4 +89,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

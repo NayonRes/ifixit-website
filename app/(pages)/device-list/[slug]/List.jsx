@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid2";
 import ModelCard from "../../../components/ModelCard";
+import SectionLoading4 from "@/app/components/SectionLoading4";
 
 export default function List({ modelList, loading }) {
   console.log("modelList", modelList);
@@ -37,6 +38,7 @@ export default function List({ modelList, loading }) {
             </Grid>
           ))}
       </Grid>
+      {loading && <SectionLoading4 />}
       {/* <TabContext value={value}>
         <Box
           sx={{
