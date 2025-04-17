@@ -16,6 +16,7 @@ const ServiceCard = ({ item }) => {
           borderRadius: 6,
           border: "1px solid #ddd",
           height: "100%",
+          
         }}
       >
         <Box sx={{ textAlign: "center" }}>

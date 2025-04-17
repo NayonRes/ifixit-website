@@ -12,18 +12,27 @@ const ModelCard = ({ item }) => {
     >
       <Box
         sx={{
-          p: 3,
+          p: 5,
           display: "flex",
           flexDirection: "column",
-          // justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
           gap: 3,
           borderRadius: 6,
           border: "1px solid #ddd",
           height: "100%",
+          transition: "background-color 0.3s", // smooth transition
+          "&:hover": {
+            backgroundColor: "#f5f5f5", // your hover color here
+          },
         }}
       >
-        <Typography variant="h5">{item?.name}</Typography>
+        <Typography
+          variant="h5"
+          sx={{ textAlign: "center", lineHeight: "35px" }}
+        >
+          {item?.name}
+        </Typography>
 
         <img
           src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}

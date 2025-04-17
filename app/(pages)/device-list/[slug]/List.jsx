@@ -28,7 +28,16 @@ export default function List({ modelList, loading }) {
 
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
-      <TabContext value={value}>
+      <Grid container spacing={3}>
+        {!loading &&
+          modelList?.length > 0 &&
+          modelList?.map((item, i) => (
+            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+              <ModelCard item={item} />
+            </Grid>
+          ))}
+      </Grid>
+      {/* <TabContext value={value}>
         <Box
           sx={{
             display: "flex",
@@ -74,28 +83,6 @@ export default function List({ modelList, loading }) {
                   <ModelCard item={item} />
                 </Grid>
               ))}
-
-            {/* <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <ModelCard />
-            </Grid> */}
           </Grid>
         </TabPanel>
         <TabPanel value="2">
@@ -154,7 +141,7 @@ export default function List({ modelList, loading }) {
             </Grid>
           </Grid>
         </TabPanel>
-      </TabContext>
+      </TabContext> */}
     </Box>
   );
 }
