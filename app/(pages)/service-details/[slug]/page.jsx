@@ -15,6 +15,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 import Link from "next/link";
 import "./page.css";
+import SectionLoadingDetails from "@/app/components/SectionLoadingDetails";
 
 const style = {
   ul: {
@@ -262,34 +263,9 @@ const page = () => {
             </Grid>
           </Grid>
         )}
-        {/* <Box sx={{ my: 8 }}>
-          <Box>
-            <Typography variant="h6" sx={{ fontWeight: 600 }}>
-              Questions
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 2, mt: 1 }}>
-              Have question about this service? Get specific details about this
-              service from expert.
-            </Typography>
-            <TextField
-              fullWidth
-              placeholder="Type your question"
-              multiline
-              rows={4}
-              // sx={{ borderRadius: "60px" }}
-              InputProps={{ sx: { borderRadius: 3 } }}
-            />
-          </Box>
-          <Box sx={style.submit}>
-            <Button variant="outlined" sx={{ borderRadius: "30px" }}>
-              Cancel
-            </Button>
-            <Button variant="contained" sx={{ borderRadius: "30px" }}>
-              Next
-            </Button>
-          </Box>
-        </Box> */}
+
         <Divider sx={{ background: "#fff" }} />
+        {loading && <SectionLoadingDetails />}
       </Container>
       <SectionSeven />
     </Box>
