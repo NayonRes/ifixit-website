@@ -13,6 +13,7 @@ import CallMadeIcon from "@mui/icons-material/CallMade";
 import SectionSeven from "@/app/components/home_page/SectionSeven";
 import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
+import Link from "next/link";
 
 const style = {
   ul: {
@@ -254,7 +255,27 @@ const page = () => {
               accidental fall significantly.
             </Typography>
           </Box>
-          <Button
+          <Box sx={{ mt: 4 }}>
+            <Typography variant="h5" sx={{   mb: 1,}}>Service Available At</Typography>
+            {serviceDetails?.branch_data?.length > 0 &&
+              serviceDetails?.branch_data?.map((item) => (
+                <Button
+                  variant="outlined"
+                  sx={{
+                    // color: "#333",
+                    borderRadius: "30px",
+
+                    mr: 1,
+                    mb: 1,
+                  }}
+                  component={Link}
+                  href={`/contact-details/${item?._id}`}
+                  endIcon={<CallMadeIcon />}
+                >
+                  {item.name}
+                </Button>
+              ))}
+            {/* <Button
             variant="contained"
             sx={{
               // color: "#333",
@@ -264,7 +285,8 @@ const page = () => {
             endIcon={<CallMadeIcon />}
           >
             Our Location
-          </Button>
+          </Button> */}
+          </Box>
         </Box>
         {serviceDetails?.steps?.length > 0 && (
           <Grid container spacing={8}>

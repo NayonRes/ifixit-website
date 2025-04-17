@@ -31,7 +31,12 @@ export default function List({ modelList, loading, serviceList, loading2 }) {
   const handleSelect = (event) => {
     setAge(event.target.value);
   };
-
+  const handleClick = () => {
+    const params = new URLSearchParams(router.query);
+    params.set('model_id', item?._id); // update model_id
+    params.set('device_id', device_id); // optional
+    router.push(`/device-list-category?${params.toString()}`, undefined, { shallow: true });
+  };
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <Grid container spacing={4}>
@@ -40,6 +45,7 @@ export default function List({ modelList, loading, serviceList, loading2 }) {
             {!loading &&
               modelList?.length > 0 &&
               modelList?.map((item) => (
+                <>
                 <Link
                   href={`/device-list-category?device_id=${device_id}&model_id=${item?._id}`}
                   key={item?._id}
@@ -58,6 +64,7 @@ export default function List({ modelList, loading, serviceList, loading2 }) {
                     {item?.name}
                   </Typography>{" "}
                 </Link>
+                </>
               ))}
           </Box>
         </Grid>

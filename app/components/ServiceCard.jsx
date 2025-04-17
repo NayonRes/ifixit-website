@@ -10,13 +10,12 @@ const ServiceCard = ({ item }) => {
           p: 3,
           display: "flex",
           flexDirection: "column",
-          // justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
           // gap: 3,
           borderRadius: 6,
           border: "1px solid #ddd",
           height: "100%",
-          
         }}
       >
         <Box sx={{ textAlign: "center" }}>
@@ -28,12 +27,14 @@ const ServiceCard = ({ item }) => {
             style={{ maxWidth: "100%" }}
             className="image"
           />
-
-          <Typography variant="base" sx={{ mt: 3, fontWeight: 600 }}>
-            {item?.title}
-          </Typography>
         </Box>
         <Box sx={{ textAlign: "center" }}>
+          <Typography
+            variant="base"
+            sx={{ mt: 3, fontWeight: 600, textAlign: "center" }}
+          >
+            {item?.title}
+          </Typography>
           <Button
             variant="text"
             color="primary"

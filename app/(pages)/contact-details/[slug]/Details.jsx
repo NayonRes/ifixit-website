@@ -8,6 +8,7 @@ import CallMadeIcon from "@mui/icons-material/CallMade";
 import ColorPalette from "@/app/theme/ColorPalette";
 import Gallery from "./Gallery";
 import axios from "axios";
+import { getDataWithToken } from "@/app/services/GetDataService";
 
 const style = {
   card_wrapper: {
@@ -50,22 +51,39 @@ const style = {
 
 const Details = ({ param }) => {
   const [branch, setBranch] = useState("");
+  const [loading, setLoading] = useState(false);
   // const data = await fetch(
   //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/public/${param}`
   // );
   // const branches = await data.json();
   // console.log("branches", branches);
 
+  // const getData = async () => {
+  //   try {
+  //     let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/public/${param}`;
+  //     axios.get(url).then((response) => {
+  //       console.log("response", response);
+  //       setBranch(response?.data?.data);
+  //     });
+  //   } catch (error) {
+  //     console.log("err", error);
+  //   }
+  // };
+
   const getData = async () => {
-    try {
-      let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/public/${param}`;
-      axios.get(url).then((response) => {
-        console.log("response", response);
-        setBranch(response?.data?.data);
-      });
-    } catch (error) {
-      console.log("err", error);
+    setLoading(true);
+
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/branch/public/${param}`;
+    let allData = await getDataWithToken(url);
+
+    console.log("after childDevice list", allData?.data?.data);
+
+    if (allData.status >= 200 && allData.status < 300) {
+      setBranch(allData?.data?.data);
+    } else {
+      setLoading(false);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -128,9 +146,7 @@ const Details = ({ param }) => {
                     variant="body1"
                     sx={{ fontWeight: 600, fontSize: "1.5rem" }}
                   >
-                    <a href="tel:9876765678" >
-                      Call : {branch?.phone_no_1}
-                    </a>
+                    <a href="tel:9876765678">Call : {branch?.phone_no_1}</a>
                   </Typography>
                 </Box>
               </Box>

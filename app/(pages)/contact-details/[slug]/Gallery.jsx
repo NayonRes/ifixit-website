@@ -68,8 +68,12 @@ function Gallery({ name }) {
             startups.
           </Typography>
         </Grid>
-
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
+          <Grid size={{ sm: 12, md: 4 }} key={index}>
+            <img src={`/gallery/test/${item}.jpg`} alt="" style={style.img} />
+          </Grid>
+        ))}
+        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
           <Grid size={{ sm: 12, md: 4 }} key={index}>
             <img
               src={`/gallery/${name}/${item}.jpg`}
@@ -77,7 +81,7 @@ function Gallery({ name }) {
               style={style.img}
             />
           </Grid>
-        ))}
+        ))} */}
       </Grid>
     </Container>
   );
