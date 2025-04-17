@@ -16,7 +16,7 @@ const page = () => {
   const getData = async () => {
     setLoading(true);
 
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${params.slug}`;
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${params.slug}&status=true`;
     let allData = await getDataWithToken(url);
 
     console.log("after childDevice list", allData?.data?.data);
@@ -39,7 +39,7 @@ const page = () => {
           title="iPhone Repair Service"
           subtitle="Choose the iPhone model you need to repair"
         />
-        <List modelList={modelList} loading={loading}/>
+        <List modelList={modelList} loading={loading} />
       </Container>
       <SectionSix modelList={modelList} />
       <SectionSeven modelList={modelList} />
