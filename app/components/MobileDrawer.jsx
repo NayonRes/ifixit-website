@@ -77,7 +77,7 @@ const MobileDrawer = () => {
         }}
       >
         <div style={{ position: "relative", padding: "3px 15px 10px" }}>
-          <img src="/logo.svg" alt="iFixit logo" />
+          <img loading="lazy" src="/logo.svg" alt="iFixit logo" />
           <IconButton
             id="closeButton"
             onClick={toggleDrawer(anchor, false)}
@@ -236,7 +236,7 @@ const MobileDrawer = () => {
               document.getElementById("closeButton").click();
             }}
             style={{ background: pathname === "/login" ? "#f3f3f3" : "" }}
-            sx={{ background: '#FEF3E2' }}
+            sx={{ background: "#FEF3E2" }}
           >
             <ListItemIcon>
               <svg

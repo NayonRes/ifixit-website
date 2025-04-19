@@ -90,7 +90,7 @@ const Header = () => {
             },
           }}
         >
-          <img src="/logo.svg" alt="iFixit logo" width="60px" />
+          <img loading="lazy" src="/logo.svg" alt="iFixit logo" width="60px" />
         </Grid>
         <Grid size="auto" xs="auto">
           <Box

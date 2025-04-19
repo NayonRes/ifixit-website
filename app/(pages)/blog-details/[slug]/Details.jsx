@@ -38,6 +38,7 @@ const Details = () => {
         </Box>
         <Box sx={{ mb: 6 }}>
           <img
+            loading="lazy"
             src="/lg.jpg"
             alt=""
             style={{ width: "100%", borderRadius: "16px" }}

@@ -85,7 +85,7 @@ const SectionTwo = () => {
             size={{ xs: 12, sm: 6, md: 6 }}
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <img src="/section-2.jpg" alt="" style={{ maxWidth: "100%" }} />
+            <img src="/section-2.jpg" loading="lazy" alt="" style={{ maxWidth: "100%" }} />
           </Grid>
         </Grid>
       </Container>

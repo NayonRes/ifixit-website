@@ -15,16 +15,20 @@ const CardTwo = () => {
         boxShadow: "0px 0px 10px 2px #eee",
         height: "100%",
       }}
-      
     >
-      <Typography variant="h5"   sx={{ lineHeight: "2rem", }}>
-        Liquid <br /> Damage 
+      <Typography variant="h5" sx={{ lineHeight: "2rem" }}>
+        Liquid <br /> Damage
       </Typography>
       <Typography variant="subtitle1" color="text.light">
         Worst thing that can happen to your device is get damaged by liquid.
         Sooner you bring it to us is better for your device.
       </Typography>
-      <img src="/products/iphone_back.png" alt="" style={{ maxWidth: '100%' }} />
+      <img
+        loading="lazy"
+        src="/products/iphone_back.png"
+        alt=""
+        style={{ maxWidth: "100%" }}
+      />
     </Box>
   );
 };

@@ -1,6 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import React from "react";
 import styles from "../../theme/styles";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -32,7 +33,7 @@ const Banner = () => {
             sx={{
               textAlign: "center",
               mb: 1,
-             
+
               display: { xs: "none", md: "block" },
             }}
           >
@@ -66,9 +67,11 @@ const Banner = () => {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 10 }}>
-          <Button variant="contained" color="primary">
-            Repair Now
-          </Button>
+          <Link href="/services">
+            <Button variant="contained" color="primary">
+              Repair Now
+            </Button>
+          </Link>
           <Button variant="outlined">Buy Now</Button>
         </Box>
         <Box
@@ -79,6 +82,7 @@ const Banner = () => {
         >
           <Box>
             <img
+              loading="lazy"
               src="/home_banner/banner1.jpg"
               alt=""
               style={{ maxWidth: "100%" }}
@@ -86,11 +90,13 @@ const Banner = () => {
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <img
+              loading="lazy"
               src="/home_banner/banner2.jpg"
               alt=""
               style={{ maxWidth: "100%" }}
             />
             <img
+              loading="lazy"
               src="/home_banner/banner3.jpg"
               alt=""
               style={{ maxWidth: "100%" }}

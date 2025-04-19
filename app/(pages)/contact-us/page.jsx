@@ -194,13 +194,19 @@ const page = () => {
               }}
             >
               <img
+                loading="lazy"
                 src="/shop.jpg"
                 alt=""
                 style={{ width: "100%", borderRadius: "8px" }}
               />
             </Box>
             <Box>
-              <img src="/gmap.jpg" alt="" style={{ width: "100%" }} />
+              <img
+                loading="lazy"
+                src="/gmap.jpg"
+                alt=""
+                style={{ width: "100%" }}
+              />
             </Box>
           </Grid>
         </Grid>

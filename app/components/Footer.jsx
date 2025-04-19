@@ -22,7 +22,7 @@ const SectionSix = () => {
         <Box>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12, sm: 12, md: 2 }}>
-              <img src="/logo.svg" alt="" />
+              <img loading="lazy" src="/logo.svg" alt="" />
             </Grid>
             {/* desktop only  */}
             <Grid

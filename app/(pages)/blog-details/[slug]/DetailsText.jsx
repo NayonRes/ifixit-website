@@ -29,6 +29,7 @@ const DetailsText = () => {
         </Typography>
         <Box sx={{ margin: "30px 0" }}>
           <img
+            loading="lazy"
             src="/blog_2.jpg"
             alt=""
             style={{ maxWidth: "100%", mx: "auto" }}

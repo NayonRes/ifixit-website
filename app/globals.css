@@ -24,6 +24,7 @@ body {
 
 main {
   transition: opacity 0.2s ease-in-out;
+  min-height: 100vh;
 }
 .loading-container {
   position: fixed;

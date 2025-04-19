@@ -40,6 +40,7 @@ const DetailsMultiple = ({ item }) => {
                 }}
               >
                 <img
+                  loading="lazy"
                   src={
                     item?.repair_image?.url?.length > 0
                       ? item?.repair_image?.url
@@ -72,7 +73,7 @@ const DetailsMultiple = ({ item }) => {
             {item?.guaranty?.length > 0 && (
               <Box sx={style.card}>
                 <Box>
-                  <img src="/icons/cash_back.svg" alt="" />
+                  <img loading="lazy" src="/icons/cash_back.svg" alt="" />
                 </Box>
                 <Box sx={style.card_text}>
                   <Typography variant="h6" sx={{ fontWeight: 600 }}>
@@ -87,7 +88,7 @@ const DetailsMultiple = ({ item }) => {
             {item?.warranty?.length > 0 && (
               <Box sx={style.card}>
                 <Box>
-                  <img src="/icons/cash_back.svg" alt="" />
+                  <img loading="lazy" src="/icons/cash_back.svg" alt="" />
                 </Box>
                 <Box sx={style.card_text}>
                   <Typography variant="h6" sx={{ fontWeight: 600 }}>

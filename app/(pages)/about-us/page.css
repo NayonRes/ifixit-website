@@ -1,0 +1,28 @@
+.step ul li {
+  padding: 10px 0px 10px 35px;
+  /* margin-left: 20px; */
+}
+
+.step ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.step li {
+  padding-left: 0px;
+  position: relative;
+}
+
+.step li::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 14px;
+  width: 24px;
+  height: 24px;
+  background-image: url("/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -67,7 +67,7 @@ const SingleBranch = ({ branch }) => {
     >
       <Box sx={style.card2}>
         <Box sx={{ mt: "4px" }}>
-          <img src="/icons/pin.svg" alt="" />
+          <img loading="lazy" src="/icons/pin.svg" alt="" />
         </Box>
         <Box sx={style.card_text}>
           <Typography variant="h6" sx={{ fontWeight: 600 }}>
@@ -95,7 +95,7 @@ const SingleBranch = ({ branch }) => {
             </a>
           </Typography>
           <Box>
-            <Link href={branch?.map_url} target="_blank" >  
+            <Link href={branch?.map_url} target="_blank">
               <Button
                 onClick={handleButtonClick}
                 variant="contained"

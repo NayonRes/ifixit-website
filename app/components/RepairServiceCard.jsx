@@ -33,11 +33,12 @@ const RepairServiceCard = ({ item, navigate }) => {
         navigate(item);
       }}
     >
-      <Typography variant="h5" sx={{textAlign:"center"}}>
+      <Typography variant="h5" sx={{ textAlign: "center" }}>
         {" "}
         {item?.name?.replace(/series\.?/i, "").trim()} Repair
       </Typography>
       <img
+        loading="lazy"
         src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}
         alt=""
         style={{ maxWidth: "100%" }}

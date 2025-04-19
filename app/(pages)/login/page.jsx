@@ -74,11 +74,15 @@ const page = () => {
   return (
     <Box sx={style.outer}>
       <Box sx={style.wrapper}>
-        <img src="/logo.svg" alt="iFixit logo" width="60px" />
+        <img loading="lazy" src="/logo.svg" alt="iFixit logo" width="60px" />
         <Typography variant="h4" sx={{ fontWeight: 600 }}>
           Log in to your account
         </Typography>
-        <Typography variant="body1" color="text.light" sx={{ mb: 3, textAlign: 'center' }}>
+        <Typography
+          variant="body1"
+          color="text.light"
+          sx={{ mb: 3, textAlign: "center" }}
+        >
           Welcome back! Please enter your details.
         </Typography>
         <Box sx={style.form}>

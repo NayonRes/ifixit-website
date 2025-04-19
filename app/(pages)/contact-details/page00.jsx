@@ -50,7 +50,12 @@ const page = () => {
   return (
     <Box>
       <Box>
-        <img src="/contact_top.jpg" alt="" style={{ width: "100%" }} />
+        <img
+          loading="lazy"
+          src="/contact_top.jpg"
+          alt=""
+          style={{ width: "100%" }}
+        />
       </Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <Grid container spacing={4}>

@@ -21,6 +21,7 @@ const CardOne = ({ item }) => {
         <Typography variant="h5">{item?.title}</Typography>
 
         <img
+          loading="lazy"
           src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}
           alt=""
           style={{ maxWidth: "100%" }}

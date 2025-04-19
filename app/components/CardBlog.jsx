@@ -31,7 +31,7 @@ const CardBlog = () => {
           tracking. Here’s how to get started.
         </Typography>
         <Box sx={{ display: "flex", gap: 1.5, alignItems: "center", mb: 2 }}>
-          <img src="/avatar.png" alt="" />
+          <img loading="lazy" src="/avatar.png" alt="" />
           <Box>
             <Typography variant="body2" sx={{ fontWeight: 600 }}>
               Phoenix Baker

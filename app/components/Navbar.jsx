@@ -41,7 +41,7 @@ const Navbar = () => {
           >
             <Link href="/">
               <Typography variant="h4">
-                <img src="/logo.svg" alt="" />
+                <img loading="lazy" src="/logo.svg" alt="" />
               </Typography>
             </Link>
             <Box
@@ -57,9 +57,17 @@ const Navbar = () => {
                   Home
                 </Typography>
               </Link>
+
               <Link href="/services">
                 <Typography
-                  sx={pathname === "/services" ? style.active : style.li}
+                  sx={
+                    pathname === "/services" ||
+                    pathname.startsWith("/device-list/") ||
+                    pathname.startsWith("/device-list-category") ||
+                    pathname.startsWith("/service-details/")
+                      ? style.active
+                      : style.li
+                  }
                 >
                   Services
                 </Typography>
@@ -71,8 +79,16 @@ const Navbar = () => {
                   Device List
                 </Typography>
               </Link> */}
+
               <Link href="/blog">
-                <Typography sx={pathname === "/blog" ? style.active : style.li}>
+                <Typography
+                  sx={
+                    pathname === "/blog" ||
+                    pathname.startsWith("/blog-details/")
+                      ? style.active
+                      : style.li
+                  }
+                >
                   Blog
                 </Typography>
               </Link>
@@ -85,6 +101,13 @@ const Navbar = () => {
                   sx={pathname === "/contact-us" ? style.active : style.li}
                 >
                   Contact Us
+                </Typography>
+              </Link>
+              <Link href="/about-us">
+                <Typography
+                  sx={pathname === "/about-us" ? style.active : style.li}
+                >
+                  About Us
                 </Typography>
               </Link>
             </Box>
@@ -106,7 +129,7 @@ const Navbar = () => {
               }}
             >
               <Link href="/login">
-                <img src="/icons/profile.png" alt="" />
+                <img loading="lazy" src="/icons/profile.png" alt="" />
               </Link>
               {/* <Button
                 variant="outlined"

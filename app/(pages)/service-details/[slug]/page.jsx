@@ -163,6 +163,7 @@ const page = () => {
             </Grid>
             <Grid size={{ xs: 12, sm: 6, md: 6 }}>
               <img
+                loading="lazy"
                 src={
                   serviceDetails?.steps[0]?.step_image?.url?.length > 0
                     ? serviceDetails?.steps[0]?.step_image?.url

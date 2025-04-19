@@ -29,7 +29,7 @@ const SectionFive = () => {
         >
           <Typography variant="h3">Why choose iFixit</Typography>
           <Box>
-            <img src="/why.png" alt="" style={{ maxWidth: "100%" }} />
+            <img src="/why.png" alt="" loading="lazy" style={{ maxWidth: "100%" }} />
           </Box>
         </Box>
         <Box>

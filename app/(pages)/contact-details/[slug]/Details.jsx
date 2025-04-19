@@ -97,7 +97,7 @@ const Details = ({ param }) => {
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <Grid container spacing={4}>
           <Grid size={{ sm: 12, md: 12 }} sx={{ my: 8 }}>
-            <img src="/details_map.jpg" alt="" style={{ width: "100%" }} />
+            <img loading="lazy" src="/details_map.jpg" alt="" style={{ width: "100%" }} />
           </Grid>
         </Grid>
       </Container>
