@@ -1,12 +1,12 @@
 import React from "react";
-import Loading from "./components/Loading";
 
-const loading = () => {
+export default function Loading() {
   return (
-    <div>
-      <Loading />
+    <div className="loading-container">
+      <div className="spinner">
+        {/* Add your spinner or loading animation here */}
+        <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
     </div>
   );
-};
-
-export default loading;
+}

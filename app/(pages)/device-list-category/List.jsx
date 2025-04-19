@@ -7,31 +7,79 @@ import ServiceCard from "@/app/components/ServiceCard";
 import SectionLoading3 from "@/app/components/SectionLoading3";
 import { memo } from "react";
 import TextLoading from "@/app/components/TextLoading";
+import ModeSidebarlList from "./ModeSidebarlList";
 
 const ModelList = memo(({ modelList, modelLoading, device_id, model_id }) => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 3 }}>
-      {!modelLoading &&
-        modelList?.length > 0 &&
-        modelList.map((item) => (
-          <Link
-            href={`/device-list-category?device_id=${device_id}&model_id=${item?._id}`}
-            key={item?._id}
-          >
-            <Typography
-              color={model_id === item?._id ? "text.primary" : "text.light"}
-              sx={{
-                px: 2,
-                py: "2px",
-                borderLeft: model_id === item?._id && "3px solid #F57042",
-                fontWeight: 600,
-              }}
-            >
-              {item?.name}
-            </Typography>
-          </Link>
-        ))}
-      {modelLoading && <TextLoading />}
+    <Box>
+      <Box
+        sx={{
+          display: {
+            xs: "block",
+            sm: "block",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          },
+        }}
+      >
+        <ModeSidebarlList
+          device_id={device_id}
+          modelList={modelList}
+          modelLoading={modelLoading}
+          model_id={model_id}
+        />
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 3 }}>
+        <Box
+          sx={{
+            flexDirection: "column",
+            gap: 3,
+            mt: 3,
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "flex",
+              lg: "flex",
+              xl: "flex",
+            },
+          }}
+        >
+          {!modelLoading &&
+            modelList?.length > 0 &&
+            modelList.map((item) => (
+              <Link
+                href={`/device-list-category?device_id=${device_id}&model_id=${item?._id}`}
+                key={item?._id}
+              >
+                <Typography
+                  color={model_id === item?._id ? "text.primary" : "text.light"}
+                  sx={{
+                    px: 2,
+                    py: "2px",
+                    borderLeft: model_id === item?._id && "3px solid #F57042",
+                    fontWeight: 600,
+                  }}
+                >
+                  {item?.name}
+                </Typography>
+              </Link>
+            ))}
+        </Box>
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "block",
+              lg: "block",
+              xl: "block",
+            },
+          }}
+        >
+          {modelLoading && <TextLoading />}
+        </Box>
+      </Box>
     </Box>
   );
 });
@@ -48,8 +96,14 @@ const ServiceList = memo(({ serviceList, serviceLoading }) => {
             </Grid>
           ))}
       </Grid>
-      {serviceLoading && <SectionLoading3 />}
-      { !serviceLoading && serviceList < 1 && <Typography variant="h5" sx={{marginLeft: '25%'}} >Service not found</Typography> }
+      <Box>
+        {serviceLoading && <SectionLoading3 />}
+        {!serviceLoading && serviceList < 1 && (
+          <Typography variant="h5" sx={{ marginLeft: "25%" }}>
+            Service not found
+          </Typography>
+        )}
+      </Box>
     </Box>
   );
 });
@@ -65,7 +119,7 @@ function List({
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <Grid container spacing={4}>
-        <Grid size={3}>
+        <Grid size={{ sm: 12, md: 3 }}>
           <ModelList
             modelList={modelList}
             modelLoading={modelLoading}
@@ -73,7 +127,7 @@ function List({
             model_id={model_id}
           />
         </Grid>
-        <Grid size={9}>
+        <Grid size={{ sm: 12, md: 9 }}>
           <ServiceList
             serviceList={serviceList}
             serviceLoading={serviceLoading}

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Home from "./components/home_page/Home";
+import Loading from "./components/Loading";
 
-const page = () => {
+export default function HomePage() {
   return (
-    <div>
+    <Suspense fallback={<Loading />}>
       <Home />
-    </div>
+    </Suspense>
   );
-};
+}
 
-export default page;

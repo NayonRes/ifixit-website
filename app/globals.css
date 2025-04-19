@@ -10,6 +10,10 @@
 
 :root {
   --primary: #f57042;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-arimo: var(--font-arimo), sans-serif;
+  --font-playfair: var(--font-playfair), serif;
+  --font-tinos: var(--font-tinos), serif;
 }
 
 html,
@@ -18,7 +22,20 @@ body {
   /* overflow-x: hidden; */
 }
 
-body {
+main {
+  transition: opacity 0.2s ease-in-out;
+}
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  z-index: 1000;
 }
 a {
   color: #111111;

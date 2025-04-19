@@ -86,7 +86,7 @@ const Service = async () => {
                 </Grid>
               ))}
         </Grid>
-        {loading && <SectionLoading />}
+        {/* {loading && <SectionLoading />} */}
       </Container>
     </Box>
   );
