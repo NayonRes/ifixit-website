@@ -4,9 +4,10 @@ import Loading from "./components/Loading";
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<Loading />}>
-      <Home />
-    </Suspense>
+    <>
+      {/* <Suspense fallback={<Loading />}> */}
+        <Home />
+      {/* </Suspense> */}
+    </>
   );
 }
-

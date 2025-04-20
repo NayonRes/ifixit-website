@@ -33,7 +33,7 @@ export default function List({ modelList, loading }) {
         {!loading &&
           modelList?.length > 0 &&
           modelList?.map((item, i) => (
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+            <Grid size={{ xs: 12, sm: 4, md: 3,lg: 2.4,xl: 2.4 }}>
               <ModelCard item={item} />
             </Grid>
           ))}

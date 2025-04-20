@@ -12,13 +12,16 @@ const ModelCard = ({ item }) => {
     >
       <Box
         sx={{
-          p: 5,
+          py: 5,
+          px: 3,
+          mx: { xs: "auto", sm: 0 },
+          width: { xs: "250px", sm: "100%" },
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
-          gap: 3,
-          borderRadius: 6,
+          gap: 1,
+          borderRadius: 5,
           border: "1px solid #ddd",
           height: "100%",
           transition: "background-color 0.3s", // smooth transition
@@ -28,8 +31,8 @@ const ModelCard = ({ item }) => {
         }}
       >
         <Typography
-          variant="h5"
-          sx={{ textAlign: "center", lineHeight: "35px" }}
+          variant="base"
+          sx={{ textAlign: "center", lineHeight: "35px", fontWeight: 600 }}
         >
           {item?.name}
         </Typography>
