@@ -34,7 +34,6 @@ const RepairServiceCard = ({ item, navigate }) => {
       }}
     >
       <Typography variant="h5" sx={{ textAlign: "center" }}>
-        {" "}
         {item?.name?.replace(/series\.?/i, "").trim()} Repair
       </Typography>
       <img

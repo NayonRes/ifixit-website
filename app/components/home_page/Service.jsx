@@ -1,30 +1,30 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import CardOne from "../CardOne";
 import RepairServiceCard from "@/app/components/RepairServiceCard";
-import { useParams, useSearchParams } from "next/navigation";
-import { getDataWithToken } from "@/app/services/GetDataService";
-import { useRouter } from "next/navigation";
-import SectionLoading from "../SectionLoading";
+import { redirect } from "next/navigation";
+import ServiceSingle from "./ServiceSingle";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 const Service = async () => {
-  // const data = await fetch(
-  //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/list?limit=1000`
-  // );
-  // const services = await data.json();
-  // console.log(
-  //   "process.env.NEXT_PUBLIC_BASE_URL",
-  //   process.env.NEXT_PUBLIC_BASE_URL
-  // );
-  // console.log("services", services);
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`
+  );
+  const li = await data.json();
+  const list = li?.data;
+  console.log(
+    "process.env.NEXT_PUBLIC_BASE_URL",
+    process.env.NEXT_PUBLIC_BASE_URL
+  );
+  console.log("services", list);
 
-  const router = useRouter();
-  const params = useParams();
-  const searchParams = useSearchParams();
-  const [list, setList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const router = useRouter();
+  // const params = useParams();
+  // const searchParams = useSearchParams();
+  // const [list, setList] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
   const navigate = (item) => {
     // href={
@@ -35,30 +35,30 @@ const Service = async () => {
     console.log("item", item);
 
     if (list?.some((el) => el.parent_id === item._id)) {
-      router.push(`/services/${item._id}`);
+      redirect(`/services/${item._id}`);
     } else {
-      router.push(`/device-list/${item._id}`);
+      redirect(`/device-list/${item._id}`);
     }
   };
 
-  const getData = async () => {
-    setLoading(true);
+  // const getData = async () => {
+  //   setLoading(true);
 
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`;
-    let allData = await getDataWithToken(url);
+  //   let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`;
+  //   let allData = await getDataWithToken(url);
 
-    console.log("after childDevice list", allData?.data?.data);
+  //   console.log("after childDevice list", allData?.data?.data);
 
-    if (allData.status >= 200 && allData.status < 300) {
-      setList(allData?.data?.data);
-    } else {
-      setLoading(false);
-    }
-    setLoading(false);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  //   if (allData.status >= 200 && allData.status < 300) {
+  //     setList(allData?.data?.data);
+  //   } else {
+  //     setLoading(false);
+  //   }
+  //   setLoading(false);
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
   return (
     <Box sx={{ pt: { sm: 0, md: 10 }, pb: 10 }}>
       <Container maxWidth="xl">
@@ -76,15 +76,8 @@ const Service = async () => {
               </Grid>
             ))}
         </Grid> */}
-          <Grid container spacing={3}>
-          {list?.length > 0 &&
-            list
-              ?.filter((el) => el.parent_id === null)
-              ?.map((item, i) => (
-                <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
-                  <RepairServiceCard item={item} navigate={navigate} />
-                </Grid>
-              ))}
+        <Grid container spacing={3}>
+          <ServiceSingle list={list} />
         </Grid>
         {/* {loading && <SectionLoading />} */}
       </Container>
