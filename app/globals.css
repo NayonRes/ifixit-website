@@ -45,6 +45,9 @@ a {
 .image {
   width: 100%;
 }
+ul li {
+  padding-left: 10px;
+}
 .pointer {
   cursor: pointer;
 }

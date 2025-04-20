@@ -166,19 +166,18 @@ const theme = createTheme({
     h6: {
       fontSize: "1.25rem", //20px
       //   lineHeight: "3.25rem", // 52px
-        fontWeight: 500,
+      fontWeight: 500,
       display: "block",
       fontFamily: '"Inter", sans-serif',
     },
     subtitle1: {
       fontSize: "1.13rem", //18px
-        fontWeight: 500,
+      fontWeight: 500,
       display: "block",
       fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "0.8rem", // Adjust for medium screens
-      
-      }
+      },
     },
     base: {
       fontSize: "1.125rem", //18px
@@ -229,6 +228,14 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiSkeleton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#ddd",
+          borderRadius: 8,
+        },
+      },
+    },
     MuiPaper: {
       // Dark theme paper color
       styleOverrides: {

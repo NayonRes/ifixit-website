@@ -10,7 +10,7 @@ const TextLoading = () => {
       <Skeleton
         variant="rectangular"
         width="100%"
-        height={70}
+        height={40}
         sx={{ borderRadius: "12px" }}
       />
     </Grid>
@@ -18,7 +18,7 @@ const TextLoading = () => {
       <Skeleton
         variant="rectangular"
         width="100%"
-        height={70}
+        height={40}
         sx={{ borderRadius: "12px" }}
       />
     </Grid>
@@ -26,7 +26,7 @@ const TextLoading = () => {
       <Skeleton
         variant="rectangular"
         width="100%"
-        height={70}
+        height={40}
         sx={{ borderRadius: "12px" }}
       />
     </Grid>

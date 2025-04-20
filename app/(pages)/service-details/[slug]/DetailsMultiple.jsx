@@ -51,15 +51,60 @@ const DetailsMultiple = ({ item }) => {
                 />
               </Box>
               <Box>
-                <Typography variant="h5" sx={{ mb: 1 }}>
+                <Typography variant="h5" sx={{ mb: 1, fontSize: "1.2rem" }}>
                   {item?.name}
                 </Typography>
-                <Typography
-                  variant="h6"
-                  sx={{ color: "primary.main", fontWeight: 600, mb: 1 }}
-                >
-                  Repair Cost - ৳{item?.repair_cost} TK
+                <Typography variant="h6" color="text.light" sx={{ fontWeight: 600, mb: 1, fontSize: "1.2rem" }}>
+                  Repair Cost -{" "}
+                  <span style={{ color: "#E96A3F" }}>
+                    ৳{item?.repair_cost} TK
+                  </span>
                 </Typography>
+                {/* start  */}
+                {item?.guaranty?.length > 0 && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      my: 2,
+                    }}
+                  >
+                    <img
+                      loading="lazy"
+                      src="/icons/cash-back-sm.svg"
+                      alt=""
+                      // style={{ height: "15px" }}
+                    />
+
+                    <Typography variant="body1" color="text.primary">
+                      {item?.guaranty}
+                    </Typography>
+                  </Box>
+                )}
+
+                {item?.warranty?.length > 0 && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      my: 2,
+                    }}
+                  >
+                    <img
+                      loading="lazy"
+                      src="/icons/cash-back-sm.svg"
+                      alt=""
+                      // style={{ height: "15px" }}
+                    />
+
+                    <Typography variant="body1" color="text.primary">
+                      {item?.warranty}
+                    </Typography>
+                  </Box>
+                )}
+                {/* end  */}
                 <Typography
                   variant="body1"
                   dangerouslySetInnerHTML={{
@@ -69,7 +114,7 @@ const DetailsMultiple = ({ item }) => {
               </Box>
             </Box>
           </Grid>
-          <Grid size={12} sx={style.card_wrapper}>
+          {/* <Grid size={12} sx={style.card_wrapper}>
             {item?.guaranty?.length > 0 && (
               <Box sx={style.card}>
                 <Box>
@@ -100,7 +145,7 @@ const DetailsMultiple = ({ item }) => {
                 </Box>
               </Box>
             )}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Box>
     </Grid>
