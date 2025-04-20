@@ -151,7 +151,7 @@ const MobileDrawer = () => {
             <ListItemText primary="Services" />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
+        {/* <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
               handleChange("/device-list");
@@ -161,22 +161,23 @@ const MobileDrawer = () => {
           >
             <ListItemIcon>
               <svg
+                width="20"
+                height="20"
+                viewBox="0 0 15 15"
+                fill="#2E2E2E"
                 xmlns="http://www.w3.org/2000/svg"
-                id="Layer_1"
-                data-name="Layer 1"
-                viewBox="0 0 24 24"
-                width="18"
-                height="18"
               >
                 <path
-                  d="m11.5,6.5c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.596,7.355c.472.287,1.088.136,1.374-.336.559-.922,1.627-1.519,2.722-1.519s2.163.596,2.722,1.519c.188.31.519.481.856.481.177,0,.355-.047.518-.145.472-.286.623-.901.337-1.374-.929-1.531-2.627-2.481-4.433-2.481s-3.504.951-4.433,2.481c-.286.473-.135,1.087.337,1.374Zm12.096-8.855v14c0,2.757-2.243,5-5,5H6c-2.206,0-4-1.794-4-4V5C2,2.243,4.243,0,7,0h10C19.757,0,22,2.243,22,5Zm-5-3h-9v14h12V5c0-1.654-1.346-3-3-3Zm-13,3v11.556c.591-.344,1.268-.556,2-.556V2.184c-1.161.414-2,1.514-2,2.816Zm16,14v-1H6c-1.103,0-2,.897-2,2s.897,2,2,2h11c1.654,0,3-1.346,3-3Z"
-                  fill="#2E2E2E"
-                />
+                  d="M4 2.5C4 2.22386 4.22386 2 4.5 2H10.5C10.7761 2 11 2.22386 11 2.5V12.5C11 12.7761 10.7761 13 10.5 13H4.5C4.22386 13 4 12.7761 4 12.5V2.5ZM4.5 1C3.67157 1 3 1.67157 3 2.5V12.5C3 13.3284 3.67157 14 4.5 14H10.5C11.3284 14 12 13.3284 12 12.5V2.5C12 1.67157 11.3284 1 10.5 1H4.5ZM6 11.65C5.8067 11.65 5.65 11.8067 5.65 12C5.65 12.1933 5.8067 12.35 6 12.35H9C9.1933 12.35 9.35 12.1933 9.35 12C9.35 11.8067 9.1933 11.65 9 11.65H6Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
               </svg>
             </ListItemIcon>
             <ListItemText primary="Device List" />
           </ListItemButton>
-        </ListItem>
+        </ListItem> */}
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
@@ -201,6 +202,20 @@ const MobileDrawer = () => {
               </svg>
             </ListItemIcon>
             <ListItemText primary="Blog" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => {
+              handleChange("/about-us");
+              document.getElementById("closeButton").click();
+            }}
+            style={{ background: pathname === "/about-us" ? "#f3f3f3" : "" }}
+          >
+            <ListItemIcon>
+            <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.25C2 4.11193 2.11193 4 2.25 4H12.75C12.8881 4 13 4.11193 13 4.25V11.5H2V4.25ZM2.25 3C1.55964 3 1 3.55964 1 4.25V12H0V12.5C0 12.7761 0.223858 13 0.5 13H14.5C14.7761 13 15 12.7761 15 12.5V12H14V4.25C14 3.55964 13.4404 3 12.75 3H2.25Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </ListItemIcon>
+            <ListItemText primary="About Us" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>

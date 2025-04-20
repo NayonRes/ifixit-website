@@ -105,12 +105,14 @@ const DetailsMultiple = ({ item }) => {
                   </Box>
                 )}
                 {/* end  */}
+                <Box sx={{ border: '1px solid #FF8455', p:2, borderRadius: 4 }} >  
                 <Typography
                   variant="body1"
                   dangerouslySetInnerHTML={{
                     __html: item?.details,
                   }}
                 />
+                </Box>
               </Box>
             </Box>
           </Grid>
