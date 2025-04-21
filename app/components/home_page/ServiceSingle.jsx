@@ -19,7 +19,7 @@ const ServiceSingle = ({ list }) => {
     if (list?.some((el) => el.parent_id === item._id)) {
       router.push(`/services/${item._id}`);
     } else {
-      router.push(`/device-list/${item._id}`);
+      router.push(`/device-list/${item._id}?device_name=${item.name}`);
     }
   };
   return (

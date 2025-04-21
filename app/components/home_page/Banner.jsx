@@ -44,12 +44,14 @@ const Banner = () => {
             color="text.main"
             sx={{
               textAlign: "center",
-              mb: 1,
+              mb: 2,
               px: 1,
               display: { xs: "block", md: "none" },
+              lineHeight: "2.5rem !important",
             }}
           >
-            Start Your Repair Journey with iFixit
+            Start Your Repair
+            <br /> Journey with iFixit
           </Typography>
           <Typography
             variant="h6"
@@ -59,11 +61,27 @@ const Banner = () => {
               fontWeight: 400,
 
               px: { xs: 1, sm: 0 },
+              display: { xs: "none", md: "block" },
             }}
           >
             Powerful, self-serve team engagement tools and analytics.
             Supercharge your <br /> managers & keep employees engaged from
             anywhere.
+          </Typography>
+          <Typography
+            variant="h6"
+            color="text.main"
+            sx={{
+              textAlign: "center",
+              fontWeight: 400,
+
+              px: { xs: 1, sm: 0 },
+              display: { xs: "block", md: "none" },
+              mb:2
+            }}
+          >
+            Powerful, self-serve team engagement tools and analytics.
+            Supercharge your managers & keep employees engaged from anywhere.
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 10 }}>

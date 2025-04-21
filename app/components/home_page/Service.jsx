@@ -37,7 +37,7 @@ const Service = async () => {
     if (list?.some((el) => el.parent_id === item._id)) {
       redirect(`/services/${item._id}`);
     } else {
-      redirect(`/device-list/${item._id}`);
+      redirect(`/device-list/${item._id}?device_name=${item.name}`);
     }
   };
 
