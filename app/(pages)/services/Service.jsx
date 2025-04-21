@@ -59,14 +59,14 @@ const Service = async () => {
   //   getData();
   // }, []);
   return (
-    <Box sx={{ pt: { sm: 0, md: 10 }, pb: 10 }}>
-      <Container maxWidth="xl">
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 6 }}>
+    <Box>
+      <Container maxWidth="xl" sx={{ pb: 10 }}>
+        {/* <Box sx={{ display: "flex", flexDirection: "column", gap: 1, mb: 6 }}>
           <Typography variant="body1" color="primary">
             SERVICES
           </Typography>
           <Typography variant="h3">Available Services</Typography>
-        </Box>
+        </Box> */}
         {/* <Grid container spacing={3}>
           {services?.data?.length > 0 &&
             services?.data?.map((item, i) => (

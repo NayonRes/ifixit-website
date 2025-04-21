@@ -10,7 +10,7 @@ import SectionSeven from "@/app/components/home_page/SectionSeven";
 const page = () => {
   return (
     <Box>
-      <Container maxWidth="xl" sx={{ pb: 10 }}>
+      <Container maxWidth="xl" sx={{ pb: 6 }}>
         <PageHeader
           title="CHOOSE YOUR APPLE DEVICE!!"
           subtitle="Choose From iPhone, iPad, Macbook, iMac, Apple Watch, Drone Device List"
@@ -21,7 +21,7 @@ const page = () => {
             flexDirection: "column",
             alignItems: "center",
             gap: 1,
-            mb: 6,
+            // mb: 6,
           }}
         >
           <Typography variant="body1" color="primary">
