@@ -38,6 +38,39 @@ const SectionLoading4 = () => {
         sx={{ borderRadius: "12px" }}
       />
     </Grid>
+    <Grid size={{ xs: 12, sm: 3, md: 3 }}>
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height={400}
+        sx={{ borderRadius: "12px" }}
+      />
+    </Grid>
+    <Grid size={{ xs: 12, sm: 3, md: 3 }}>
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height={400}
+        sx={{ borderRadius: "12px" }}
+      />
+    </Grid>
+    <Grid size={{ xs: 12, sm: 3, md: 3 }}>
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height={400}
+        sx={{ borderRadius: "12px" }}
+      />
+    </Grid>
+    <Grid size={{ xs: 12, sm: 3, md: 3 }}>
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height={400}
+        sx={{ borderRadius: "12px" }}
+      />
+    </Grid>
+    
   </Grid>
   )
 }

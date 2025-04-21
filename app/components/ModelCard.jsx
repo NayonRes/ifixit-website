@@ -6,9 +6,11 @@ import React from "react";
 const ModelCard = ({ item }) => {
   const params = useParams();
   const searchParams = useSearchParams();
+
+  const deviceName = searchParams.get("device_name");
   return (
     <Link
-      href={`/device-list-category?device_id=${params.slug}&model_id=${item?._id}`}
+      href={`/device-list-category?device_id=${params.slug}&model_id=${item?._id}&device_name=${deviceName}`}
     >
       <Box
         sx={{

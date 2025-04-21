@@ -45,7 +45,7 @@ const Banner = () => {
             sx={{
               textAlign: "center",
               mb: 1,
-              px: 2,
+              px: 1,
               display: { xs: "block", md: "none" },
             }}
           >
@@ -58,7 +58,7 @@ const Banner = () => {
               textAlign: "center",
               fontWeight: 400,
 
-              px: { xs: 4, sm: 0 },
+              px: { xs: 1, sm: 0 },
             }}
           >
             Powerful, self-serve team engagement tools and analytics.

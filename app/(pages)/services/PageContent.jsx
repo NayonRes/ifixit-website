@@ -41,7 +41,7 @@ const pageContent = async () => {
     if (list?.some((el) => el.parent_id === item._id)) {
       router.push(`/services/${item._id}`);
     } else {
-      router.push(`/device-list/${item._id}`);
+      router.push(`/device-list/${item._id}?device_name=${item.name}`);
     }
   };
 
@@ -89,7 +89,7 @@ const pageContent = async () => {
             list
               ?.filter((el) => el.parent_id === null)
               ?.map((item, i) => (
-                <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
+                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }} key={i}>
                   <RepairServiceCard item={item} navigate={navigate} />
                 </Grid>
               ))}

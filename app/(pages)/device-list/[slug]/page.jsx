@@ -11,6 +11,7 @@ import { getDataWithToken } from "@/app/services/GetDataService";
 const page = () => {
   const params = useParams();
   const searchParams = useSearchParams();
+  const deviceName = searchParams.get("device_name");
   const [modelList, setModelList] = useState([]);
   const [loading, setLoading] = useState(false);
   const getData = async () => {
@@ -36,8 +37,8 @@ const page = () => {
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <PageHeader
-          title="iPhone Repair Service"
-          subtitle="Choose the iPhone model you need to repair"
+          title={`${deviceName} Repair Service`}
+          subtitle={`Choose the ${deviceName} model you need to repair`}
         />
         <List modelList={modelList} loading={loading} />
       </Container>

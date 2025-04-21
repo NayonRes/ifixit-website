@@ -13,6 +13,7 @@ const Page = () => {
   const searchParams = useSearchParams();
   const device_id = searchParams.get("device_id");
   const model_id = searchParams.get("model_id");
+  const deviceName = searchParams.get("device_name");
 
   const [modelList, setModelList] = useState([]);
   const [modelLoading, setModelLoading] = useState(false);
@@ -71,8 +72,8 @@ const Page = () => {
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <PageHeader
-          title="iPhone Repair Service"
-          subtitle="Choose the iPhone model you need to repair"
+          title={`${deviceName} Repair Service`}
+          subtitle={`Choose the ${deviceName} model you need to repair`}
         />
         <List
           modelList={memoizedModelList}
