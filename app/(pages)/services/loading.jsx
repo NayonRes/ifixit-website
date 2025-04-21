@@ -1,10 +1,12 @@
-import Loading from "@/app/components/Loading";
+
+import SectionLoading from "@/app/components/SectionLoading";
 import React from "react";
 
 const loading = () => {
   return (
     <div>
-      <Loading />
+      <SectionLoading />
+      
     </div>
   );
 };
