@@ -5,7 +5,7 @@ import Line from "@/app/components/Line";
 import PageHeader from "@/app/components/PageHeader";
 import SectionSix from "@/app/components/home_page/SectionSix";
 import SectionSeven from "@/app/components/home_page/SectionSeven";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Skeleton, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import RepairServiceCard from "@/app/components/RepairServiceCard";
 import { useParams, useSearchParams } from "next/navigation";
@@ -84,14 +84,22 @@ const page = async () => {
           <Typography variant="h3">Available Services</Typography>
         </Box>
         <Grid container spacing={3}>
-          {list?.length > 0 &&
-            list
-             
-              ?.map((item, i) => (
+          {!loading &&
+            list?.length > 0 &&
+            list?.map((item, i) => (
+              <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
+                <RepairServiceCard item={item} navigate={navigate} />
+              </Grid>
+            ))}
+          {loading && (
+            <>
+              {[...Array(6).keys()]?.map((item, i) => (
                 <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
-                  <RepairServiceCard item={item} navigate={navigate} />
+                  <Skeleton variant="rectangular" height={300} />
                 </Grid>
               ))}
+            </>
+          )}
         </Grid>
       </Container>
       <Line />

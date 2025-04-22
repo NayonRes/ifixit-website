@@ -103,7 +103,7 @@ const page = () => {
           serviceDetails?.repair_info?.map((item) => (
             <Details key={item._id} item={item} />
           ))}
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{ mb: 10 }}>
           {serviceDetails?.repair_info?.length > 0 &&
             serviceDetails?.repair_info?.length > 1 &&
             serviceDetails?.repair_info?.map((item) => (
@@ -122,7 +122,9 @@ const page = () => {
           <Grid container spacing={8}>
             <Grid size={{ xs: 12, sm: 6, md: 6 }}>
               <Box sx={{ mt: 12 }}>
-                <Typography variant="h5">Step 1</Typography>
+                <Typography variant="h5">
+                  {serviceDetails?.steps[0]?.title}
+                </Typography>
 
                 <Box className="step">
                   <Typography
