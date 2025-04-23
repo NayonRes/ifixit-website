@@ -62,6 +62,7 @@ const Navbar = () => {
                 <Typography
                   sx={
                     pathname === "/services" ||
+                    pathname.startsWith("/services/") ||
                     pathname.startsWith("/device-list/") ||
                     pathname.startsWith("/device-list-category") ||
                     pathname.startsWith("/service-details/")

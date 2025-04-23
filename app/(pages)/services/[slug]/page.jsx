@@ -12,7 +12,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 import { useRouter } from "next/navigation";
 
-const page = async () => {
+const page = () => {
   // const data = await fetch(
   //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?parent_id=null&status=true`
   // );
