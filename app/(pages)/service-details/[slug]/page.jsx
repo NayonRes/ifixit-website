@@ -18,6 +18,7 @@ import "./page.css";
 import SectionLoadingDetails from "@/app/components/SectionLoadingDetails";
 import Details from "./Details";
 import DetailsMultiple from "./DetailsMultiple";
+import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 
 const style = {
   ul: {
@@ -117,6 +118,29 @@ const page = () => {
           sx={{ mt: 1, mb: 8 }}
           dangerouslySetInnerHTML={{ __html: serviceDetails?.description }}
         />
+
+        {serviceDetails?.branch_data?.length > 0 && (
+          <Box>
+            <Typography variant="h5">Available At:</Typography>
+
+            <Grid container spacing={2}>
+              {serviceDetails?.branch_data?.map((item) => (
+                <Grid item>
+                  <Button
+                    variant="outlined"
+                    sx={{}}
+                    // endIcon={<ArrowOutwardOutlinedIcon />}
+                    component={Link}
+                    href={`/contact-details/${item?._id}`}
+                  >
+                    {item?.name} &nbsp;
+                    <ArrowOutwardOutlinedIcon />
+                  </Button>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        )}
 
         {serviceDetails?.steps?.length > 0 && (
           <Grid container spacing={8}>
