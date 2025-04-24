@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import ServiceSingle from "./ServiceSingle";
 
 export const dynamic = "force-dynamic";
-export const revalidate = 60;
+export const revalidate = 0;
 
 const Service = async () => {
   const data = await fetch(
