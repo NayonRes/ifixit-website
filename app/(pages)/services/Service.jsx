@@ -4,12 +4,10 @@ import Grid from "@mui/material/Grid2";
 import { redirect } from "next/navigation";
 import ServiceSingle from "./ServiceSingle";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 60;
-
 const Service = async () => {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`,
+    { next: { revalidate: 0 } }
   );
   const li = await data.json();
   const list = li?.data;
