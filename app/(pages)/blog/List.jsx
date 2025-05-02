@@ -1,153 +1,133 @@
 "use client";
-import * as React from "react";
+import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import Grid from "@mui/material/Grid2";
 import CardBlog from "../../components/CardBlog";
+import ReactPaginate from "react-paginate";
+import axios from "axios";
+import { CircularProgress, Typography, Container } from "@mui/material";
+import "./paginate.css"
 
 export default function List() {
-  const [value, setValue] = React.useState("1");
-  const [age, setAge] = React.useState("");
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPosts, setTotalPosts] = useState(0);
+  const limit = 6; 
+  useEffect(() => {
+    fetchBlogs(currentPage + 1);
+  }, [currentPage]);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const fetchBlogs = async (page) => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/blog/public/list?status=true&limit=${limit}&page=${page}`);
+      
+      
+      const { data } = response;
+      
+      if (data.success) {
+        setBlogs(data.data || []);
+        setTotalPosts(data.totalData || 0);
+        
+      
+        const totalPages = Math.ceil(data.totalData / limit);
+        setPageCount(totalPages);
+      } else {
+        setError(data.message || "Failed to load blog posts");
+        setBlogs([]);
+      }
+      
+    } catch (err) {
+      console.error("Error fetching blogs:", err);
+      setError("Failed to load blog posts. Please try again later.");
+      setBlogs([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleSelect = (event) => {
-    setAge(event.target.value);
+  const handlePageChange = (selectedItem) => {
+    setCurrentPage(selectedItem.selected);
+   
+    window.scrollTo(0, 0);
   };
+
+  if (error) {
+    return (
+      <Container maxWidth="lg">
+        <Box sx={{ width: "100%", py: 4, textAlign: "center" }}>
+          <Typography color="error">{error}</Typography>
+        </Box>
+      </Container>
+    );
+  }
 
   return (
-    <Box sx={{ width: "100%", typography: "body1" }}>
-      <TabContext value={value}>
-        <Box
-          sx={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 4,
-            mb: 4,
-          }}
-        >
-          <TabList
-            onChange={handleChange}
-            sx={{ borderBottom: 1, borderColor: "divider", flex: 1 }}
-          >
-            <Tab label="Item One" value="1" />
-            <Tab label="Item Two" value="2" />
-            <Tab label="Item Three" value="3" />
-          </TabList>
-          <Box>
-            <FormControl sx={{ width: "200px" }}>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={age}
-                onChange={handleSelect}
-                displayEmpty
-                size="small"
-              >
-                <MenuItem value="">All</MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirtyttt </MenuItem>
-              </Select>
-            </FormControl>
+    <Container maxWidth="lg">
+      <Box sx={{ width: "100%", py: 6 }}>
+        {loading ? (
+          <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
+            <CircularProgress />
           </Box>
-        </Box>
-        <TabPanel value="1">
-          <Grid container spacing={4}>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
+        ) : (
+          <>
+            {/* <Box sx={{ mb: 4 }}>
+              <Typography variant="h4" sx={{ mb: 2, fontWeight: "bold" }}>
+                Blog Posts
+              </Typography>
+              <Typography variant="body1" color="text.secondary">
+                Showing {blogs.length} of {totalPosts} blog posts
+              </Typography>
+            </Box> */}
+            
+            <Grid container spacing={6}>
+              {blogs.length > 0 ? (
+                blogs.map((blog, index) => (
+                  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={blog._id || index}>
+                    <CardBlog blog={blog} />
+                  </Grid>
+                ))
+              ) : (
+                <Grid xs={12}>
+                  <Box sx={{ textAlign: "center", py: 8 }}>
+                    <Typography variant="h6">No blog posts found.</Typography>
+                  </Box>
+                </Grid>
+              )}
             </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-          </Grid>
-        </TabPanel>
-        <TabPanel value="2">
-          <Grid container spacing={4}>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-          </Grid>
-        </TabPanel>
-        <TabPanel value="3">
-          <Grid container spacing={4}>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-              <CardBlog />
-            </Grid>
-          </Grid>
-        </TabPanel>
-      </TabContext>
-    </Box>
+
+            {blogs.length > 0 && pageCount > 1 && (
+              <Box sx={{ display: "flex", justifyContent: "center", mt: 8 }}>
+                <ReactPaginate
+                  previousLabel={"Previous"}
+                  nextLabel={"Next"}
+                  breakLabel={"..."}
+                  pageCount={pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={3}
+                  onPageChange={handlePageChange}
+                  containerClassName={"pagination"}
+                  activeClassName={"active"}
+                  forcePage={currentPage}
+                  renderOnZeroPageCount={null}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  previousClassName={"page-item"}
+                  previousLinkClassName={"page-link"}
+                  nextClassName={"page-item"}
+                  nextLinkClassName={"page-link"}
+                  breakClassName={"page-item"}
+                  breakLinkClassName={"page-link"}
+                  disabledClassName={"disabled"}
+                />
+              </Box>
+            )}
+          </>
+        )}
+      </Box>
+    </Container>
   );
 }

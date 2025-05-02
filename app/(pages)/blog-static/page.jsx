@@ -2,6 +2,7 @@ import { Box, Container } from "@mui/material";
 import React from "react";
 import PageHeader from "@/app/components/PageHeader";
 import List from "./List";
+import SectionSix from "../../components/home_page/SectionSix";
 import SectionSeven from "../../components/home_page/SectionSeven";
 
 const page = () => {
@@ -22,16 +23,17 @@ const page = () => {
             />
           </Box>
         </Box>
-        {/* <Box sx={{ mb: 6 }}>
+        <Box sx={{ mb: 6 }}>
           <img
             loading="lazy"
             src="/lg.jpg"
             alt=""
             style={{ width: "100%", borderRadius: "16px" }}
           />
-        </Box> */}
+        </Box>
         <List />
       </Container>
+      {/* <SectionSix /> */}
       <SectionSeven />
     </Box>
   );
