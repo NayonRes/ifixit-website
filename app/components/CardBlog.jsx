@@ -3,11 +3,6 @@ import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
-const stripHtml = (html) => {
-  if (!html) return "";
-  return html.replace(/<[^>]*>/g, "");
-};
-
 const formatDate = (dateString) => {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
@@ -27,9 +22,6 @@ const CardBlog = ({ blog = {} }) => {
     created_at = new Date().toISOString(),
     created_by = "Author",
   } = blog;
-
-  const plainDescription = stripHtml(description || "");
-  const displayDescription = subtitle || plainDescription;
 
   // Format the date
   const formattedDate = formatDate(created_at);
@@ -88,7 +80,7 @@ const CardBlog = ({ blog = {} }) => {
             WebkitBoxOrient: "vertical",
           }}
         >
-          {displayDescription}
+          {subtitle}
         </Typography>
         <Box
           sx={{
