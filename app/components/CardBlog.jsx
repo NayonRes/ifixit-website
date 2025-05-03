@@ -82,7 +82,7 @@ const CardBlog = ({ blog = {} }) => {
         >
           {subtitle}
         </Typography>
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
             gap: 1.5,
@@ -109,7 +109,7 @@ const CardBlog = ({ blog = {} }) => {
               {formattedDate}
             </Typography>
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </Link>
   );

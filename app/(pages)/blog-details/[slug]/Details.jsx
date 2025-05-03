@@ -6,6 +6,7 @@ import SectionSeven from "@/app/components/home_page/SectionSeven";
 import DetailsText from "./DetailsText";
 import axios from "axios";
 import List from "../../blog/List";
+import BlogLoading from "./BlogLoading";
 
 const Details = ({ param }) => {
   const [blogs, setBlogs] = useState({});
@@ -41,7 +42,12 @@ const Details = ({ param }) => {
       </Container>
     );
   }
-  return (
+  return loading ? (
+    <Box>
+      {/* <CircularProgress /> */}
+      <BlogLoading />
+    </Box>
+  ) : (
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <Box

@@ -7,6 +7,7 @@ import ReactPaginate from "react-paginate";
 import axios from "axios";
 import { CircularProgress, Typography, Container } from "@mui/material";
 import "./paginate.css";
+import BlogLoading from "./BlogLoading";
 
 export default function List() {
   const [blogs, setBlogs] = useState([]);
@@ -68,8 +69,9 @@ export default function List() {
     <Container maxWidth="lg">
       <Box sx={{ width: "100%", py: 0 }}>
         {loading ? (
-          <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
-            <CircularProgress />
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            {/* <CircularProgress /> */}
+            <BlogLoading />
           </Box>
         ) : (
           <>
@@ -85,7 +87,7 @@ export default function List() {
             <Grid container spacing={6}>
               {blogs.length > 0 ? (
                 blogs.map((blog, index) => (
-                  <Grid size={{ xs: 12, sm: 6, md: 3 }} key={blog._id || index}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={blog._id || index}>
                     <CardBlog blog={blog} />
                   </Grid>
                 ))
