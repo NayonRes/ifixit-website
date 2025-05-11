@@ -29,12 +29,23 @@ const ServiceCard = ({ item }) => {
           />
         </Box>
         <Box sx={{ textAlign: "center" }}>
-          <Typography
-            variant="base"
-            sx={{ mt: 3, fontWeight: 600, textAlign: "center" }}
-          >
-            {item?.title}
-          </Typography>
+          <Box sx={{ mt: 3 }}>
+            <Typography
+              variant="base"
+              sx={{ mt: 1, fontWeight: 600, textAlign: "center",lineHeight:"24px" }}
+            >
+              {item?.title}
+            </Typography>
+            {item?.repair_info?.length === 1 && (
+              <Typography
+                variant="medium"
+                color="text.light"
+                sx={{ fontWeight: 600, textAlign: "center" }}
+              >
+                Tk {item?.repair_info[0]?.repair_cost}
+              </Typography>
+            )}
+          </Box>
           <Button
             variant="text"
             color="primary"

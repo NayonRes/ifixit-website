@@ -136,7 +136,7 @@ function List({
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <Grid container spacing={4}>
-        <Grid size={{ xs: 12, sm: 12, md: 3 }}>
+        <Grid size={{ xs: 12, sm: 12, md: 2.5 }}>
           <ModelList
             modelList={modelList}
             modelLoading={modelLoading}
@@ -144,7 +144,7 @@ function List({
             model_id={model_id}
           />
         </Grid>
-        <Grid size={{ xs: 12, sm: 12, md: 9 }}>
+        <Grid size={{ xs: 12, sm: 12, md: 9.5 }}>
           <ServiceList
             serviceList={serviceList}
             serviceLoading={serviceLoading}
