@@ -42,7 +42,7 @@ const ModelCard = ({ item }) => {
         <img
           loading="lazy"
           src={item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"}
-          alt=""
+          alt={item?.name}
           style={{ maxWidth: "100%" }}
           className="image"
         />

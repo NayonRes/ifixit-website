@@ -77,7 +77,7 @@ const Banner = () => {
 
               px: { xs: 1, sm: 0 },
               display: { xs: "block", md: "none" },
-              mb:2
+              mb: 2,
             }}
           >
             Powerful, self-serve team engagement tools and analytics.
@@ -102,7 +102,7 @@ const Banner = () => {
             <img
               loading="lazy"
               src="/home_banner/banner1.jpg"
-              alt=""
+              alt="ifixit workshop"
               style={{ maxWidth: "100%" }}
             />
           </Box>
@@ -110,13 +110,13 @@ const Banner = () => {
             <img
               loading="lazy"
               src="/home_banner/banner2.jpg"
-              alt=""
+              alt="ifixit workshop"
               style={{ maxWidth: "100%" }}
             />
             <img
               loading="lazy"
               src="/home_banner/banner3.jpg"
-              alt=""
+              alt="ifixit workshop"
               style={{ maxWidth: "100%" }}
             />
           </Box>

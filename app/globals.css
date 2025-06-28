@@ -11,9 +11,9 @@
 :root {
   --primary: #f57042;
   --font-inter: var(--font-inter), sans-serif;
-  --font-arimo: var(--font-arimo), sans-serif;
+  /* --font-arimo: var(--font-arimo), sans-serif;
   --font-playfair: var(--font-playfair), serif;
-  --font-tinos: var(--font-tinos), serif;
+  --font-tinos: var(--font-tinos), serif; */
 }
 
 html,
@@ -312,4 +312,13 @@ input[type="number"]::-webkit-outer-spin-button {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 0); }
+  20% { transform: translate(-1px, 0); }
+  40% { transform: translate(1px, 0); }
+  60% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 0); }
+  100% { transform: translate(0, 0); }
 }

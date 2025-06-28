@@ -12,7 +12,7 @@ const arimo = Arimo({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  variable: '--font-arimo',
+  variable: "--font-arimo",
 });
 
 const playfair_display = Playfair_Display({
@@ -20,7 +20,7 @@ const playfair_display = Playfair_Display({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  variable: '--font-playfair',
+  variable: "--font-playfair",
 });
 
 const tinos = Tinos({
@@ -28,7 +28,7 @@ const tinos = Tinos({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  variable: '--font-tinos',
+  variable: "--font-tinos",
 });
 
 const inter = Inter({
@@ -36,7 +36,7 @@ const inter = Inter({
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
-  variable: '--font-inter',
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -46,7 +46,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${arimo.variable} ${playfair_display.variable} ${tinos.variable}`}>
+    // <html lang="en" className={`${inter.variable} ${arimo.variable} ${playfair_display.variable} ${tinos.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body className="font-sans">
         <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>

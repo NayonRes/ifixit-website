@@ -97,7 +97,7 @@ const theme = createTheme({
       fontSize: "3.75rem", //60px
       lineHeight: "4.25rem", // 68px
       fontWeight: 700,
-      fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
+      // fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
       display: "block",
 
       [createTheme().breakpoints.down("lg")]: {
@@ -116,7 +116,7 @@ const theme = createTheme({
       fontSize: "3rem", //42px
       lineHeight: "3.2rem", // 48px
       fontWeight: 700,
-      fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
+      // fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
       display: "block",
 
       [createTheme().breakpoints.down("lg")]: {
@@ -137,7 +137,7 @@ const theme = createTheme({
       lineHeight: "1.75rem", // 28px
       fontWeight: 600,
       display: "block",
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("lg")]: {
         fontSize: "1.5rem", // Adjust for medium screens
       },
@@ -153,7 +153,7 @@ const theme = createTheme({
       lineHeight: "3.25rem", // 52px
       fontWeight: 700,
       display: "block",
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "1.125rem", // Adjust for medium screens
         lineHeight: "2rem", // 32px
@@ -168,13 +168,13 @@ const theme = createTheme({
       //   lineHeight: "3.25rem", // 52px
       fontWeight: 500,
       display: "block",
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
     },
     subtitle1: {
       fontSize: "1.13rem", //18px
       fontWeight: 500,
       display: "block",
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "0.8rem", // Adjust for medium screens
       },
@@ -184,7 +184,7 @@ const theme = createTheme({
       lineHeight: "2.125rem", // 34px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "1rem", // Adjust for medium screens
       },
@@ -198,7 +198,7 @@ const theme = createTheme({
       lineHeight: "1.75rem", // 28px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "0.875rem", // Adjust for medium screens
       },
@@ -211,7 +211,7 @@ const theme = createTheme({
       lineHeight: "1.125rem", // 18px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
       [createTheme().breakpoints.down("md")]: {
         fontSize: "0.75rem", // Adjust for medium screens
       },
@@ -224,7 +224,7 @@ const theme = createTheme({
       lineHeight: "1rem", // 16px
       display: "block",
       fontWeight: 400,
-      fontFamily: '"Inter", sans-serif',
+      // fontFamily: '"Inter", sans-serif',
     },
   },
   components: {

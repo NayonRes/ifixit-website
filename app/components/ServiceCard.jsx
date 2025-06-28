@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
@@ -16,23 +16,44 @@ const ServiceCard = ({ item }) => {
           borderRadius: 6,
           border: "1px solid #ddd",
           height: "100%",
+
+          transition: "0.3s",
+          "& .image": {
+            transition: "transform 0.3s ease-in-out",
+          },
+          "&:hover": {
+            // background: "red",
+            // boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+            boxShadow: "rgba(0, 0, 0, 0.09) 0px 3px 12px",
+            "& .image": {
+              // animation: "shake 0.4s ease-in-out",
+              transform: "scale(1.1)",
+            },
+          },
         }}
       >
         <Box sx={{ textAlign: "center" }}>
-          <img
-            src={
-              item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"
-            }
-            alt=""
-            style={{ maxWidth: "100%" }}
-            className="image"
-          />
+          <Avatar sx={{ width: 120, height: 120, bgcolor: "#f5f5f5", p: 3 }}>
+            <img
+              src={
+                item?.image?.url?.length > 0 ? item?.image?.url : "/noImage.jpg"
+              }
+              alt=""
+              style={{ maxWidth: "100%" }}
+              className="image"
+            />
+          </Avatar>
         </Box>
         <Box sx={{ textAlign: "center" }}>
           <Box sx={{ mt: 3 }}>
             <Typography
               variant="base"
-              sx={{ mt: 1, fontWeight: 600, textAlign: "center",lineHeight:"24px" }}
+              sx={{
+                mt: 1,
+                fontWeight: 600,
+                textAlign: "center",
+                lineHeight: "24px",
+              }}
             >
               {item?.title}
             </Typography>
