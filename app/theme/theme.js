@@ -94,7 +94,7 @@ const theme = createTheme({
       // },
     },
     h2: {
-      fontSize: "3.75rem", //60px
+      fontSize: "3rem", //60px
       lineHeight: "4.25rem", // 68px
       fontWeight: 700,
       // fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
@@ -113,7 +113,7 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontSize: "3rem", //42px
+      fontSize: "2.50rem", //42px
       lineHeight: "3.2rem", // 48px
       fontWeight: 700,
       // fontFamily: '"Inter", sans-serif', // alternative of  Times New Roman
@@ -149,7 +149,7 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "1.5rem", //24px
+      fontSize: "1.25rem", //24px
       lineHeight: "3.25rem", // 52px
       fontWeight: 700,
       display: "block",
@@ -164,14 +164,14 @@ const theme = createTheme({
       },
     },
     h6: {
-      fontSize: "1.25rem", //20px
+      fontSize: "1.125rem", //20px
       //   lineHeight: "3.25rem", // 52px
       fontWeight: 500,
       display: "block",
       // fontFamily: '"Inter", sans-serif',
     },
     subtitle1: {
-      fontSize: "1.13rem", //18px
+      fontSize: "1rem", //18px
       fontWeight: 500,
       display: "block",
       // fontFamily: '"Inter", sans-serif',
@@ -180,7 +180,7 @@ const theme = createTheme({
       },
     },
     base: {
-      fontSize: "1.125rem", //18px
+      fontSize: "1rem", //18px
       lineHeight: "2.125rem", // 34px
       display: "block",
       fontWeight: 400,
@@ -194,7 +194,7 @@ const theme = createTheme({
       },
     },
     medium: {
-      fontSize: "1rem", //16px
+      fontSize: ".875rem", //16px
       lineHeight: "1.75rem", // 28px
       display: "block",
       fontWeight: 400,
@@ -207,7 +207,7 @@ const theme = createTheme({
       },
     },
     small: {
-      fontSize: "0.875rem", //14px
+      fontSize: "0.75rem", //14px
       lineHeight: "1.125rem", // 18px
       display: "block",
       fontWeight: 400,
@@ -225,6 +225,16 @@ const theme = createTheme({
       display: "block",
       fontWeight: 400,
       // fontFamily: '"Inter", sans-serif',
+    },
+  },
+
+  breakpoints: {
+    values: {
+      xs: 0, // mobile
+      sm: 600, // small tablet
+      md: 900, // tablet/desktop
+      lg: 1200, // large desktop
+      xl: 1200, // extra large screen
     },
   },
   components: {

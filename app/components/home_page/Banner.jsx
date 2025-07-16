@@ -2,6 +2,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import React from "react";
 import styles from "../../theme/styles";
 import Link from "next/link";
+import Grid from "@mui/material/Grid2";
 
 const Banner = () => {
   return (
@@ -92,10 +93,11 @@ const Banner = () => {
           </Link>
           <Button variant="outlined">Buy Now</Button>
         </Box>
-        <Box
+        {/* <Box
           sx={{
             gap: 4,
             display: styles.desktopOnlyFlex,
+            background: "red",
           }}
         >
           <Box>
@@ -120,7 +122,63 @@ const Banner = () => {
               style={{ maxWidth: "100%" }}
             />
           </Box>
-        </Box>
+        </Box> */}
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            // border: "2px solid red",
+            display: {
+              xs: "none",
+              sm: "none",
+              md: "flex",
+              lg: "flex",
+              xl: "flex",
+            },
+          }}
+        >
+          <Grid size={8} sx={{}}>
+            <img
+              loading="lazy"
+              src="/home_banner/banner1.jpg"
+              alt="ifixit workshop"
+              style={{ width: "100%" }}
+            />
+          </Grid>
+          <Grid size={4} sx={{}}>
+            <Grid
+              container
+              spacing={4}
+              direction="column"
+              justifyContent="space-between"
+              sx={{
+                height: "100%",
+
+                // gap: 4,
+                // display: styles.desktopOnlyFlex,
+              }}
+            >
+              <Grid size={12}>
+                {" "}
+                <img
+                  loading="lazy"
+                  src="/home_banner/banner2.jpg"
+                  alt="ifixit workshop"
+                  style={{ width: "100%" }}
+                />
+              </Grid>
+              <Grid size={12}>
+                {" "}
+                <img
+                  loading="lazy"
+                  src="/home_banner/banner3.jpg"
+                  alt="ifixit workshop"
+                  style={{ width: "100%" }}
+                />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

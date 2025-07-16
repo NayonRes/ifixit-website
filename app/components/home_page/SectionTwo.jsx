@@ -31,7 +31,7 @@ const SectionTwo = () => {
             <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
               <Grid container spacing={3}>
                 <Grid size={6} sx={style.inner}>
-                  <Typography variant="h2" color="primary">
+                  <Typography variant="h3" color="primary">
                     5400+
                   </Typography>
                   <Typography
@@ -43,7 +43,7 @@ const SectionTwo = () => {
                   </Typography>
                 </Grid>
                 <Grid size={6} sx={style.inner}>
-                  <Typography variant="h2" color="primary">
+                  <Typography variant="h3" color="primary">
                     5400+
                   </Typography>
                   <Typography
@@ -55,7 +55,7 @@ const SectionTwo = () => {
                   </Typography>
                 </Grid>
                 <Grid size={6} sx={style.inner}>
-                  <Typography variant="h2" color="primary">
+                  <Typography variant="h3" color="primary">
                     5400+
                   </Typography>
                   <Typography
@@ -67,7 +67,7 @@ const SectionTwo = () => {
                   </Typography>
                 </Grid>
                 <Grid size={6} sx={style.inner}>
-                  <Typography variant="h2" color="primary">
+                  <Typography variant="h3" color="primary">
                     5400+
                   </Typography>
                   <Typography
