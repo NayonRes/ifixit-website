@@ -50,14 +50,24 @@ const DetailsMultiple = ({ item }) => {
                   style={{ width: "100%" }}
                 />
               </Box>
-              <Box>
+              <Box sx={{ textAlign: "center" }}>
                 <Typography variant="h5" sx={{ mb: 1, fontSize: "1.2rem" }}>
                   {item?.name}
                 </Typography>
-                <Typography variant="h6" color="text.light" sx={{ fontWeight: 600, mb: 1, fontSize: "1.2rem" }}>
-                  Repair Cost -{" "}
+
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <b>Quality:</b> {item?.product_variation_data?.quality}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <b>Charge:</b> Assemble Charge: {item?.repair_cost}/-TK
+                </Typography>
+                <Typography
+                  variant="h6"
+                  color="text.light"
+                  sx={{ fontWeight: 600, mb: 1, fontSize: "1.2rem" }}
+                >
                   <span style={{ color: "#E96A3F" }}>
-                    ৳{item?.repair_cost} TK
+                    ৳{item?.product_variation_data?.price} TK
                   </span>
                 </Typography>
                 {/* start  */}
@@ -88,6 +98,7 @@ const DetailsMultiple = ({ item }) => {
                     sx={{
                       display: "flex",
                       alignItems: "center",
+                      justifyContent: "center",
                       gap: 1,
                       my: 2,
                     }}
@@ -105,14 +116,16 @@ const DetailsMultiple = ({ item }) => {
                   </Box>
                 )}
                 {/* end  */}
-                <Box sx={{ border: '1px solid #FF8455', p:2, borderRadius: 4 }} >  
-                <Typography
-                  variant="body1"
-                  dangerouslySetInnerHTML={{
-                    __html: item?.details,
-                  }}
-                />
-                </Box>
+                {/* <Box
+                  sx={{ border: "1px solid #FF8455", p: 2, borderRadius: 4 }}
+                >
+                  <Typography
+                    variant="body1"
+                    dangerouslySetInnerHTML={{
+                      __html: item?.details,
+                    }}
+                  />
+                </Box> */}
               </Box>
             </Box>
           </Grid>
