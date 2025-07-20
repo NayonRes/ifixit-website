@@ -2,9 +2,35 @@ import { Avatar, Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
+import { useParams, useSearchParams } from "next/navigation";
 const ServiceCard = ({ item }) => {
+  const params = useParams();
+  const searchParams = useSearchParams();
+  const device_id = searchParams.get("device_id");
+  const model_id = searchParams.get("model_id");
+  const devices = params.devices;
+  const slug = params.slug;
+
+  const deviceName = searchParams.get("device_name");
   return (
-    <Link href={`/service-details/${item._id}`}>
+    <Link
+      // href={`/service-details/${item._id}`}
+
+      href={`/services/${slug}/${devices
+        .replace(/series/gi, "")
+        .trim()
+        ?.toLowerCase()
+        .replace(/\s+/g, "-")}/${item?.title
+        .replace(/series/gi, "")
+        .trim()
+        ?.toLowerCase()
+        .replace(
+          /\s+/g,
+          "-"
+        )}/details?device_id=${device_id}&model_id=${model_id}&device_name=${deviceName}&sdid=${
+        item?._id
+      }`}
+    >
       <Box
         sx={{
           p: 3,

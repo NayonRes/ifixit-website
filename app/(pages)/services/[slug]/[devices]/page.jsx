@@ -3,10 +3,10 @@ import { Box, Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import PageHeader from "@/app/components/PageHeader";
 import List from "./List";
-import SectionSix from "../../../components/home_page/SectionSix";
-import SectionSeven from "../../../components/home_page/SectionSeven";
 import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
+import SectionSix from "@/app/components/home_page/SectionSix";
+import SectionSeven from "@/app/components/home_page/SectionSeven";
 
 const page = () => {
   const params = useParams();

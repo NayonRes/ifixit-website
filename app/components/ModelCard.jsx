@@ -6,11 +6,22 @@ import React from "react";
 const ModelCard = ({ item }) => {
   const params = useParams();
   const searchParams = useSearchParams();
-
+  const devices = params.devices;
+  const slug = params.slug;
   const deviceName = searchParams.get("device_name");
+  const device_id = searchParams.get("device_id");
+
+  // const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
+  // const model_slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
   return (
     <Link
-      href={`/device-list-category?device_id=${params.slug}&model_id=${item?._id}&device_name=${deviceName}`}
+      href={`/services/${slug}/${item.name
+        .replace(/series/gi, "")
+        .trim()
+        ?.toLowerCase()
+        .replace(/\s+/g, "-")}/service-list?device_id=${device_id}&model_id=${
+        item?._id
+      }&device_name=${deviceName}`}
     >
       <Box
         sx={{

@@ -15,11 +15,15 @@ const ServiceSingle = ({ list }) => {
     //     : `/service/${item._id}`
     // }
     console.log("item", item);
-
+    const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
+    const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
     if (list?.some((el) => el.parent_id === item._id)) {
-      router.push(`/services/${item._id}`);
+      router.push(`/services/${slug}-repair?sid=${item._id}`);
     } else {
-      router.push(`/device-list/${item._id}?device_name=${item.name}`);
+      router.push(
+        `services/${slug}-repair/device-list?device_id=${item._id}&device_name=${item.name}`
+        // `services/device-list/${slug}?device_id=${item._id}&device_name=${item.name}`
+      );
     }
   };
   return (
