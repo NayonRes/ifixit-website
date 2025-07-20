@@ -4,6 +4,12 @@ import PageHeader from "@/app/components/PageHeader";
 import List from "./List";
 import SectionSeven from "../../components/home_page/SectionSeven";
 
+export const metadata = {
+  title: "iFixit - Blog",
+  description: "iFixit Blog",
+  keywords: "mobile blog, iphone blog",
+};
+
 const page = () => {
   return (
     <Box>

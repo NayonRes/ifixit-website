@@ -45,7 +45,11 @@ const style = {
     gap: 2,
   },
 };
-
+export const metadata = {
+  title: "iFixit - Contact Us",
+  description: "iFixit Contact Us",
+  keywords: "ifixit Contact Us",
+};
 const page = () => {
   return (
     <Box>

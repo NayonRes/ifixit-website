@@ -6,7 +6,11 @@ import Service from "./Service";
 import Line from "@/app/components/Line";
 import SectionSix from "@/app/components/home_page/SectionSix";
 import SectionSeven from "@/app/components/home_page/SectionSeven";
-
+export const metadata = {
+  title: "iFixit - Services",
+  description: "iFixit Services",
+  keywords: "mobile fix, iphone fix",
+};
 const page = () => {
   return (
     <Box>
