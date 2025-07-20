@@ -188,19 +188,21 @@ const page = () => {
               </Box> */}
               </Box>
             </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 6 }}>
-              <img
-                loading="lazy"
-                src={
-                  serviceDetails?.steps[0]?.step_image?.url?.length > 0
-                    ? serviceDetails?.steps[0]?.step_image?.url
-                    : "/noImage.jpg"
-                }
-                alt=""
-                style={{ maxWidth: "100%" }}
-              />
-              {/* <img src="/details.png" alt="" style={{ maxWidth: "100%" }} /> */}
-            </Grid>
+            {serviceDetails?.steps[0]?.step_image?.url && (
+              <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+                <img
+                  loading="lazy"
+                  src={
+                    serviceDetails?.steps[0]?.step_image?.url?.length > 0
+                      ? serviceDetails?.steps[0]?.step_image?.url
+                      : "/noImage.jpg"
+                  }
+                  alt=""
+                  style={{ maxWidth: "100%" }}
+                />
+                {/* <img src="/details.png" alt="" style={{ maxWidth: "100%" }} /> */}
+              </Grid>
+            )}
           </Grid>
         )}
 
