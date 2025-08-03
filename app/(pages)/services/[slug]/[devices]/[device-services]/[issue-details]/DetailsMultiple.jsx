@@ -52,7 +52,8 @@ const DetailsMultiple = ({ item }) => {
               </Box>
               <Box sx={{ textAlign: "center" }}>
                 <Typography variant="h5" sx={{ mb: 1, fontSize: "1.2rem" }}>
-                  {item?.name}
+                  {item?.product_data?.name}{" "}
+                  {item?.product_variation_data?.name}
                 </Typography>
 
                 <Typography variant="body1" sx={{ mb: 1 }}>
