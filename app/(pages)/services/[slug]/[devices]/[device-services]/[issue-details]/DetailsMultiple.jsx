@@ -56,7 +56,7 @@ const DetailsMultiple = ({ item }) => {
                   sx={{ mb: 1, fontSize: "1.2rem", lineHeight: "32px" }}
                 >
                   {item?.product_data?.name}{" "}
-                  {item?.product_variation_data?.name}
+                  {/* {item?.product_variation_data?.name} */}
                 </Typography>
 
                 <Typography variant="body1" sx={{ mb: 1 }}>
