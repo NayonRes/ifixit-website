@@ -42,8 +42,8 @@ const DetailsMultiple = ({ item }) => {
                 <img
                   loading="lazy"
                   src={
-                    item?.repair_image?.url?.length > 0
-                      ? item?.repair_image?.url
+                    item?.product_variation_data?.images?.length > 0
+                      ? item?.product_variation_data?.images[0]?.url
                       : "/noImage.jpg"
                   }
                   alt=""
