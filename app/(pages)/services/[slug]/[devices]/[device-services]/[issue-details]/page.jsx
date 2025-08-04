@@ -116,7 +116,13 @@ const page = () => {
         <Typography
           variant="body1"
           color="text.light"
-          sx={{ mt: 1, mb: 8 }}
+          sx={{
+            mt: 1,
+            mb: 8,
+            "& p": {
+              marginBottom: "20px",
+            },
+          }}
           dangerouslySetInnerHTML={{ __html: serviceDetails?.description }}
         />
 
