@@ -100,7 +100,7 @@ const page = () => {
   return (
     <Box>
       <Container maxWidth="xl">
-        {serviceDetails?.repair_info?.length > 0 &&
+        {/* {serviceDetails?.repair_info?.length > 0 &&
           serviceDetails?.repair_info?.length === 1 &&
           serviceDetails?.repair_info?.map((item) => (
             <Details key={item._id} item={item} />
@@ -111,8 +111,20 @@ const page = () => {
             serviceDetails?.repair_info?.map((item) => (
               <DetailsMultiple key={item._id} item={item} />
             ))}
-        </Grid>
-
+        </Grid> */}
+        {serviceDetails?.repair_info?.length > 0 &&
+          (serviceDetails.repair_info.length === 1 &&
+          !serviceDetails.repair_info[0]?.product_id ? (
+            serviceDetails.repair_info?.map((item) => (
+              <Details key={item._id} item={item} />
+            ))
+          ) : (
+            <Grid container spacing={3} sx={{ mb: 10 }}>
+              {serviceDetails.repair_info?.map((item) => (
+                <DetailsMultiple key={item._id} item={item} />
+              ))}
+            </Grid>
+          ))}
         <Typography
           variant="body1"
           color="text.light"

@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid2";
 
 const Details = ({ item }) => {
   return (
-    <Box>
+    <Box sx={{mb:6}}>
       <Box
         sx={{
           border: "1px solid #ddd",

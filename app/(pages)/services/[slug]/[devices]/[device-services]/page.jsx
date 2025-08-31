@@ -74,7 +74,7 @@ const Page = () => {
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <PageHeader
           title={`${deviceName} Repair Service`}
-          subtitle={`Choose the ${deviceName} model you need to repair`}
+          subtitle={`Choose the ${deviceName} model you need to repair 222`}
         />
         <List
           modelList={memoizedModelList}
