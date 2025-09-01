@@ -15,7 +15,7 @@ const ModelList = memo(({ modelList, modelLoading, device_id, model_id }) => {
   const searchParams = useSearchParams();
 
   const devices = params.devices;
-  const slug = params.slug; 
+  const slug = params.slug;
 
   const deviceName = searchParams.get("device_name");
   return (
@@ -114,13 +114,26 @@ const ServiceList = memo(({ serviceList, serviceLoading }) => {
   return (
     <Box>
       <Grid container spacing={3}>
-        {!serviceLoading &&
+        {/* {!serviceLoading &&
           serviceList?.length > 0 &&
           serviceList.map((item) => (
             <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4, xl: 3 }} key={item._id}>
               <ServiceCard item={item} />
             </Grid>
-          ))}
+          ))} */}
+        {!serviceLoading &&
+          serviceList?.length > 0 &&
+          serviceList
+            .slice() // make a copy so you don't mutate the original array
+            .sort((a, b) => a.order_no - b.order_no) // sort by order_no
+            .map((item) => (
+              <Grid
+                size={{ xs: 12, sm: 6, md: 6, lg: 4, xl: 3 }}
+                key={item._id}
+              >
+                <ServiceCard item={item} />
+              </Grid>
+            ))}
       </Grid>
       <Box>
         {serviceLoading && <SectionLoading3 />}

@@ -83,15 +83,21 @@ const ServiceCard = ({ item }) => {
             >
               {item?.title}
             </Typography>
-            {item?.repair_info?.length === 1 && (
-              <Typography
-                variant="medium"
-                color="text.light"
-                sx={{ fontWeight: 600, textAlign: "center" }}
-              >
-                Tk {item?.repair_info[0]?.repair_cost}
-              </Typography>
-            )}
+            {
+              // item?.repair_info?.length === 1 &&
+
+              item?.repair_info?.length > 0 &&
+                item.repair_info.length === 1 &&
+                !item.repair_info[0]?.product_id && (
+                  <Typography
+                    variant="medium"
+                    color="text.light"
+                    sx={{ fontWeight: 600, textAlign: "center" }}
+                  >
+                    Tk {item?.repair_info[0]?.repair_cost}
+                  </Typography>
+                )
+            }
           </Box>
           <Button
             variant="text"
