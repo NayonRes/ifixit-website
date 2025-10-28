@@ -5,15 +5,14 @@ import Line from "@/app/components/Line";
 import PageHeader from "@/app/components/PageHeader";
 import SectionSix from "@/app/components/home_page/SectionSix";
 import SectionSeven from "@/app/components/home_page/SectionSeven";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Skeleton, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import RepairServiceCard from "@/app/components/RepairServiceCard";
 import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 import { useRouter } from "next/navigation";
-import SectionLoading from "../../components/SectionLoading";
 
-const pageContent = async () => {
+const ChildDevices = ({ list }) => {
   // const data = await fetch(
   //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?parent_id=null&status=true`
   // );
@@ -27,8 +26,10 @@ const pageContent = async () => {
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
-  const [list, setList] = useState([]);
+  const sid = searchParams.get("sid");
+  // const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
+  console.log("sid", sid);
 
   const navigate = (item) => {
     // href={
@@ -37,32 +38,36 @@ const pageContent = async () => {
     //     : `/service/${item._id}`
     // }
     console.log("item", item);
-
+    const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
+    const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
     if (list?.some((el) => el.parent_id === item._id)) {
-      router.push(`/services/${item._id}`);
+      // router.push(`/service/${item._id}`);
+      router.push(`/services/${slug}-repair?sid=${item._id}`);
     } else {
-      // router.push(`/device-list/${item._id}?device_name=${item.name}`);
-      router.push(item?.endpoint);
+      router.push(
+        `/services/${slug}-repair/device-list?device_id=${item._id}&device_name=${item.name}`
+        // router.push(`/device-list/${item._id}?device_name=${item.name}`);
+      );
     }
   };
 
-  const getData = async () => {
-    setLoading(true);
+  // const getData = async () => {
+  //   setLoading(true);
 
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`;
-    let allData = await getDataWithToken(url);
+  //   let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?parent_id=${sid}&status=true`;
+  //   let allData = await getDataWithToken(url);
 
-    console.log("after childDevice list", allData?.data?.data);
+  //   console.log("after childDevice list", allData?.data?.data);
 
-    if (allData.status >= 200 && allData.status < 300) {
-      setList(allData?.data?.data);
-    } else {
-      setLoading(false);
-    }
-    setLoading(false);
-  };
+  //   if (allData.status >= 200 && allData.status < 300) {
+  //     setList(allData?.data?.data);
+  //   } else {
+  //     setLoading(false);
+  //   }
+  //   setLoading(false);
+  // };
   useEffect(() => {
-    getData();
+    // getData();
   }, []);
   return (
     <Box>
@@ -86,17 +91,23 @@ const pageContent = async () => {
           <Typography variant="h3">Available Services</Typography>
         </Box>
         <Grid container spacing={3}>
-          {list?.length > 0 &&
-            list
-              ?.filter((el) => el.parent_id === null)
-              ?.map((item, i) => (
-                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4 }} key={i}>
-                  <RepairServiceCard item={item} navigate={navigate} />
+          {!loading &&
+            list?.length > 0 &&
+            list?.map((item, i) => (
+              <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
+                <RepairServiceCard item={item} navigate={navigate} />
+              </Grid>
+            ))}
+          {loading && (
+            <>
+              {[...Array(6).keys()]?.map((item, i) => (
+                <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
+                  <Skeleton variant="rectangular" height={300} />
                 </Grid>
               ))}
+            </>
+          )}
         </Grid>
-
-        {loading && <SectionLoading />}
       </Container>
       <Line />
       <SectionSix />
@@ -106,4 +117,4 @@ const pageContent = async () => {
   );
 };
 
-export default pageContent;
+export default ChildDevices;

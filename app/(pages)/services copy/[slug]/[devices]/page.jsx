@@ -3,32 +3,27 @@ import { Box, Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import PageHeader from "@/app/components/PageHeader";
 import List from "./List";
-import { useParams, useSearchParams, usePathname } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { getDataWithToken } from "@/app/services/GetDataService";
 import SectionSix from "@/app/components/home_page/SectionSix";
 import SectionSeven from "@/app/components/home_page/SectionSeven";
-import ChildDevices from "./ChildDevices";
 
 const page = () => {
   const params = useParams();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
   const deviceName = searchParams.get("device_name");
   const deviceId = searchParams.get("device_id");
   const [modelList, setModelList] = useState([]);
-  const [isChildDevice, setIsChildDevice] = useState(false);
   const [loading, setLoading] = useState(false);
   const getData = async () => {
     setLoading(true);
 
-    // let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${deviceId}&status=true`;
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/public/model-get-by-device?endpoint=${pathname}&status=true`;
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${deviceId}&status=true`;
     let allData = await getDataWithToken(url);
 
     console.log("after childDevice list", allData?.data?.data);
 
     if (allData.status >= 200 && allData.status < 300) {
-      setIsChildDevice(allData?.data?.childDevice);
       setModelList(allData?.data?.data);
     } else {
       setLoading(false);
@@ -38,9 +33,7 @@ const page = () => {
   useEffect(() => {
     getData();
   }, []);
-  if (isChildDevice) {
-    return <ChildDevices list={modelList} />;
-  }
+
   return (
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>

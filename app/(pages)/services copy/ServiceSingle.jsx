@@ -2,8 +2,8 @@
 import React from "react";
 import Grid from "@mui/material/Grid2";
 
-import RepairServiceCard from "../RepairServiceCard";
 import { useRouter } from "next/navigation";
+import RepairServiceCard from "@/app/components/RepairServiceCard";
 
 const ServiceSingle = ({ list }) => {
   const router = useRouter();
@@ -18,12 +18,14 @@ const ServiceSingle = ({ list }) => {
     const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
     const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
     if (list?.some((el) => el.parent_id === item._id)) {
+      // router.push(`/services/${item._id}`);
       router.push(`/services/${slug}-repair?sid=${item._id}`);
     } else {
-      // router.push(
-      //   `services/${slug}-repair/device-list?device_id=${item._id}&device_name=${item.name}`
-      // );
-      router.push(item?.endpoint);
+      // router.push(`/device-list/${item._id}?device_name=${item.name}`);
+      router.push(
+        `services/${slug}-repair/device-list?device_id=${item._id}&device_name=${item.name}`
+        // `services/device-list/${slug}?device_id=${item._id}&device_name=${item.name}`
+      );
     }
   };
   return (

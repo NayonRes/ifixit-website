@@ -22,10 +22,11 @@ const ServiceSingle = ({ list }) => {
       router.push(`/services/${slug}-repair?sid=${item._id}`);
     } else {
       // router.push(`/device-list/${item._id}?device_name=${item.name}`);
-      router.push(
-        `services/${slug}-repair/device-list?device_id=${item._id}&device_name=${item.name}`
-        // `services/device-list/${slug}?device_id=${item._id}&device_name=${item.name}`
-      );
+      // router.push(
+      //   `services/${slug}-repair/device-list?device_id=${item._id}&device_name=${item.name}`
+      // );
+
+      router.push(item?.endpoint);
     }
   };
   return (
