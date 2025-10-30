@@ -13,16 +13,6 @@ import { getDataWithToken } from "@/app/services/GetDataService";
 import { useRouter } from "next/navigation";
 
 const ChildDevices = ({ list }) => {
-  // const data = await fetch(
-  //   `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?parent_id=null&status=true`
-  // );
-
-  // const devices = await data.json();
-  // console.log(
-  //   "process.env.NEXT_PUBLIC_BASE_URL",
-  //   process.env.NEXT_PUBLIC_BASE_URL
-  // );
-  // console.log("devices", devices);
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
@@ -32,11 +22,7 @@ const ChildDevices = ({ list }) => {
   console.log("sid", sid);
 
   const navigate = (item) => {
-    // href={
-    //   item?.parent_id === null
-    //     ? `/device-list/${item._id}`
-    //     : `/service/${item._id}`
-    // }
+   
     console.log("item", item);
     const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
     const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");

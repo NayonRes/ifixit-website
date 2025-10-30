@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme/theme";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { UrlProvider } from "./context/UrlContext";
 
 // Optimize font loading with display: swap
 const arimo = Arimo({
@@ -51,13 +52,15 @@ export default function RootLayout({ children }) {
       <body className="font-sans">
         <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>
-            <div className="flex flex-col min-h-screen">
-              <header className="appbar_holder" id="header">
-                <Navbar />
-              </header>
-              <main className="flex-grow">{children}</main>
-              <Footer />
-            </div>
+            <UrlProvider>
+              <div className="flex flex-col min-h-screen">
+                <header className="appbar_holder" id="header">
+                  <Navbar />
+                </header>
+                <main className="flex-grow">{children}</main>
+                <Footer />
+              </div>
+            </UrlProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

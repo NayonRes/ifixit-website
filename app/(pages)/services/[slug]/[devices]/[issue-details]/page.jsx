@@ -19,6 +19,7 @@ import SectionLoadingDetails from "@/app/components/SectionLoadingDetails";
 import Details from "./Details";
 import DetailsMultiple from "./DetailsMultiple";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
+import { useUrl } from "@/app/context/UrlContext";
 
 const style = {
   ul: {
@@ -71,6 +72,8 @@ const style = {
 
 const page = () => {
   const params = useParams();
+  const { url, pathname, hash } = useUrl();
+  console.log("hash", hash);
   const searchParams = useSearchParams();
   const device_id = searchParams.get("device_id");
   const model_id = searchParams.get("model_id");
@@ -80,7 +83,8 @@ const page = () => {
 
   const getServiceList = async () => {
     setLoading(true);
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/service/public/${sdid}`;
+    let hashValue = hash && hash.startsWith('#') ? hash.slice(1) : hash;
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/public/service-details/${hashValue}`;
     let allData = await getDataWithToken(url);
 
     console.log("after childDevice list", allData?.data?.data);

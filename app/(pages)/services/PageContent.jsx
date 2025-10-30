@@ -31,6 +31,7 @@ const pageContent = async () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = (item) => {
+     
     // href={
     //   item?.parent_id === null
     //     ? `/device-list/${item._id}`

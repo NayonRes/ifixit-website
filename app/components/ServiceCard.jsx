@@ -3,33 +3,46 @@ import Link from "next/link";
 import React from "react";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { useParams, useSearchParams } from "next/navigation";
-const ServiceCard = ({ item }) => {
+import { useUrl } from "../context/UrlContext";
+const ServiceCard = ({ item, modelList }) => {
+  console.log("modelList 222", modelList);
+
   const params = useParams();
   const searchParams = useSearchParams();
+  const { url, pathname, hash } = useUrl();
   const device_id = searchParams.get("device_id");
   const model_id = searchParams.get("model_id");
   const devices = params.devices;
   const slug = params.slug;
 
   const deviceName = searchParams.get("device_name");
+
   return (
     <Link
-      // href={`/service-details/${item._id}`}
+      href={`${
+        item?.endpoints?.find(
+          (endpoint) =>
+            endpoint?.model_id ===
+            modelList?.find((model) => `#!${model?.endpoint}` === hash)?._id
+        )?.endpoint ?? "#"
+      }#${item?._id}`}
 
-      href={`/services/${slug}/${devices
-        .replace(/series/gi, "")
-        .trim()
-        ?.toLowerCase()
-        .replace(/\s+/g, "-")}/${item?.title
-        .replace(/series/gi, "")
-        .trim()
-        ?.toLowerCase()
-        .replace(
-          /\s+/g,
-          "-"
-        )}/details?device_id=${device_id}&model_id=${model_id}&device_name=${deviceName}&sdid=${
-        item?._id
-      }`}
+      // ${modelList?.find((model) => `#!${model?.endpoint}` === hash)?._model_id}`}
+
+      // href={`/services/${slug}/${devices
+      //   .replace(/series/gi, "")
+      //   .trim()
+      //   ?.toLowerCase()
+      //   .replace(/\s+/g, "-")}/${item?.title
+      //   .replace(/series/gi, "")
+      //   .trim()
+      //   ?.toLowerCase()
+      //   .replace(
+      //     /\s+/g,
+      //     "-"
+      //   )}/details?device_id=${device_id}&model_id=${model_id}&device_name=${deviceName}&sdid=${
+      //   item?._id
+      // }`}
     >
       <Box
         sx={{
@@ -82,6 +95,9 @@ const ServiceCard = ({ item }) => {
               }}
             >
               {item?.title}
+
+              <br />
+              {modelList?.find((model) => `#!${model?.endpoint}` === hash)?._id}
             </Typography>
             {
               // item?.repair_info?.length === 1 &&

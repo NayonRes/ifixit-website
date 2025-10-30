@@ -1,27 +1,27 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import Link from "next/link";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 import React from "react";
 
 const ModelCard = ({ item }) => {
   const params = useParams();
   const searchParams = useSearchParams();
-  const devices = params.devices;
-  const slug = params.slug;
-  const deviceName = searchParams.get("device_name");
-  const device_id = searchParams.get("device_id");
+  const pathname = usePathname();
+ 
 
   // const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
   // const model_slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
   return (
     <Link
-      href={`/services/${slug}/${item.name
-        .replace(/series/gi, "")
-        .trim()
-        ?.toLowerCase()
-        .replace(/\s+/g, "-")}/service-list?device_id=${device_id}&model_id=${
-        item?._id
-      }&device_name=${deviceName}`}
+      // href={`/services/${slug}/${item.name
+      //   .replace(/series/gi, "")
+      //   .trim()
+      //   ?.toLowerCase()
+      //   .replace(/\s+/g, "-")}/service-list?device_id=${device_id}&model_id=${
+      //   item?._id
+      // }&device_name=${deviceName}`}
+      href={`${pathname}#!${item?.endpoint}`}
     >
       <Box
         sx={{
@@ -47,7 +47,7 @@ const ModelCard = ({ item }) => {
           variant="base"
           sx={{ textAlign: "center", lineHeight: "35px", fontWeight: 600 }}
         >
-          {item?.name}
+          {item?.name} model1111
         </Typography>
 
         <img

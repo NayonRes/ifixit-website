@@ -9,6 +9,7 @@ const ServiceSingle = ({ list }) => {
   const router = useRouter();
   console.log("list", list);
   const navigate = (item) => {
+    
     // href={
     //   item?.parent_id === null
     //     ? `/device-list/${item._id}`
