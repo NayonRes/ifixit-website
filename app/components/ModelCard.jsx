@@ -8,7 +8,6 @@ const ModelCard = ({ item }) => {
   const params = useParams();
   const searchParams = useSearchParams();
   const pathname = usePathname();
- 
 
   // const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
   // const model_slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
@@ -47,7 +46,7 @@ const ModelCard = ({ item }) => {
           variant="base"
           sx={{ textAlign: "center", lineHeight: "35px", fontWeight: 600 }}
         >
-          {item?.name} model1111
+          {item?.name}
         </Typography>
 
         <img

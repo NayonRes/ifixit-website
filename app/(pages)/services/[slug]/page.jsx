@@ -10,6 +10,7 @@ import SectionSix from "@/app/components/home_page/SectionSix";
 import SectionSeven from "@/app/components/home_page/SectionSeven";
 import ChildDevices from "./ChildDevices";
 import ModelAndIssueList from "../model-and-service-list/ModelAndIssueList";
+import { ArticleJsonLd } from "next-seo";
 
 const page = () => {
   const params = useParams();
@@ -30,6 +31,7 @@ const page = () => {
   const [loading, setLoading] = useState(false);
   const [modelCode, setModelCode] = useState("");
   const [hydrated, setHydrated] = useState(false);
+  const [deviceInfo, setDeviceInfo] = useState({});
   const getData = async () => {
     setLoading(true);
 
@@ -42,6 +44,7 @@ const page = () => {
     if (allData.status >= 200 && allData.status < 300) {
       setIsChildDevice(allData?.data?.childDevice);
       setModelList(allData?.data?.data);
+      setDeviceInfo(allData?.data?.device);
     } else {
       setLoading(false);
     }
@@ -50,6 +53,84 @@ const page = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  // Update HTML metadata (title and meta tags) when deviceInfo changes
+  useEffect(() => {
+    if (deviceInfo?.name) {
+      // Update document title
+      const deviceName = deviceInfo.name;
+      document.title = `Best ${deviceName} repair services, Dhaka, Bangladesh`;
+
+      // Update or create meta description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute(
+          "content",
+          `Most authentic ${deviceName} repair service in Bangladesh. We are expert in repairing ${deviceName.toLowerCase()} devices along with all apple devices such as iPad,MacBook etc `
+        );
+      } else {
+        metaDescription = document.createElement("meta");
+        metaDescription.setAttribute("name", "description");
+        metaDescription.setAttribute(
+          "content",
+          `Most authentic ${deviceName} repair service in Bangladesh. We are expert in repairing ${deviceName.toLowerCase()} devices along with all apple devices such as iPad,MacBook etc `
+        );
+        document.head.appendChild(metaDescription);
+      }
+
+      // Update or create meta keywords
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute(
+          "content",
+          `${deviceName.toLowerCase()} repair service, best quality ${deviceName.toLowerCase()} repair service in bangladesh,best ${deviceName.toLowerCase()} repair service in dhaka`
+        );
+      } else {
+        metaKeywords = document.createElement("meta");
+        metaKeywords.setAttribute("name", "keywords");
+        metaKeywords.setAttribute(
+          "content",
+          `${deviceName.toLowerCase()} repair service, best quality ${deviceName.toLowerCase()} repair service in bangladesh,best ${deviceName.toLowerCase()} repair service in dhaka`
+        );
+        document.head.appendChild(metaKeywords);
+      }
+
+      // Update Open Graph tags
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute(
+          "content",
+          `Best ${deviceName} repair services, Dhaka, Bangladesh`
+        );
+      } else {
+        ogTitle = document.createElement("meta");
+        ogTitle.setAttribute("property", "og:title");
+        ogTitle.setAttribute(
+          "content",
+          `Best ${deviceName} repair services, Dhaka, Bangladesh`
+        );
+        document.head.appendChild(ogTitle);
+      }
+
+      let ogDescription = document.querySelector(
+        'meta[property="og:description"]'
+      );
+      if (ogDescription) {
+        ogDescription.setAttribute(
+          "content",
+          `Most authentic ${deviceName} repair service in Bangladesh. We are expert in repairing ${deviceName.toLowerCase()} devices along with all apple devices such as iPad,MacBook etc `
+        );
+      } else {
+        ogDescription = document.createElement("meta");
+        ogDescription.setAttribute("property", "og:description");
+        ogDescription.setAttribute(
+          "content",
+          `Most authentic ${deviceName} repair service in Bangladesh. We are expert in repairing ${deviceName.toLowerCase()} devices along with all apple devices such as iPad,MacBook etc `
+        );
+        document.head.appendChild(ogDescription);
+      }
+    }
+  }, [deviceInfo]);
   // Client-side hash detection
   // useEffect(() => {
   //   // Run only on client side
@@ -74,17 +155,23 @@ const page = () => {
     return <ChildDevices list={modelList} />;
   } else {
     return (
-      <Box>
-        <Container maxWidth="xl" sx={{ pb: 10 }}>
-          <PageHeader
-            title={`${deviceName} Repair Service`}
-            subtitle={`Choose the ${deviceName} model you need to repair`}
-          />
-          <List modelList={modelList} loading={loading} />
-        </Container>
-        <SectionSix modelList={modelList} />
-        <SectionSeven modelList={modelList} />
-      </Box>
+      <>
+        <Box>
+          <Container maxWidth="xl" sx={{ pb: 10 }}>
+            <PageHeader
+              title={`${
+                deviceInfo?.name ? deviceInfo?.name : ""
+              } Repair Service`}
+              subtitle={`Choose the ${
+                deviceInfo?.name ? deviceInfo?.name : ""
+              } model you need to repair`}
+            />
+            <List modelList={modelList} loading={loading} />
+          </Container>
+          <SectionSix modelList={modelList} />
+          <SectionSeven modelList={modelList} />
+        </Box>
+      </>
     );
   }
 };

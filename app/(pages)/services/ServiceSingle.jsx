@@ -9,7 +9,8 @@ const ServiceSingle = ({ list }) => {
   const router = useRouter();
   console.log("list", list);
   const navigate = (item) => {
-    
+    router.push(item?.endpoint);
+    return;
     // href={
     //   item?.parent_id === null
     //     ? `/device-list/${item._id}`
@@ -20,7 +21,7 @@ const ServiceSingle = ({ list }) => {
     const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
     if (list?.some((el) => el.parent_id === item._id)) {
       // router.push(`/services/${item._id}`);
-      router.push(`/services/${slug}-repair?sid=${item._id}`);
+      router.push(`/services/${slug}-repair?sid 1111=${item._id}`);
     } else {
       // router.push(`/device-list/${item._id}?device_name=${item.name}`);
       // router.push(

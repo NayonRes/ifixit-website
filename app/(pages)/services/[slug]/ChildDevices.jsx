@@ -22,7 +22,8 @@ const ChildDevices = ({ list }) => {
   console.log("sid", sid);
 
   const navigate = (item) => {
-   
+    router.push(item?.endpoint);
+    return;
     console.log("item", item);
     const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
     const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
@@ -56,50 +57,52 @@ const ChildDevices = ({ list }) => {
     // getData();
   }, []);
   return (
-    <Box>
-      <Container maxWidth="xl" sx={{ pb: 10 }}>
-        <PageHeader
-          title="CHOOSE YOUR APPLE DEVICE!!"
-          subtitle="Choose From iPhone, iPad, Macbook, iMac, Apple Watch, Drone Device List"
-        />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 1,
-            mb: 6,
-          }}
-        >
-          <Typography variant="body1" color="primary">
-            SERVICES
-          </Typography>
-          <Typography variant="h3">Available Services</Typography>
-        </Box>
-        <Grid container spacing={3}>
-          {!loading &&
-            list?.length > 0 &&
-            list?.map((item, i) => (
-              <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
-                <RepairServiceCard item={item} navigate={navigate} />
-              </Grid>
-            ))}
-          {loading && (
-            <>
-              {[...Array(6).keys()]?.map((item, i) => (
+    <>
+      <Box>
+        <Container maxWidth="xl" sx={{ pb: 10 }}>
+          <PageHeader
+            title="CHOOSE YOUR APPLE DEVICE!!"
+            subtitle="Choose From iPhone, iPad, Macbook, iMac, Apple Watch, Drone Device List"
+          />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 1,
+              mb: 6,
+            }}
+          >
+            <Typography variant="body1" color="primary">
+              SERVICES
+            </Typography>
+            <Typography variant="h3">Available Services</Typography>
+          </Box>
+          <Grid container spacing={3}>
+            {!loading &&
+              list?.length > 0 &&
+              list?.map((item, i) => (
                 <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
-                  <Skeleton variant="rectangular" height={300} />
+                  <RepairServiceCard item={item} navigate={navigate} />
                 </Grid>
               ))}
-            </>
-          )}
-        </Grid>
-      </Container>
-      <Line />
-      <SectionSix />
-      <Line />
-      <SectionSeven />
-    </Box>
+            {loading && (
+              <>
+                {[...Array(6).keys()]?.map((item, i) => (
+                  <Grid size={{ xs: 12, sm: 4, md: 4 }} key={i}>
+                    <Skeleton variant="rectangular" height={300} />
+                  </Grid>
+                ))}
+              </>
+            )}
+          </Grid>
+        </Container>
+        <Line />
+        <SectionSix />
+        <Line />
+        <SectionSeven />
+      </Box>
+    </>
   );
 };
 

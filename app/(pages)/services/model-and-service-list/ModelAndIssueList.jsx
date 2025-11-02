@@ -67,7 +67,7 @@ const ModelAndIssueList = () => {
 
   useEffect(() => {
     fetchModelList();
-  }, [hash]);
+  }, []);
 
   useEffect(() => {
     fetchServiceList();
