@@ -1,4 +1,5 @@
 import { Arimo, Playfair_Display, Tinos, Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
@@ -52,15 +53,17 @@ export default function RootLayout({ children }) {
       <body className="font-sans">
         <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>
-            <UrlProvider>
-              <div className="flex flex-col min-h-screen">
-                <header className="appbar_holder" id="header">
-                  <Navbar />
-                </header>
-                <main className="flex-grow">{children}</main>
-                <Footer />
-              </div>
-            </UrlProvider>
+            <Suspense fallback={null}>
+              <UrlProvider>
+                <div className="flex flex-col min-h-screen">
+                  <header className="appbar_holder" id="header">
+                    <Navbar />
+                  </header>
+                  <main className="flex-grow">{children}</main>
+                  <Footer />
+                </div>
+              </UrlProvider>
+            </Suspense>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
