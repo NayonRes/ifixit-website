@@ -6,7 +6,7 @@ import ServiceSingle from "./ServiceSingle";
 const Service = async () => {
   const data = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/device/public/list?status=true`,
-    { next: { revalidate: 3600 } } // Cache for 1 hour instead of 0
+    { next: { revalidate: 900 } } // Cache for 15 minutes instead of 0
   );
   const li = await data.json();
   const list = li?.data;
