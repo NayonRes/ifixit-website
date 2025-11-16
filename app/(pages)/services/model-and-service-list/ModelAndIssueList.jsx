@@ -23,6 +23,7 @@ const ModelAndIssueList = () => {
   const [modelLoading, setModelLoading] = useState(false);
   const [serviceList, setServiceList] = useState([]);
   const [serviceLoading, setServiceLoading] = useState(false);
+  const [deviceInfo, setDeviceInfo] = useState({});
 
   const fetchModelList = async () => {
     setModelLoading(true);
@@ -34,6 +35,8 @@ const ModelAndIssueList = () => {
 
       if (response.status >= 200 && response.status < 300) {
         setModelList(response?.data?.data || []);
+
+        setDeviceInfo(response?.data?.device);
       }
     } catch (error) {
       console.error("Error fetching models:", error);
@@ -79,8 +82,10 @@ const ModelAndIssueList = () => {
     <Box>
       <Container maxWidth="xl" sx={{ pb: 10 }}>
         <PageHeader
-          title={`${deviceName} Repair Service`}
-          subtitle={`Choose the ${deviceName} model you need to repair`}
+          title={`${deviceInfo?.name ? deviceInfo?.name : ""} Repair Service`}
+          subtitle={`Choose the ${
+            deviceInfo?.name ? deviceInfo?.name : ""
+          } model you need to repair`}
         />
         <List
           modelList={memoizedModelList}

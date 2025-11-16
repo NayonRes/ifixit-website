@@ -97,9 +97,6 @@ const ServiceCard = ({ item, modelList }) => {
               }}
             >
               {item?.title}
-
-              <br />
-              {modelList?.find((model) => `#!${model?.endpoint}` === hash)?._id}
             </Typography>
             {
               // item?.repair_info?.length === 1 &&
