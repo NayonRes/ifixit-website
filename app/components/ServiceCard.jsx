@@ -7,8 +7,6 @@ import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { useParams, useSearchParams } from "next/navigation";
 import { useUrl } from "../context/UrlContext";
 const ServiceCard = ({ item, modelList }) => {
- 
-
   const params = useParams();
   const searchParams = useSearchParams();
   const { url, pathname, hash } = useUrl();
@@ -27,24 +25,14 @@ const ServiceCard = ({ item, modelList }) => {
             endpoint?.model_id ===
             modelList?.find((model) => `#!${model?.endpoint}` === hash)?._id
         )?.endpoint ?? "#"
-      }#${item?._id}`}
-
-      // ${modelList?.find((model) => `#!${model?.endpoint}` === hash)?._model_id}`}
-
-      // href={`/services/${slug}/${devices
-      //   .replace(/series/gi, "")
-      //   .trim()
-      //   ?.toLowerCase()
-      //   .replace(/\s+/g, "-")}/${item?.title
-      //   .replace(/series/gi, "")
-      //   .trim()
-      //   ?.toLowerCase()
-      //   .replace(
-      //     /\s+/g,
-      //     "-"
-      //   )}/details?device_id=${device_id}&model_id=${model_id}&device_name=${deviceName}&sdid=${
-      //   item?._id
-      // }`}
+      }`}
+      // href={`${
+      //   item?.endpoints?.find(
+      //     (endpoint) =>
+      //       endpoint?.model_id ===
+      //       modelList?.find((model) => `#!${model?.endpoint}` === hash)?._id
+      //   )?.endpoint ?? "#"
+      // }#${item?._id}`}
     >
       <Box
         sx={{
