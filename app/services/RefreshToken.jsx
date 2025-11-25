@@ -11,7 +11,7 @@ const RefreshToken = (ifixit_admin_panel, logout, login) => {
       return;
     }
     const decodedToken = jwtDecode(token);
-    console.log("decodedToken", decodedToken);
+   
 
     // let decodedTokenTime = ifixit_admin_panel.expires_in * 1000;
     let decodedTokenTime = decodedToken.exp * 1000;

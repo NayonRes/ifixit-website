@@ -37,7 +37,6 @@ const pageContent = async () => {
     //     ? `/device-list/${item._id}`
     //     : `/service/${item._id}`
     // }
-    console.log("item", item);
 
     if (list?.some((el) => el.parent_id === item._id)) {
       router.push(`/services/${item._id}`);

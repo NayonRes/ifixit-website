@@ -31,7 +31,7 @@ const ModelAndIssueList = () => {
       // let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/model/public/get-by-device?device_id=${device_id}`;
       let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/public/model-get-by-device?endpoint=${pathname}&status=true`;
       let response = await getDataWithToken(url);
-      console.log("model response", response?.data?.data);
+    
 
       if (response.status >= 200 && response.status < 300) {
         setModelList(response?.data?.data || []);

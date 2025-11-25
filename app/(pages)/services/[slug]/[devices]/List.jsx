@@ -14,7 +14,7 @@ import SectionLoading4 from "@/app/components/SectionLoading4";
 import ModelCard from "@/app/components/ModelCard";
 
 export default function List({ modelList, loading }) {
-  console.log("modelList", modelList);
+
 
   const [value, setValue] = React.useState("1");
   const [age, setAge] = React.useState("");

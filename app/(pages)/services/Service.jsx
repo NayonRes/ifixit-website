@@ -11,11 +11,8 @@ const Service = async () => {
   );
   const li = await data.json();
   const list = li?.data;
-  console.log(
-    "process.env.NEXT_PUBLIC_BASE_URL",
-    process.env.NEXT_PUBLIC_BASE_URL
-  );
-  console.log("services", list);
+
+
 
   // const router = useRouter();
   // const params = useParams();
@@ -29,7 +26,7 @@ const Service = async () => {
     //     ? `/device-list/${item._id}`
     //     : `/service/${item._id}`
     // }
-    console.log("item", item);
+
 
     if (list?.some((el) => el.parent_id === item._id)) {
       redirect(`/services/${item._id}`);

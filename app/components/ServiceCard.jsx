@@ -7,7 +7,7 @@ import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import { useParams, useSearchParams } from "next/navigation";
 import { useUrl } from "../context/UrlContext";
 const ServiceCard = ({ item, modelList }) => {
-  console.log("modelList 222", modelList);
+ 
 
   const params = useParams();
   const searchParams = useSearchParams();

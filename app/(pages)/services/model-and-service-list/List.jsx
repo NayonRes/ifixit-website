@@ -13,9 +13,9 @@ import { useUrl } from "@/app/context/UrlContext";
 
 const ModelList = memo(({ modelList, modelLoading, device_id, model_id }) => {
   const { url, pathname, hash } = useUrl();
-  console.log("modelList url", url);
-  console.log("modelList pathname", pathname);
-  console.log("modelList hash", hash);
+  // console.log("modelList url", url);
+  // console.log("modelList pathname", pathname);
+  // console.log("modelList hash", hash);
   // const pathname = usePathname();
   const params = useParams();
   const searchParams = useSearchParams();

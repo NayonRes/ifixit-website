@@ -10,11 +10,7 @@ const Service = async () => {
   );
   const li = await data.json();
   const list = li?.data;
-  console.log(
-    "process.env.NEXT_PUBLIC_BASE_URL",
-    process.env.NEXT_PUBLIC_BASE_URL
-  );
-  console.log("services", list);
+ 
 
   return (
     <Box sx={{ pt: { sm: 0, md: 10 }, pb: 10 }}>

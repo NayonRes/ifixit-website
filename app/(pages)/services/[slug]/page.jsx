@@ -21,9 +21,9 @@ const page = () => {
   // Example usage: const { url, pathname: ctxPathname, hash } = useUrl();
 
   const { url, pathname, hash } = useUrl();
-  console.log("url", url);
-  console.log("pathname", pathname);
-  console.log("hash", hash);
+  // console.log("url", url);
+  // console.log("pathname", pathname);
+  // console.log("hash", hash);
   const deviceName = searchParams.get("device_name");
   const deviceId = searchParams.get("device_id");
   const [modelList, setModelList] = useState([]);

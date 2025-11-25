@@ -7,7 +7,7 @@ import RepairServiceCard from "@/app/components/RepairServiceCard";
 
 const ServiceSingle = ({ list }) => {
   const router = useRouter();
-  console.log("list", list);
+
   const navigate = (item) => {
     router.push(item?.endpoint);
     return;

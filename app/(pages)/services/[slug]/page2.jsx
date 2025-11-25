@@ -37,7 +37,7 @@ const page = () => {
     //     ? `/device-list/${item._id}`
     //     : `/service/${item._id}`
     // }
-    console.log("item", item);
+ 
     const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
     const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
     if (list?.some((el) => el.parent_id === item._id)) {

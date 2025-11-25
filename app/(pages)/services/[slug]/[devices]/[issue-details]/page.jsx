@@ -73,18 +73,21 @@ const style = {
 const page = () => {
   const params = useParams();
   const { url, pathname, hash } = useUrl();
-  console.log("hash", hash);
+  // console.log("hash", hash);
+  // console.log("pathname", pathname);
+
   const searchParams = useSearchParams();
-  const device_id = searchParams.get("device_id");
-  const model_id = searchParams.get("model_id");
+  // const device_id = searchParams.get("device_id");
+  // const model_id = searchParams.get("model_id");
   const sdid = searchParams.get("sdid");
   const [serviceDetails, setServiceDetails] = useState({});
   const [loading, setLoading] = useState(false);
 
   const getServiceList = async () => {
     setLoading(true);
-    let hashValue = hash && hash.startsWith('#') ? hash.slice(1) : hash;
-    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/public/service-details/${hashValue}`;
+    let hashValue = hash && hash.startsWith("#") ? hash.slice(1) : hash;
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/public/service-details?endpoint=${pathname}`;
+    // let url2 = `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/public/service-details/${hashValue}?endpoint=${pathname}`;
     let allData = await getDataWithToken(url);
 
     console.log("after childDevice list", allData?.data?.data);
@@ -100,7 +103,7 @@ const page = () => {
   };
   useEffect(() => {
     getServiceList();
-  }, [device_id, model_id]);
+  }, []);
   return (
     <Box>
       <Container maxWidth="xl">

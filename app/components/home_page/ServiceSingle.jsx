@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 
 const ServiceSingle = ({ list }) => {
   const router = useRouter();
-  console.log("list", list);
+
   const navigate = (item) => {
-    console.log("item", item);
+
     const nameWithoutSeries = item.name.replace(/series/gi, "").trim(); // remove 'series' and trim
     const slug = nameWithoutSeries.toLowerCase().replace(/\s+/g, "-");
     if (list?.some((el) => el.parent_id === item._id)) {

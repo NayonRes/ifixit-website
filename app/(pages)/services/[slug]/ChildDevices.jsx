@@ -16,10 +16,9 @@ const ChildDevices = ({ list }) => {
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
-  const sid = searchParams.get("sid");
   // const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log("sid", sid);
+ 
 
   const navigate = (item) => {
     router.push(item?.endpoint);
